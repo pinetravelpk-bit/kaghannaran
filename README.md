@@ -140,3 +140,7 @@ Until Supabase is connected the site shows sample data. Unlike local development
 To turn on Google: in Google Cloud, enable the **Routes API**, create an API key restricted to the Routes API, and add `GOOGLE_MAPS_API_KEY=...` to `shared/.env.production`. Then restart the site (`systemctl restart kaghannaran`); no rebuild is needed. Each segment is checked at most once an hour (about 3,600 requests a month for 5 segments). Check this against Google's current Routes API pricing and set a budget alert.
 
 **Weather** (Admin → Weather). Add any area by name and coordinates, choose which 4 appear on the home board, post an advisory (info / warning / danger), or override the conditions from a local report for a set time.
+
+## 3D valley map
+
+The home page "N-15 in 3D" view uses real data, built once into `public/terrain/` by `npm run terrain`: SRTM terrain heights, Sentinel-2 cloudless satellite imagery (2K for phones, 4K for desktops) and the N-15 route from OpenStreetMap. Stop positions are set in `scripts/build-terrain.mjs`. The big towns are snapped to their coordinates, and the small stops are placed by their usual road distance from Balakot. Re-run the script after changing them. Data credits are on `/credits`.
