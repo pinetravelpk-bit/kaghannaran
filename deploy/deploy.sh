@@ -12,6 +12,7 @@ REL=$BASE/releases/$(date +%Y%m%d%H%M%S)
 id "$APP" >/dev/null 2>&1 || useradd --system --home-dir "$BASE" --shell /usr/sbin/nologin "$APP"
 mkdir -p "$BASE/releases" "$BASE/shared"
 touch "$BASE/shared/.env.production"
+chown "$APP:$APP" "$BASE"
 chown -R "$APP:$APP" "$BASE/releases" "$BASE/shared"
 chmod 600 "$BASE/shared/.env.production"
 
