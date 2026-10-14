@@ -1,30 +1,16 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { Search, ChevronDown } from "lucide-react";
-import { clsx } from "clsx";
+import { ChevronDown } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import type { RoadSegment, Stop } from "@/lib/types";
+import type { RoadReading, Stop } from "@/lib/types";
 import { RoadBoard, type WeatherLite } from "./RoadBoard";
+import { Finder } from "./Finder";
 
 const TerrainScene = dynamic(() => import("./TerrainScene"), { ssr: false, loading: () => <div className="h-full w-full bg-pine" /> });
 
-export function Hero({ t, stops, road, weather }: { t: Dictionary; stops: Stop[]; road: RoadSegment[]; weather: WeatherLite[] }) {
+export function Hero({ t, stops, road, weather }: { t: Dictionary; stops: Stop[]; road: RoadReading[]; weather: WeatherLite[] }) {
   const reduce = !!useReducedMotion();
-  const router = useRouter();
-  const tabs = [
-    { id: "", label: t.tabs.all },
-    { id: "hotel", label: t.tabs.hotel },
-    { id: "restaurant", label: t.tabs.restaurant },
-    { id: "jeep-operator", label: t.tabs.jeep },
-    { id: "tour-guide", label: t.tabs.guide },
-    { id: "adventure", label: t.tabs.adventure },
-  ];
-  const [tab, setTab] = useState("hotel");
-  const [q, setQ] = useState("");
-  const [stop, setStop] = useState("");
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 120]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0.3]);
@@ -62,45 +48,7 @@ export function Hero({ t, stops, road, weather }: { t: Dictionary; stops: Stop[]
             {t.hero.sub}
           </motion.p>
 
-          <motion.form
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.95, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              const p = new URLSearchParams();
-              if (tab) p.set("type", tab);
-              if (q) p.set("q", q);
-              if (stop) p.set("stop", stop);
-              router.push(`/directory?${p.toString()}`);
-            }}
-            className="flex max-w-2xl flex-col gap-2.5 rounded-[22px] bg-ground p-2.5 text-ink shadow-2xl shadow-black/30"
-          >
-            <div role="group" aria-label="Category" className="no-scrollbar flex gap-1 overflow-x-auto px-1 pt-1">
-              {tabs.map((x) => (
-                <button key={x.id} type="button" aria-pressed={tab === x.id} onClick={() => setTab(x.id)} className={clsx("relative min-h-10 shrink-0 rounded-full px-4 text-sm font-semibold transition", tab === x.id ? "text-ground" : "text-ink-2 hover:bg-white")}>
-                  {tab === x.id && <motion.span layoutId="hero-tab" className="absolute inset-0 -z-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
-                  <span className="relative">{x.label}</span>
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              <label className="flex min-w-52 flex-[2_1_220px] flex-col gap-0.5 rounded-2xl bg-white px-4 py-2.5">
-                <span className="text-xs font-semibold tracking-wide text-muted uppercase">{t.hero.search}</span>
-                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t.hero.searchPlaceholder} className="bg-transparent text-[17px] outline-none placeholder:text-[#7A8784]" />
-              </label>
-              <label className="flex min-w-40 flex-[1_1_160px] flex-col gap-0.5 rounded-2xl bg-white px-4 py-2.5">
-                <span className="text-xs font-semibold tracking-wide text-muted uppercase">{t.hero.near}</span>
-                <select value={stop} onChange={(e) => setStop(e.target.value)} className="bg-transparent text-[17px] outline-none">
-                  <option value="">{t.hero.wholeValley}</option>
-                  {stops.map((s) => <option key={s.slug} value={s.slug}>{s.name}</option>)}
-                </select>
-              </label>
-              <button type="submit" className="flex min-h-14 items-center gap-2.5 rounded-2xl bg-ink px-7 font-semibold text-ground transition hover:bg-maroon">
-                <Search className="size-[18px]" aria-hidden /> {t.hero.search}
-              </button>
-            </div>
-          </motion.form>
+          <Finder t={t} stops={stops} />
         </div>
 
         <motion.div initial={reduce ? false : { opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6, duration: 0.9, ease: [0.16, 1, 0.3, 1] }} className="min-w-0 flex-[1_1_440px]">

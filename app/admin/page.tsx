@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AlertTriangle, ArrowUpRight, Clock, ClipboardCheck, Building, UserRoundCheck, Construction } from "lucide-react";
-import { getActivity, getBusinessTypes, getListings, getRoad, getStops } from "@/lib/data";
+import { getActivity, getBusinessTypes, getListings, getStops } from "@/lib/data";
+import { getRoadLive } from "@/lib/road";
 import { isDemo } from "@/lib/supabase/config";
 import { SAMPLE_SUBMISSION_TREND } from "@/lib/seed";
 import { AdminHeader, Card, ago, hoursSince } from "@/components/admin/ui";
@@ -29,7 +30,7 @@ function weekly(listings: Listing[]) {
 }
 
 export default async function AdminHome() {
-  const [all, types, stops, road, activity] = await Promise.all([getListings({ status: "all" }), getBusinessTypes(), getStops(), getRoad(), getActivity(8)]);
+  const [all, types, stops, road, activity] = await Promise.all([getListings({ status: "all" }), getBusinessTypes(), getStops(), getRoadLive(), getActivity(8)]);
   const pending = all.filter((l) => l.status === "pending").sort((a, b) => a.submittedAt.localeCompare(b.submittedAt));
   const approved = all.filter((l) => l.status === "approved");
   const guides = all.filter((l) => l.type === "tour-guide");
@@ -120,7 +121,7 @@ export default async function AdminHome() {
             <ul className="font-mono text-sm">
               {road.map((r) => <li key={r.id} className="flex items-center justify-between gap-2 border-t border-[#1C3330] py-2"><span className="truncate">{r.segment}</span><RoadBadge status={r.status} /></li>)}
             </ul>
-            <span className="flex items-center gap-1.5 text-xs text-fog"><Construction className="size-3.5" />Last updated {ago(road.reduce((a, r) => (r.updatedAt > a ? r.updatedAt : a), road[0]?.updatedAt ?? new Date().toISOString()))}</span>
+            <span className="flex items-center gap-1.5 text-xs text-fog"><Construction className="size-3.5" />Last updated {ago(road.reduce((a, r) => (r.checkedAt > a ? r.checkedAt : a), road[0]?.checkedAt ?? new Date().toISOString()))}</span>
           </Card>
           <Card title="Recent activity" action={<Link href="/admin/activity" className="text-sm font-semibold text-maroon">All →</Link>}>
             <ol className="relative flex flex-col gap-3 border-s-2 border-line ps-4">

@@ -11,6 +11,14 @@ const en = {
     search: "Search", searchPlaceholder: "e.g. family hotel with parking", near: "Near", wholeValley: "Whole valley", popular: "Popular",
   },
   tabs: { all: "All", hotel: "Hotels", restaurant: "Restaurants", jeep: "Jeeps", guide: "Guides", adventure: "Adventure" },
+  finder: {
+    stayType: "Stay type", budget: "Budget / night", mustHave: "Must have", cuisine: "Cuisine", familyArea: "Family area",
+    route: "Route", anyRoute: "Any route", seats: "Group size", area: "Area", anyArea: "Any area", language: "Language", anyLanguage: "Any language",
+    firstAid: "First-aid trained", activity: "Activity", anyActivity: "Any activity", youngest: "Youngest in group",
+    anyAge: "Any age", years: "years",
+    ph: { all: "e.g. ATM, pharmacy, fuel, trout", hotel: "Hotel name or feature", restaurant: "Dish or restaurant name", jeep: "Driver or company name", guide: "Guide name or trek", adventure: "Operator name" },
+    cta: { all: "Search", hotel: "Find stays", restaurant: "Find food", jeep: "Find jeeps", guide: "Find guides", adventure: "Find activities" },
+  },
   sections: {
     route: "The route", routeTitle: "Balakot to Babusar, stop by stop.", routeSub: "Pick a stop to see every place worth visiting there. New marks recently added spots; dashed circles are side trips off the N-15.",
     numbers: "Valley by numbers", numbersTitle: "From 980 m to 4,173 m in one road.",
@@ -40,6 +48,14 @@ const ur: Dict = {
     search: "تلاش", searchPlaceholder: "مثلاً پارکنگ والا فیملی ہوٹل", near: "قریب", wholeValley: "پوری وادی", popular: "مقبول",
   },
   tabs: { all: "سب", hotel: "ہوٹل", restaurant: "ریسٹورنٹ", jeep: "جیپیں", guide: "گائیڈ", adventure: "ایڈونچر" },
+  finder: {
+    stayType: "رہائش کی قسم", budget: "بجٹ / رات", mustHave: "ضروری سہولیات", cuisine: "کھانا", familyArea: "فیملی ایریا",
+    route: "روٹ", anyRoute: "کوئی بھی روٹ", seats: "گروپ کا سائز", area: "علاقہ", anyArea: "کوئی بھی علاقہ", language: "زبان", anyLanguage: "کوئی بھی زبان",
+    firstAid: "فرسٹ ایڈ تربیت یافتہ", activity: "سرگرمی", anyActivity: "کوئی بھی سرگرمی", youngest: "گروپ میں سب سے کم عمر",
+    anyAge: "کوئی بھی عمر", years: "سال",
+    ph: { all: "مثلاً اے ٹی ایم، فارمیسی، پیٹرول، ٹراؤٹ", hotel: "ہوٹل کا نام یا سہولت", restaurant: "ڈش یا ریسٹورنٹ کا نام", jeep: "ڈرائیور یا کمپنی کا نام", guide: "گائیڈ کا نام یا ٹریک", adventure: "آپریٹر کا نام" },
+    cta: { all: "تلاش", hotel: "رہائش تلاش کریں", restaurant: "کھانا تلاش کریں", jeep: "جیپ تلاش کریں", guide: "گائیڈ تلاش کریں", adventure: "سرگرمیاں تلاش کریں" },
+  },
   sections: {
     route: "راستہ", routeTitle: "بالاکوٹ سے بابوسر، پڑاؤ بہ پڑاؤ۔", routeSub: "کسی پڑاؤ کو چنیں اور وہاں کی ہر دیکھنے والی جگہ دیکھیں۔ ’نیا‘ حال ہی میں شامل جگہیں ہیں؛ نقطہ دار دائرے این-15 سے ہٹ کر سائیڈ ٹرپ ہیں۔",
     numbers: "وادی اعداد میں", numbersTitle: "ایک سڑک پر 980 میٹر سے 4,173 میٹر تک۔",

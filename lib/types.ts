@@ -42,12 +42,47 @@ export type Trail = {
 
 export type RoadStatus = "open" | "caution" | "closed" | "seasonal";
 
+export type LatLon = { lat: number; lon: number };
+
 export type RoadSegment = {
   id: string;
   segment: string;
+  /** manual note/status set by staff; used when mode is "manual" (or when no live check is possible) */
   note: string;
   status: RoadStatus;
   updatedAt: string;
+  mode: "auto" | "manual";
+  manualUntil?: string; // manual override expires and the segment goes back to automatic
+  from?: LatLon;
+  to?: LatLon;
+  normalKm?: number; // usual driving distance; a much longer Google route means a detour (road closed)
+  openMonths?: number[]; // 1–12; outside these months the pass is treated as seasonally closed
+};
+
+/** What visitors see: the stored segment resolved against live checks. */
+export type RoadReading = {
+  id: string;
+  segment: string;
+  status: RoadStatus;
+  note: string;
+  source: "manual" | "auto" | "fallback";
+  checkedAt: string;
+  etaMin?: number; // live driving time from Google Maps
+  normalMin?: number; // driving time without traffic
+};
+
+export type WeatherArea = LatLon & {
+  slug: string;
+  name: string;
+  alt: number;
+  sort: number;
+  onHome: boolean;
+  advisory: string;
+  advisoryLevel: "info" | "warning" | "danger";
+  overrideLabel?: string;
+  overrideTemp?: number;
+  overrideUntil?: string;
+  updatedAt?: string;
 };
 
 export type FieldDef = {

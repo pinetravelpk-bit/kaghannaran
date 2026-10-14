@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { isDemo } from "@/lib/supabase/config";
-import type { ListingStatus, Place, Role, RoadStatus, SiteSettings, BusinessType } from "@/lib/types";
+import type { ListingStatus, Place, Role, RoadSegment, SiteSettings, BusinessType, WeatherArea } from "@/lib/types";
 import { demoResult, logActivity, requireStaff, type ActionResult } from "./util";
 
 const fail = (e: unknown): ActionResult => ({ ok: false, message: e instanceof Error ? e.message : "Something went wrong." });
@@ -54,15 +54,21 @@ export async function deleteListing(id: string, name: string): Promise<ActionRes
   } catch (e) { return fail(e); }
 }
 
-export async function saveRoadSegment(seg: { id?: string; segment: string; note: string; status: RoadStatus; sort?: number }): Promise<ActionResult> {
+export async function saveRoadSegment(seg: Omit<RoadSegment, "id" | "updatedAt"> & { id?: string; sort?: number }): Promise<ActionResult> {
   try {
-    if (isDemo) return demoResult(`Road: ${seg.segment} → ${seg.status}`);
+    const what = seg.mode === "manual" ? `${seg.segment} → ${seg.status} (manual)` : `${seg.segment} → automatic`;
+    if (isDemo) return demoResult(`Road: ${what}`);
     const { user, s } = await requireStaff();
-    const row = { segment: seg.segment, note: seg.note, status: seg.status, updated_at: new Date().toISOString(), updated_by: user.id, ...(seg.sort !== undefined ? { sort_order: seg.sort } : {}) };
+    const row = {
+      segment: seg.segment, note: seg.note, status: seg.status, mode: seg.mode, manual_until: seg.mode === "manual" ? seg.manualUntil ?? null : null,
+      from_lat: seg.from?.lat ?? null, from_lon: seg.from?.lon ?? null, to_lat: seg.to?.lat ?? null, to_lon: seg.to?.lon ?? null,
+      normal_km: seg.normalKm ?? null, open_months: seg.openMonths?.length ? seg.openMonths : null,
+      updated_at: new Date().toISOString(), updated_by: user.id, ...(seg.sort !== undefined ? { sort_order: seg.sort } : {}),
+    };
     const q = seg.id ? s!.from("road_segments").update(row).eq("id", seg.id).select("id").single() : s!.from("road_segments").insert(row).select("id").single();
     const { data, error } = await q;
     if (error) throw error;
-    await logActivity("updated road status", `${seg.segment} → ${seg.status}`);
+    await logActivity("updated road status", what);
     revalidatePath("/", "layout");
     return { ok: true, message: "Road status published", id: data.id };
   } catch (e) { return fail(e); }
@@ -159,5 +165,35 @@ export async function saveTrails(trails: import("@/lib/types").Trail[]): Promise
     await logActivity("edited trails", `${trails.length} routes`);
     revalidatePath("/", "layout");
     return { ok: true, message: `Saved ${trails.length} routes` };
+  } catch (e) { return fail(e); }
+}
+
+export async function saveWeatherArea(a: WeatherArea, originalSlug?: string): Promise<ActionResult> {
+  try {
+    if (isDemo) return demoResult(`Weather: saved ${a.name}`);
+    const { user, s } = await requireStaff();
+    const row = {
+      slug: a.slug, name: a.name, lat: a.lat, lon: a.lon, alt: a.alt, sort_order: a.sort, on_home: a.onHome,
+      advisory: a.advisory, advisory_level: a.advisoryLevel, override_label: a.overrideLabel || null,
+      override_temp: a.overrideTemp ?? null, override_until: a.overrideUntil ?? null, updated_at: new Date().toISOString(), updated_by: user.id,
+    };
+    const { error } = originalSlug && originalSlug !== a.slug
+      ? await s!.from("weather_areas").update(row).eq("slug", originalSlug)
+      : await s!.from("weather_areas").upsert(row);
+    if (error) throw error;
+    await logActivity("updated weather", a.name + (a.advisory ? `: ${a.advisory}` : ""));
+    revalidatePath("/", "layout");
+    return { ok: true, message: `Saved weather for ${a.name}` };
+  } catch (e) { return fail(e); }
+}
+
+export async function deleteWeatherArea(slug: string): Promise<ActionResult> {
+  try {
+    if (isDemo) return demoResult("Area removed");
+    const { s } = await requireStaff();
+    const { error } = await s!.from("weather_areas").delete().eq("slug", slug);
+    if (error) throw error;
+    revalidatePath("/", "layout");
+    return { ok: true, message: "Area removed" };
   } catch (e) { return fail(e); }
 }

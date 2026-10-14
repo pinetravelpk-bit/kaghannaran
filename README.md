@@ -67,6 +67,7 @@ In demo mode you are signed in as a demo admin. Open `/admin` to see the admin p
 2. **Create the database.** Open the SQL editor, then run in order:
    - `supabase/migrations/0001_init.sql` (tables, security rules, storage buckets)
    - `supabase/seed.sql` (the 19 stops and places, 16 trails, 14 business types, road segments)
+   - `supabase/migrations/0002_live_road_weather.sql` (automatic road checks and weather areas)
 3. **Add your keys.** Copy `.env.example` to `.env.local` and fill in values from *Project Settings → API*:
    ```
    NEXT_PUBLIC_SUPABASE_URL=...
@@ -128,3 +129,14 @@ NEXT_PUBLIC_CONTACT_EMAIL=info@kaghannaran.com
 ```
 
 Until Supabase is connected the site shows sample data. Unlike local development, production does **not** sign visitors in as Demo Admin, so `/admin` and `/dashboard` redirect to the sign-in page.
+
+## Live road status & weather
+
+**Road status** (Admin → Road status). Each N-15 segment is on *Automatic* or *Manual override*:
+
+- **Automatic** checks every hour: Google Maps live driving time and detours (needs `GOOGLE_MAPS_API_KEY`), the Open-Meteo forecast at both ends (snow, heavy rain, storms) and the pass season (Babusar: open Jun–Oct). Google has no public road-closure feed. If Google routes around a segment (much longer than its usual km), it is marked **Closed**.
+- **Manual override** sets the status and note yourself for 6 h, 24 h, 3 days or until you switch back. Use it for landslides and other local reports.
+
+To turn on Google: in Google Cloud, enable the **Routes API**, create an API key restricted to the Routes API, and add `GOOGLE_MAPS_API_KEY=...` to `shared/.env.production`. Then restart the site (`systemctl restart kaghannaran`); no rebuild is needed. Each segment is checked at most once an hour (about 3,600 requests a month for 5 segments). Check this against Google's current Routes API pricing and set a budget alert.
+
+**Weather** (Admin → Weather). Add any area by name and coordinates, choose which 4 appear on the home board, post an advisory (info / warning / danger), or override the conditions from a local report for a set time.

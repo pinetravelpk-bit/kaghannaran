@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
-import { Construction } from "lucide-react";
-import type { RoadSegment } from "@/lib/types";
+import { Construction, TriangleAlert } from "lucide-react";
+import type { RoadReading } from "@/lib/types";
 import { RoadBadge } from "@/components/ui/StatusBadge";
 
-export type WeatherLite = { name: string; alt: number; temp?: number; label: string };
+export type WeatherLite = { name: string; alt: number; temp?: number; label: string; advisory?: boolean };
+
+const SOURCE: Record<RoadReading["source"], string> = { auto: "LIVE", manual: "TEAM", fallback: "TEAM" };
 
 const ago = (iso: string) => {
   const mins = Math.max(1, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
@@ -35,8 +37,8 @@ function Flap({ text, delay = 0 }: { text: string; delay?: number }) {
   );
 }
 
-export function RoadBoard({ road, weather }: { road: RoadSegment[]; weather: WeatherLite[] }) {
-  const last = road.reduce((a, r) => (r.updatedAt > a ? r.updatedAt : a), road[0]?.updatedAt ?? new Date().toISOString());
+export function RoadBoard({ road, weather }: { road: RoadReading[]; weather: WeatherLite[] }) {
+  const last = road.reduce((a, r) => (r.checkedAt > a ? r.checkedAt : a), road[0]?.checkedAt ?? new Date().toISOString());
   return (
     <div className="rounded-[22px] border border-[#23403B] bg-board/95 p-6 font-mono shadow-2xl shadow-black/40 backdrop-blur" dir="ltr">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-dashed border-[#2E4A45] pb-4">
@@ -50,7 +52,7 @@ export function RoadBoard({ road, weather }: { road: RoadSegment[]; weather: Wea
         {road.map((r, i) => (
           <li key={r.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-[#1C3330] py-3 text-ground">
             <span className="flex min-w-0 flex-col">
-              <span className="text-sm font-semibold tracking-wide uppercase">{r.segment}</span>
+              <span className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase">{r.segment}<span title={r.source === "auto" ? "Checked automatically from live traffic and weather" : "Set by the Kaghan Naran team"} className="rounded bg-board-2 px-1.5 py-px text-[9px] tracking-widest text-[#7F9893]">{SOURCE[r.source]}</span></span>
               <span className="truncate text-xs text-[#7F9893]">{r.note}</span>
             </span>
             <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1 + i * 0.12 }}>
@@ -62,7 +64,7 @@ export function RoadBoard({ road, weather }: { road: RoadSegment[]; weather: Wea
       <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4" id="weather-mini">
         {weather.map((w, i) => (
           <div key={w.name} className="flex flex-col gap-1 rounded-xl bg-pine px-3 py-2.5 text-ground">
-            <span className="text-[10px] tracking-widest text-fog uppercase">{w.name}</span>
+            <span className="flex items-center gap-1 text-[10px] tracking-widest text-fog uppercase">{w.name}{w.advisory ? <TriangleAlert className="size-3 text-signal" aria-label="Weather advisory" /> : null}</span>
             {w.temp !== undefined ? <Flap text={`${Math.round(w.temp)}°`} delay={1.2 + i * 0.15} /> : <span className="text-lg font-semibold text-signal">—°</span>}
             <span className="truncate text-[10px] text-[#7F9893]">{w.label} · {w.alt.toLocaleString("en-US")} m</span>
           </div>

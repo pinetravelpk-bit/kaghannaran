@@ -3,12 +3,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { clsx } from "clsx";
-import { LayoutDashboard, ClipboardCheck, Building, UserRoundCheck, CalendarDays, MapPinned, Construction, ListChecks, Users, History, Settings, Globe, Route } from "lucide-react";
+import { LayoutDashboard, ClipboardCheck, Building, UserRoundCheck, CalendarDays, MapPinned, Construction, ListChecks, Users, History, Settings, Globe, Route, CloudSun } from "lucide-react";
 
 const NAV = [
   { group: "Overview", items: [["/admin", "Dashboard", LayoutDashboard], ["/admin/activity", "Activity log", History]] },
   { group: "Moderation", items: [["/admin/approvals", "Approval queue", ClipboardCheck], ["/admin/listings", "All listings", Building], ["/admin/guides", "Tour guides", UserRoundCheck], ["/admin/community", "Events & jobs", CalendarDays]] },
-  { group: "Content", items: [["/admin/places", "Places & stops", MapPinned], ["/admin/trails", "Trails", Route], ["/admin/road", "Road status", Construction], ["/admin/types", "Business types & rules", ListChecks]] },
+  { group: "Content", items: [["/admin/places", "Places & stops", MapPinned], ["/admin/trails", "Trails", Route], ["/admin/road", "Road status", Construction], ["/admin/weather", "Weather", CloudSun], ["/admin/types", "Business types & rules", ListChecks]] },
   { group: "System", items: [["/admin/users", "Users & roles", Users], ["/admin/settings", "Settings", Settings]] },
 ] as const;
 

@@ -1,4 +1,4 @@
-import type { ActivityItem, EventItem, Job, Listing, ListingStatus, Profile, RoadSegment, SiteSettings, Trail } from "@/lib/types";
+import type { ActivityItem, EventItem, Job, Listing, ListingStatus, Profile, RoadSegment, SiteSettings, Trail, WeatherArea } from "@/lib/types";
 import { photo } from "@/lib/media";
 import { getType } from "./business-types";
 
@@ -32,19 +32,26 @@ const d = (daysAgo: number, h = 10) => {
 };
 
 export const ROAD_SEGMENTS: RoadSegment[] = [
-  { id: "r1", segment: "Balakot → Kiwai", note: "Riverside stretch along the Kunhar", status: "open", updatedAt: d(0, 8) },
-  { id: "r2", segment: "Kiwai → Kaghan → Naran", note: "Main N-15 section", status: "open", updatedAt: d(0, 8) },
-  { id: "r3", segment: "Naran → Batakundi", note: "Kiswah waterfall runs across the road. Drive slowly", status: "caution", updatedAt: d(0, 9) },
-  { id: "r4", segment: "Batakundi → Babusar Top", note: "Via Besal ford and Lulusar Lake", status: "seasonal", updatedAt: d(1, 17) },
-  { id: "r5", segment: "Babusar Top → Chilas", note: "Steep descent, check before going", status: "seasonal", updatedAt: d(1, 17) },
+  { id: "r1", segment: "Balakot → Kiwai", note: "Riverside stretch along the Kunhar", status: "open", updatedAt: d(0, 8), mode: "auto", from: { lat: 34.548, lon: 73.351 }, to: { lat: 34.676, lon: 73.452 }, normalKm: 24 },
+  { id: "r2", segment: "Kiwai → Kaghan → Naran", note: "Main N-15 section", status: "open", updatedAt: d(0, 8), mode: "auto", from: { lat: 34.676, lon: 73.452 }, to: { lat: 34.909, lon: 73.651 }, normalKm: 59 },
+  { id: "r3", segment: "Naran → Batakundi", note: "Kiswah waterfall runs across the road. Drive slowly", status: "caution", updatedAt: d(0, 9), mode: "manual", from: { lat: 34.909, lon: 73.651 }, to: { lat: 34.948, lon: 73.737 }, normalKm: 16 },
+  { id: "r4", segment: "Batakundi → Babusar Top", note: "Via Besal ford and Lulusar Lake", status: "seasonal", updatedAt: d(1, 17), mode: "auto", from: { lat: 34.948, lon: 73.737 }, to: { lat: 35.149, lon: 74.036 }, normalKm: 55, openMonths: [6, 7, 8, 9, 10] },
+  { id: "r5", segment: "Babusar Top → Chilas", note: "Steep descent, check before going", status: "seasonal", updatedAt: d(1, 17), mode: "auto", from: { lat: 35.149, lon: 74.036 }, to: { lat: 35.42, lon: 74.094 }, normalKm: 40, openMonths: [6, 7, 8, 9, 10] },
 ];
 
-/** Weather points (coordinates approximate) used with the free Open-Meteo API. */
-export const WEATHER_POINTS = [
-  { slug: "balakot", name: "Balakot", lat: 34.548, lon: 73.351, alt: 980 },
-  { slug: "kaghan", name: "Kaghan", lat: 34.778, lon: 73.523, alt: 2050 },
-  { slug: "naran", name: "Naran", lat: 34.909, lon: 73.651, alt: 2400 },
-  { slug: "babusar-top", name: "Babusar Top", lat: 35.149, lon: 74.036, alt: 4173 },
+/** Weather areas (coordinates approximate) used with the free Open-Meteo API. Staff can edit these in Admin → Weather. */
+const wa = (slug: string, name: string, lat: number, lon: number, alt: number, sort: number, onHome = false): WeatherArea =>
+  ({ slug, name, lat, lon, alt, sort, onHome, advisory: "", advisoryLevel: "info" });
+export const WEATHER_AREAS: WeatherArea[] = [
+  wa("balakot", "Balakot", 34.548, 73.351, 980, 0, true),
+  wa("kiwai", "Kiwai", 34.676, 73.452, 1450, 1),
+  wa("shogran", "Shogran", 34.637, 73.468, 2360, 2),
+  wa("kaghan", "Kaghan", 34.778, 73.523, 2050, 3, true),
+  wa("naran", "Naran", 34.909, 73.651, 2400, 4, true),
+  wa("saif-ul-malook", "Saif-ul-Malook", 34.877, 73.693, 3224, 5),
+  wa("batakundi", "Batakundi", 34.948, 73.737, 2700, 6),
+  wa("lulusar", "Lulusar Lake", 35.081, 73.94, 3410, 7),
+  { ...wa("babusar-top", "Babusar Top", 35.149, 74.036, 4173, 8, true), advisory: "Pass closes for winter, usually from November. Carry warm clothes even in summer.", advisoryLevel: "warning" },
 ];
 
 type Seed = Omit<Listing, "checklist" | "history" | "documents" | "slug" | "updatedAt" | "submittedAt"> & { daysAgo: number };

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, ClipboardCheck, FileUp, ShieldCheck, Briefcase, CalendarDays } from "lucide-react";
 import { getDict } from "@/lib/i18n/server";
-import { getBusinessTypes, getEvents, getJobs, getListings, getRoad, getSettings, getStops, getTrails } from "@/lib/data";
-import { getWeather, weatherLabel } from "@/lib/weather";
+import { getBusinessTypes, getEvents, getJobs, getListings, getSettings, getStops, getTrails } from "@/lib/data";
+import { getWeather } from "@/lib/weather";
+import { getRoadLive } from "@/lib/road";
 import { Hero } from "@/components/home/Hero";
 import { RouteExplorer } from "@/components/home/RouteExplorer";
 import { Infographic } from "@/components/home/Infographic";
@@ -19,7 +20,7 @@ export const revalidate = 300;
 export default async function Home() {
   const { t } = await getDict();
   const [stops, trails, road, weather, types, listings, events, jobs, settings] = await Promise.all([
-    getStops(), getTrails(), getRoad(), getWeather(), getBusinessTypes(), getListings(), getEvents(), getJobs(), getSettings(),
+    getStops(), getTrails(), getRoadLive(), getWeather(), getBusinessTypes(), getListings(), getEvents(), getJobs(), getSettings(),
   ]);
   const featured = listings.filter((l) => l.featured).concat(listings.filter((l) => !l.featured)).slice(0, 6);
   const typeBySlug = Object.fromEntries(types.map((x) => [x.slug, x]));
@@ -30,7 +31,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero t={t} stops={stops} road={road} weather={weather.map((w) => ({ name: w.name, alt: w.alt, temp: w.temp, label: weatherLabel(w.code) }))} />
+      <Hero t={t} stops={stops} road={road.map(({ auto: _a, ...r }) => r)} weather={weather.filter((w) => w.onHome).slice(0, 4).map((w) => ({ name: w.name, alt: w.alt, temp: w.temp, label: w.label, advisory: w.advisoryLevel !== "info" && !!w.advisory }))} />
       <PlaceMarquee names={allPlaceNames} />
 
       {/* 01 ROUTE */}

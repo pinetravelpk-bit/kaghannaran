@@ -3,7 +3,7 @@ import { cache } from "react";
 import { supabaseServer } from "@/lib/supabase/server";
 import { isDemo, isDemoAdmin } from "@/lib/supabase/config";
 import * as seed from "@/lib/seed";
-import type { ActivityItem, BusinessType, EventItem, Job, Listing, ListingStatus, Profile, Role, RoadSegment, SiteSettings, Stop, Trail } from "@/lib/types";
+import type { ActivityItem, BusinessType, EventItem, Job, Listing, ListingStatus, Profile, Role, RoadSegment, SiteSettings, Stop, Trail, WeatherArea } from "@/lib/types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -30,7 +30,18 @@ const toListing = (r: any): Listing => ({
     .sort((a: any, b: any) => a.at.localeCompare(b.at)),
   submittedAt: r.submitted_at, updatedAt: r.updated_at,
 });
-const toRoad = (r: any): RoadSegment => ({ id: r.id, segment: r.segment, note: r.note, status: r.status, updatedAt: r.updated_at });
+const pt = (lat: any, lon: any) => (lat == null || lon == null ? undefined : { lat: Number(lat), lon: Number(lon) });
+const toRoad = (r: any): RoadSegment => ({
+  id: r.id, segment: r.segment, note: r.note, status: r.status, updatedAt: r.updated_at,
+  mode: r.mode ?? "manual", manualUntil: r.manual_until ?? undefined,
+  from: pt(r.from_lat, r.from_lon), to: pt(r.to_lat, r.to_lon),
+  normalKm: r.normal_km == null ? undefined : Number(r.normal_km), openMonths: r.open_months ?? undefined,
+});
+const toWeatherArea = (r: any): WeatherArea => ({
+  slug: r.slug, name: r.name, lat: r.lat, lon: r.lon, alt: r.alt, sort: r.sort_order, onHome: r.on_home,
+  advisory: r.advisory, advisoryLevel: r.advisory_level, overrideLabel: r.override_label ?? undefined,
+  overrideTemp: r.override_temp == null ? undefined : Number(r.override_temp), overrideUntil: r.override_until ?? undefined, updatedAt: r.updated_at,
+});
 const toEvent = (r: any): EventItem => ({ id: r.id, title: r.title, date: r.starts_at ?? undefined, where: r.location, stop: r.stop_slug ?? "", description: r.description, status: r.status });
 const toJob = (r: any): Job => ({ id: r.id, title: r.title, employer: r.employer, stop: r.stop_slug ?? "", type: r.job_type, salary: r.salary ?? undefined, description: r.description, contact: r.contact, status: r.status, postedAt: r.created_at });
 
@@ -69,6 +80,14 @@ export const getRoad = cache(async (): Promise<RoadSegment[]> => {
   if (!s) return seed.ROAD_SEGMENTS;
   const { data, error } = await s.from("road_segments").select("*").order("sort_order");
   return error || !data?.length ? seed.ROAD_SEGMENTS : data.map(toRoad);
+});
+
+export const getWeatherAreas = cache(async (): Promise<WeatherArea[]> => {
+  const s = await db();
+  if (!s) return seed.WEATHER_AREAS;
+  // falls back to the built-in areas until migration 0002 has been run
+  const { data, error } = await s.from("weather_areas").select("*").order("sort_order");
+  return error || !data?.length ? seed.WEATHER_AREAS : data.map(toWeatherArea);
 });
 
 export const getSettings = cache(async (): Promise<SiteSettings> => {
