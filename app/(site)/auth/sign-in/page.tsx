@@ -1,8 +1,9 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { SignInForm } from "@/components/forms/AuthForms";
 import { AuthShell } from "@/components/site/AuthShell";
 
-export const metadata = { title: "Sign in" };
+export const metadata = pageMeta({ title: "Sign in", description: "Sign in to manage your Kaghan Naran listings.", path: "/auth/sign-in", noindex: true });
 
 export default async function SignInPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const { next } = await searchParams;

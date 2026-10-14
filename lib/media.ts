@@ -2,8 +2,8 @@
  * Stock photography.
  *
  * All images below are free-licensed photos from Wikimedia Commons (mostly CC BY-SA),
- * loaded by URL as placeholders until you upload your own photos from the admin panel.
- * Credits are listed on /credits — keep that page if you keep these photos.
+ * loaded by URL until you upload your own photos from the admin panel.
+ * Credits are listed on /credits; keep that page if you keep these photos.
  *
  * To swap a photo: change the file name here, or set `image` on a stop / listing in the admin.
  */

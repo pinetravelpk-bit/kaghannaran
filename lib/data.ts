@@ -109,7 +109,7 @@ export async function getListings(opts: { status?: ListingStatus | "all"; type?:
   const s = await db();
   let list: Listing[];
   if (!s) {
-    list = seed.SAMPLE_LISTINGS;
+    list = seed.LISTINGS;
   } else {
     let query = s.from("listings").select(LISTING_SELECT).order("submitted_at", { ascending: false });
     if (status !== "all") query = query.eq("status", status);
@@ -130,7 +130,7 @@ export async function getListings(opts: { status?: ListingStatus | "all"; type?:
 
 export async function getListing(idOrSlug: string): Promise<Listing | undefined> {
   const s = await db();
-  if (!s) return seed.SAMPLE_LISTINGS.find((l) => l.id === idOrSlug || l.slug === idOrSlug);
+  if (!s) return seed.LISTINGS.find((l) => l.id === idOrSlug || l.slug === idOrSlug);
   const isUuid = /^[0-9a-f-]{36}$/i.test(idOrSlug);
   const { data } = await s.from("listings").select(LISTING_SELECT).eq(isUuid ? "id" : "slug", idOrSlug).maybeSingle();
   return data ? toListing(data) : undefined;
@@ -138,7 +138,7 @@ export async function getListing(idOrSlug: string): Promise<Listing | undefined>
 
 export async function getMyListings(userId: string): Promise<Listing[]> {
   const s = await db();
-  if (!s) return seed.SAMPLE_LISTINGS.filter((l) => ["l1", "l9", "l13"].includes(l.id));
+  if (!s) return [];
   const { data } = await s.from("listings").select(LISTING_SELECT).eq("owner_id", userId).order("submitted_at", { ascending: false });
   return (data ?? []).map(toListing);
 }
@@ -146,7 +146,7 @@ export async function getMyListings(userId: string): Promise<Listing[]> {
 // ───────── community ─────────
 export async function getEvents(all = false): Promise<EventItem[]> {
   const s = await db();
-  if (!s) return all ? seed.SAMPLE_EVENTS : seed.SAMPLE_EVENTS.filter((e) => e.status === "approved");
+  if (!s) return all ? seed.EVENTS : seed.EVENTS.filter((e) => e.status === "approved");
   let q = s.from("events").select("*").order("starts_at", { ascending: true, nullsFirst: true });
   if (!all) q = q.eq("status", "approved");
   const { data } = await q;
@@ -155,7 +155,7 @@ export async function getEvents(all = false): Promise<EventItem[]> {
 
 export async function getJobs(all = false): Promise<Job[]> {
   const s = await db();
-  if (!s) return all ? seed.SAMPLE_JOBS : seed.SAMPLE_JOBS.filter((e) => e.status === "approved");
+  if (!s) return all ? seed.JOBS : seed.JOBS.filter((e) => e.status === "approved");
   let q = s.from("jobs").select("*").order("created_at", { ascending: false });
   if (!all) q = q.eq("status", "approved");
   const { data } = await q;
@@ -165,14 +165,14 @@ export async function getJobs(all = false): Promise<Job[]> {
 // ───────── admin ─────────
 export async function getProfiles(): Promise<Profile[]> {
   const s = await db();
-  if (!s) return seed.SAMPLE_PROFILES;
+  if (!s) return seed.PROFILES;
   const { data } = await s.from("profiles").select("*, listings(count)").order("created_at", { ascending: false });
   return (data ?? []).map((r: any) => ({ id: r.id, name: r.full_name, email: r.email, role: r.role, phone: r.phone ?? undefined, createdAt: r.created_at, listings: r.listings?.[0]?.count ?? 0 }));
 }
 
 export async function getActivity(limit = 50): Promise<ActivityItem[]> {
   const s = await db();
-  if (!s) return seed.SAMPLE_ACTIVITY;
+  if (!s) return seed.ACTIVITY;
   const { data } = await s.from("activity_log").select("*").order("created_at", { ascending: false }).limit(limit);
   return (data ?? []).map((r: any) => ({ id: String(r.id), at: r.created_at, actor: r.actor_name, action: r.action, target: r.target }));
 }

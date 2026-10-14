@@ -7,9 +7,21 @@ import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
 import { photo } from "@/lib/media";
 import { X } from "lucide-react";
+import { pageMeta } from "@/lib/seo";
 import { FILTER_PARAMS, STAY_TYPES, filterValueLabel, matchesFilters, type FilterParams } from "@/lib/search";
 
-export const metadata = { title: "Directory" };
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ stop?: string; q?: string } & FilterParams> }) {
+  const sp = await searchParams;
+  const [types, stops] = await Promise.all([getBusinessTypes(), getStops()]);
+  const type = sp.type === STAY_TYPES ? { name: "Places to stay", slug: STAY_TYPES } : types.find((x) => x.slug === sp.type);
+  const stop = stops.find((x) => x.slug === sp.stop);
+  const what = type ? type.name : "Hotels, jeeps, guides and services";
+  const where = stop ? `${stop.name}, Kaghan Valley` : "Kaghan Valley";
+  // index the category and stop pages; searches and attribute filters stay out of the index
+  const canonical = `/directory${type || stop ? `?${new URLSearchParams({ ...(type ? { type: type.slug } : {}), ...(stop ? { stop: stop.slug } : {}) })}` : ""}`;
+  const filtered = !!sp.q || Object.keys(FILTER_PARAMS).some((k) => sp[k as keyof FilterParams]);
+  return pageMeta({ title: `${what} in ${where}`, description: `${what} in ${where}, from Balakot and Kaghan to Naran and Babusar Top. Listings are checked by our team, with phone numbers, prices and locations.`, path: canonical, noindex: filtered });
+}
 
 export default async function DirectoryPage({ searchParams }: { searchParams: Promise<{ stop?: string; q?: string } & FilterParams> }) {
   const sp = await searchParams;
@@ -74,7 +86,7 @@ export default async function DirectoryPage({ searchParams }: { searchParams: Pr
           ) : (
             <div className="flex flex-col items-start gap-4 rounded-3xl bg-sage p-8">
               <p className="font-display text-2xl font-semibold">Nothing listed here yet.</p>
-              <p className="text-ink-2">Know a good place? Ask the owner to add it — it’s free and reviewed by our team.</p>
+              <p className="text-ink-2">Know a good place? Ask the owner to add it. It’s free and reviewed by our team.</p>
               <Link href="/list-your-business" className="rounded-full bg-ink px-6 py-3 font-semibold text-ground">List a business</Link>
             </div>
           )}

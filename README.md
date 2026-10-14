@@ -2,7 +2,7 @@
 
 A Next.js 15 + Supabase website and admin panel for the Kaghan valley, from Balakot to Babusar Top. It is built for **Pine Travel (SMC-Private) Limited**.
 
-It runs right away in **demo mode** with sample data, so nothing needs to be set up first. Connect Supabase when you're ready to go live.
+It runs right away without a database, using the built-in data (stops, places, trails and verified emergency numbers), so nothing needs to be set up first. Connect Supabase when you're ready to go live.
 
 ```bash
 npm install
@@ -68,6 +68,7 @@ In demo mode you are signed in as a demo admin. Open `/admin` to see the admin p
    - `supabase/migrations/0001_init.sql` (tables, security rules, storage buckets)
    - `supabase/seed.sql` (the 19 stops and places, 16 trails, 14 business types, road segments)
    - `supabase/migrations/0002_live_road_weather.sql` (automatic road checks and weather areas)
+   - `supabase/migrations/0003_public_services.sql` (verified emergency and help numbers)
 3. **Add your keys.** Copy `.env.example` to `.env.local` and fill in values from *Project Settings → API*:
    ```
    NEXT_PUBLIC_SUPABASE_URL=...
@@ -91,8 +92,8 @@ If you edit places or business types in `lib/seed/` before launch, run `npm run 
 - **Photos:** these are free Wikimedia Commons stock images loaded by URL (`lib/media.ts`), credited on `/credits`. Replace them with your own photos. Each stop's cover image can be changed in *Admin → Places & stops*.
 - **Film:** add your YouTube, Vimeo or mp4 link in *Admin → Settings*.
 - **Altitudes:** only Balakot, Kaghan, Naran, Lulusar, Babusar Top and Shogran have heights, and they are approximate. The elevation chart fills in between them.
-- **Placeholders:** `[your-email]` in the footer and listing pages, the Privacy page text, and the WhatsApp road-alert form (`components/site/AlertSignup.tsx` has a TODO to connect your SMS/WhatsApp provider).
-- **Sample data:** sample listings, jobs and events appear in demo mode only. They are never written to your database.
+- **Contact email:** set `NEXT_PUBLIC_CONTACT_EMAIL` (defaults to info@kaghannaran.com).
+- **Business listings:** there is no sample data. Hotels, restaurants, jeeps and guides appear once their owners sign up and staff approve them.
 
 ## Project map
 
@@ -118,7 +119,7 @@ The live site runs on the Inventive Clicks VPS behind nginx, the same way as the
 
 **Deploy a new version:** push to `main`, then on the server run `bash /var/www/kaghannaran/current/deploy/deploy.sh`.
 
-**Go live with Supabase:** follow steps 1–5 of *Going live* above, put the keys in `shared/.env.production`, and deploy again (the `NEXT_PUBLIC_*` keys are baked in at build time):
+**Go live with Supabase:** follow steps 1 to 5 of *Going live* above, put the keys in `shared/.env.production`, and deploy again (the `NEXT_PUBLIC_*` keys are baked in at build time):
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=...
@@ -128,13 +129,13 @@ NEXT_PUBLIC_SITE_URL=https://kaghannaran.com
 NEXT_PUBLIC_CONTACT_EMAIL=info@kaghannaran.com
 ```
 
-Until Supabase is connected the site shows sample data. Unlike local development, production does **not** sign visitors in as Demo Admin, so `/admin` and `/dashboard` redirect to the sign-in page.
+Until Supabase is connected the site shows the built-in data and accounts are closed. Unlike local development, production does **not** sign visitors in as Demo Admin, so `/admin` and `/dashboard` redirect to the sign-in page.
 
 ## Live road status & weather
 
 **Road status** (Admin → Road status). Each N-15 segment is on *Automatic* or *Manual override*:
 
-- **Automatic** checks every hour: Google Maps live driving time and detours (needs `GOOGLE_MAPS_API_KEY`), the Open-Meteo forecast at both ends (snow, heavy rain, storms) and the pass season (Babusar: open Jun–Oct). Google has no public road-closure feed. If Google routes around a segment (much longer than its usual km), it is marked **Closed**.
+- **Automatic** checks every hour: Google Maps live driving time and detours (needs `GOOGLE_MAPS_API_KEY`), the Open-Meteo forecast at both ends (snow, heavy rain, storms) and the pass season (Babusar: open Jun to Oct). Google has no public road-closure feed. If Google routes around a segment (much longer than its usual km), it is marked **Closed**.
 - **Manual override** sets the status and note yourself for 6 h, 24 h, 3 days or until you switch back. Use it for landslides and other local reports.
 
 To turn on Google: in Google Cloud, enable the **Routes API**, create an API key restricted to the Routes API, and add `GOOGLE_MAPS_API_KEY=...` to `shared/.env.production`. Then restart the site (`systemctl restart kaghannaran`); no rebuild is needed. Each segment is checked at most once an hour (about 3,600 requests a month for 5 segments). Check this against Google's current Routes API pricing and set a budget alert.
@@ -144,3 +145,11 @@ To turn on Google: in Google Cloud, enable the **Routes API**, create an API key
 ## 3D valley map
 
 The home page "N-15 in 3D" view uses real data, built once into `public/terrain/` by `npm run terrain`: SRTM terrain heights, Sentinel-2 cloudless satellite imagery (2K for phones, 4K for desktops) and the N-15 route from OpenStreetMap. Stop positions are set in `scripts/build-terrain.mjs`. The big towns are snapped to their coordinates, and the small stops are placed by their usual road distance from Balakot. Re-run the script after changing them. Data credits are on `/credits`.
+
+## SEO and AI search
+
+- Every public page has its own title, description, canonical URL, Open Graph and Twitter card (`pageMeta` in `lib/seo.ts`).
+- Structured data (JSON-LD): Organization and WebSite on every page; TouristDestination, ItemList and FAQPage on the home page; TouristDestination with coordinates and height, breadcrumbs and FAQ on each place page; LocalBusiness subtypes on listings; live FAQ answers on /road.
+- FAQ answers are generated from the site's own data (`lib/faq.ts`), so distances, heights and road status always match the pages.
+- For AI assistants: `/llms.txt` and `/llms-full.txt` (live summaries), `/api/road` and `/api/places` (JSON). `robots.txt` welcomes search and AI crawlers and keeps accounts and admin private.
+- Optional env: `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` add the Search Console and Bing Webmaster verification tags.

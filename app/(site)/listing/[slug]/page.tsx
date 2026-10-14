@@ -5,14 +5,17 @@ import { getBusinessTypes, getListing, getStops } from "@/lib/data";
 import { Photo } from "@/components/ui/Photo";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
-import { isDemo } from "@/lib/supabase/config";
 import { CONTACT_EMAIL } from "@/lib/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbs, graph, listingSchema, pageMeta } from "@/lib/seo";
+import { stopPoint } from "@/lib/geo";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const l = await getListing(slug);
-  // sample listings are not real businesses, so keep them out of search engines
-  return { title: l?.name ?? "Listing", description: l?.description, robots: isDemo ? { index: false } : undefined };
+  if (!l) return { title: "Listing not found" };
+  const where = (await getStops()).find((x) => x.slug === l.stop)?.name;
+  return pageMeta({ title: `${l.name}${where ? `, ${where}` : ""}: phone and details`, description: `${l.description} Phone: ${l.phone}.`.slice(0, 300), path: `/listing/${l.slug}`, image: l.image });
 }
 
 export default async function ListingPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,6 +28,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
   const wa = (l.whatsapp ?? l.phone).replace(/\D/g, "").replace(/^0/, "92");
   return (
     <>
+      <JsonLd data={graph(listingSchema(l, type, stop, stop ? stopPoint(stop.slug) : undefined), breadcrumbs([["Directory", "/directory"], ...(type ? [[type.name, `/directory?type=${type.slug}`] as [string, string]] : []), [l.name, `/listing/${l.slug}`]]))} />
       <section className="relative isolate overflow-hidden bg-pine text-ground">
         <Photo src={l.image} alt={l.name} eager className="absolute inset-0 -z-10 h-full w-full opacity-70 [&_img]:animate-kenburns" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,#12302C_5%,rgba(18,48,44,0.2)_70%)]" />
@@ -32,7 +36,6 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-wrap gap-2">
             {type ? <span className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-ink"><Icon name={type.icon} className="size-4" />{type.name}</span> : null}
             {l.verified ? <span className="flex items-center gap-1.5 rounded-full bg-emerald-700 px-3 py-1.5 text-sm font-semibold"><BadgeCheck className="size-4" />Verified</span> : null}
-            {isDemo ? <span className="rounded-full bg-ink px-3 py-1.5 text-sm font-semibold">Sample listing</span> : null}
           </div>
           <h1 className="font-display text-5xl leading-none font-extrabold tracking-tight md:text-7xl">{l.name}</h1>
           <p className="flex flex-wrap items-center gap-4 text-mist">
@@ -66,8 +69,9 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
             <div className="flex flex-col gap-3 rounded-3xl bg-ink p-6 text-ground">
               {l.priceFrom ? <span className="font-display text-3xl font-extrabold">PKR {l.priceFrom.toLocaleString("en-US")} <span className="text-base font-normal text-fog">from</span></span> : null}
               <a href={`tel:${l.phone}`} className="flex min-h-13 items-center justify-center gap-2 rounded-2xl bg-amber font-semibold text-ink"><Phone className="size-4" />Call {l.phone}</a>
-              <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a>
-              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />Reviewed by the Kaghan Naran team before publishing. Book directly with the owner.</p>
+              {wa.length >= 10 ? <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a> : null}
+              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />{type?.adminOnly ? "Public service number, checked by the Kaghan Naran team." : "Reviewed by the Kaghan Naran team before publishing. Book directly with the owner."}</p>
+              {typeof l.attributes.source === "string" ? <a href={l.attributes.source} target="_blank" rel="noreferrer" className="text-sm text-fog underline">Source</a> : null}
             </div>
             <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Report: " + l.name)}`} className="text-center text-sm text-muted underline">Report a problem with this listing</a>
           </aside>

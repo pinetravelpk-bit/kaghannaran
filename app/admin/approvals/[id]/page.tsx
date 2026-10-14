@@ -31,7 +31,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
     }));
     return { key: d.key, label: d.label, required: d.required, files };
   }));
-  const fmt = (v: unknown) => (Array.isArray(v) ? v.join(", ") : typeof v === "boolean" ? (v ? "Yes" : "No") : v === undefined || v === "" ? "—" : String(v));
+  const fmt = (v: unknown) => (Array.isArray(v) ? v.join(", ") : typeof v === "boolean" ? (v ? "Yes" : "No") : v === undefined || v === "" ? "-" : String(v));
   const wa = (l.whatsapp ?? l.phone).replace(/\D/g, "").replace(/^0/, "92");
 
   return (
@@ -58,7 +58,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
           <Card title={`${type.individual ? "Profile" : "Business"} details`}>
             <dl className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
               <div className="border-t border-line pt-2"><dt className="text-sm text-muted">Applicant</dt><dd className="font-semibold">{l.ownerName}</dd></div>
-              <div className="border-t border-line pt-2"><dt className="text-sm text-muted">Price from</dt><dd className="font-mono font-semibold">{l.priceFrom ? `PKR ${l.priceFrom.toLocaleString("en-US")}` : "—"}</dd></div>
+              <div className="border-t border-line pt-2"><dt className="text-sm text-muted">Price from</dt><dd className="font-mono font-semibold">{l.priceFrom ? `PKR ${l.priceFrom.toLocaleString("en-US")}` : "-"}</dd></div>
               {type.fields.map((f) => <div key={f.key} className="border-t border-line pt-2"><dt className="text-sm text-muted">{f.label}{f.required ? " *" : ""}</dt><dd className="font-semibold">{fmt(l.attributes[f.key])}</dd></div>)}
             </dl>
           </Card>

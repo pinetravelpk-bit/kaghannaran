@@ -45,7 +45,7 @@ export const STOPS: Stop[] = [
       { name: "Paye Meadows", note: "About 45 minutes by jeep from Shogran. Best to arrive before 2 pm." },
       { name: "Makra Peak", note: "Trek from Paye. One visitor did 10 km in about 3.5 hours." },
       { name: "Musa ka Musalla & Malika Parbat views" },
-      { name: "Shogran–Sharan hiking track" },
+      { name: "Shogran to Sharan hiking track" },
     ],
   },
   {
@@ -55,8 +55,8 @@ export const STOPS: Stop[] = [
       { name: "Paras Bridge, Hangrai", note: "A bridge over the Kunhar near Paras.", isNew: N },
       { name: "Sharan Forest", note: "About 45 min by jeep from Paras. Stays at the forest edge have Wi-Fi and Mobilink signal. Two youth hostels about 30 min further in have no mobile internet." },
       { name: "Sharan Waterfall", note: "45 minutes to 1 hour from the camping pods.", warning: "The climb back is hard, but horses are available." },
-      { name: "Manshi Top", note: "3–4 hour hike from Sharan, with views of Musa ka Musalla, Shogran, Siri, Paye and Makra." },
-      { name: "Musa ka Musalla trek", note: "A 2–3 day trek from Sharan." },
+      { name: "Manshi Top", note: "3 to 4 hour hike from Sharan, with views of Musa ka Musalla, Shogran, Siri, Paye and Makra." },
+      { name: "Musa ka Musalla trek", note: "A 2 to 3 day trek from Sharan." },
     ],
   },
   {
@@ -91,7 +91,7 @@ export const STOPS: Stop[] = [
     desc: "Resort trails and a long hike up to the Danna Meadows.",
     places: [
       { name: "Hiking trail by Spruce Resort", isNew: N },
-      { name: "Danna Meadows", note: "2–6 hour trek from Khanian. The old jeep track was destroyed in the 2005 earthquake.", isNew: N, warning: "No facilities, so carry water and food." },
+      { name: "Danna Meadows", note: "2 to 6 hour trek from Khanian. The old jeep track was destroyed in the 2005 earthquake.", isNew: N, warning: "No facilities, so carry water and food." },
     ],
   },
   {
@@ -131,7 +131,7 @@ export const STOPS: Stop[] = [
     desc: "Roadside waterfalls on the way, then the jeep track up to Lalazar. Batakundi is about 16 km from Naran.",
     places: [
       { name: "Kiswah Waterfall", note: "Water flows across the road.", isNew: N, warning: "Drive slowly here." },
-      { name: "Sohni Waterfall", note: "Falls over step-like rocks. You can climb 50–60 ft to the water.", isNew: N },
+      { name: "Sohni Waterfall", note: "Falls over step-like rocks. You can climb 50 to 60 ft to the water.", isNew: N },
       { name: "Batakundi", note: "About 16 km from Naran. The Satsar Mala trek also starts from the campground." },
       { name: "Lalazar", note: "Half-hour jeep from Batakundi. Old Dak Bungalow and a small forest at the top.", warning: "Dusty or slippery track." },
     ],
@@ -182,7 +182,7 @@ export const STOPS: Stop[] = [
     slug: "babusar-top", order: 19, name: "Babusar Top", nameUr: "بابوسر ٹاپ", kind: "Pass", altitude: 4173, image: photo("lulusar2"),
     desc: "The top of the valley, with a zipline and big views. Jeep tracks lead to Dharamsar Lake just before the pass.",
     places: [
-      { name: "Dharamsar Lake", note: "Jeep track just before Babusar Top, 1.5–3 hrs from the main road. Best to hire a 4x4 from Jalkhad." },
+      { name: "Dharamsar Lake", note: "Jeep track just before Babusar Top, 1.5 to 3 hrs from the main road. Best to hire a 4x4 from Jalkhad." },
       { name: "Sambaksar Lake", note: "About a 1-hour trek from Dharamsar, also visible from Babusar Top." },
       { name: "Kalabashi Top", note: "On the route from Dharamsar to Mullah ki Basti." },
       { name: "Babusar Top", note: "4,173 m, with a zipline and views." },

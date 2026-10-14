@@ -6,7 +6,7 @@ import { supabaseServer } from "@/lib/supabase/server";
 import type { ActionResult } from "./util";
 
 export async function signIn(_: ActionResult | null, form: FormData): Promise<ActionResult> {
-  if (isDemo) return { ok: false, message: isDemoAdmin ? "Demo mode: sign-in is disabled. You’re already browsing as Demo Admin — open /admin or /dashboard." : "Accounts open soon. Please check back shortly." };
+  if (isDemo) return { ok: false, message: isDemoAdmin ? "Demo mode: sign-in is disabled. You’re already browsing as Demo Admin. Open /admin or /dashboard." : "Accounts open soon. Please check back shortly." };
   const email = String(form.get("email") ?? "");
   const password = String(form.get("password") ?? "");
   const next = String(form.get("next") ?? "/dashboard");

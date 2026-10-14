@@ -65,7 +65,7 @@ export function RoadBoard({ road, weather }: { road: RoadReading[]; weather: Wea
         {weather.map((w, i) => (
           <div key={w.name} className="flex flex-col gap-1 rounded-xl bg-pine px-3 py-2.5 text-ground">
             <span className="flex items-center gap-1 text-[10px] tracking-widest text-fog uppercase">{w.name}{w.advisory ? <TriangleAlert className="size-3 text-signal" aria-label="Weather advisory" /> : null}</span>
-            {w.temp !== undefined ? <Flap text={`${Math.round(w.temp)}°`} delay={1.2 + i * 0.15} /> : <span className="text-lg font-semibold text-signal">—°</span>}
+            {w.temp !== undefined ? <Flap text={`${Math.round(w.temp)}°`} delay={1.2 + i * 0.15} /> : <span className="text-lg font-semibold text-signal">-°</span>}
             <span className="truncate text-[10px] text-[#7F9893]">{w.label} · {w.alt.toLocaleString("en-US")} m</span>
           </div>
         ))}

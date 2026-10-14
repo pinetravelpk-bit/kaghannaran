@@ -1,4 +1,4 @@
--- Kaghan Naran Directory — database schema
+-- Kaghan Naran Directory: database schema
 -- Run in the Supabase SQL editor (or `supabase db push`).
 
 -- gen_random_uuid() is built into Postgres 13+ (Supabase).

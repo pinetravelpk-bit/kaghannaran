@@ -24,9 +24,9 @@ export default async function GuidesPage() {
               <StatusBadge status={g.status} />
             </div>
             <ul className="flex flex-col gap-2 border-t border-line p-5 text-sm">
-              <li className="flex gap-2"><Languages className="size-4 shrink-0 text-pine" />{list(g.attributes.languages).join(", ") || "—"}</li>
-              <li className="flex gap-2"><MapPinned className="size-4 shrink-0 text-pine" />{list(g.attributes.areas).join(", ") || "—"}</li>
-              <li className="flex gap-2"><Award className="size-4 shrink-0 text-pine" />{String(g.attributes.experience ?? "—")} years experience</li>
+              <li className="flex gap-2"><Languages className="size-4 shrink-0 text-pine" />{list(g.attributes.languages).join(", ") || "-"}</li>
+              <li className="flex gap-2"><MapPinned className="size-4 shrink-0 text-pine" />{list(g.attributes.areas).join(", ") || "-"}</li>
+              <li className="flex gap-2"><Award className="size-4 shrink-0 text-pine" />{String(g.attributes.experience ?? "-")} years experience</li>
               <li className="flex gap-2"><HeartPulse className="size-4 shrink-0 text-pine" />First-aid: {g.attributes.firstAid ? "Yes" : "No"}</li>
             </ul>
             <div className="mt-auto flex items-center justify-between gap-2 border-t border-line p-4">

@@ -10,7 +10,7 @@ const EarthScene = dynamic(() => import("./EarthScene"), { ssr: false });
 
 const btn = "flex size-10 items-center justify-center rounded-full bg-[#0a1716]/80 text-white shadow-lg backdrop-blur transition hover:bg-[#8E1B1B] disabled:opacity-40";
 
-/** Real-terrain valley map with Google Earth–style controls, a road tour and a live elevation strip. */
+/** Real-terrain valley map with Google Earth style controls, a road tour and a live elevation strip. */
 export function EarthView({ stops }: { stops: EarthStop[] }) {
   const box = useRef<HTMLDivElement>(null);
   const near = useInView(box, { once: true, margin: "400px" });

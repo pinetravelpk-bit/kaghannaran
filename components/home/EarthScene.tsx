@@ -6,7 +6,7 @@ import * as THREE from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 
 /**
- * Google Earth–style view of the Kaghan valley: real SRTM terrain draped with Sentinel-2 satellite
+ * Google Earth style view of the Kaghan valley: real SRTM terrain draped with Sentinel-2 satellite
  * imagery, the N-15 from OpenStreetMap, and every stop at its real position.
  * Assets are built by scripts/build-terrain.mjs into public/terrain/.
  */

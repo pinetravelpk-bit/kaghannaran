@@ -56,7 +56,7 @@ export type RoadSegment = {
   from?: LatLon;
   to?: LatLon;
   normalKm?: number; // usual driving distance; a much longer Google route means a detour (road closed)
-  openMonths?: number[]; // 1–12; outside these months the pass is treated as seasonally closed
+  openMonths?: number[]; // 1 to 12; outside these months the pass is treated as seasonally closed
 };
 
 /** What visitors see: the stored segment resolved against live checks. */

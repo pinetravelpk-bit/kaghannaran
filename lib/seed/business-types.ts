@@ -15,7 +15,7 @@ export const BUSINESS_TYPES: BusinessType[] = [
       { key: "roomTypes", label: "Room types", type: "multiselect", options: ["Standard", "Deluxe", "Family", "Suite", "Dormitory"] },
       { key: "amenities", label: "Amenities", type: "multiselect", options: ["Parking", "Hot water", "Heating", "Wi-Fi", "Generator / solar", "Restaurant", "River view", "Family friendly"] },
       { key: "checkIn", label: "Check-in time", type: "text", placeholder: "e.g. 12:00" },
-      { key: "season", label: "Open season", type: "select", options: ["All year", "Summer only (May–Oct)", "Custom"] },
+      { key: "season", label: "Open season", type: "select", options: ["All year", "Summer only (May to Oct)", "Custom"] },
     ],
     documents: [CNIC, REG, PHOTOS],
     checklist: [...baseChecks, "Room rates displayed", "Safety: fire extinguisher / exits"],
@@ -47,7 +47,7 @@ export const BUSINESS_TYPES: BusinessType[] = [
     fields: [
       { key: "cuisine", label: "Cuisine", type: "multiselect", options: ["Desi", "BBQ", "Trout", "Chinese", "Fast food", "Tea & snacks"] },
       { key: "seating", label: "Seating capacity", type: "number" },
-      { key: "hours", label: "Opening hours", type: "text", placeholder: "e.g. 8am – 11pm" },
+      { key: "hours", label: "Opening hours", type: "text", placeholder: "e.g. 8am to 11pm" },
       { key: "familyArea", label: "Family area", type: "boolean" },
     ],
     documents: [CNIC, { key: "food", label: "Food safety licence", required: false }, PHOTOS],
@@ -97,7 +97,7 @@ export const BUSINESS_TYPES: BusinessType[] = [
     slug: "tour-company", name: "Tour company", group: "People", icon: "Map",
     description: "Registered tour operators and travel agencies.",
     fields: [
-      { key: "packages", label: "Package types", type: "multiselect", options: ["Day trips", "2–3 day tours", "Treks", "Family tours", "Honeymoon", "Corporate"] },
+      { key: "packages", label: "Package types", type: "multiselect", options: ["Day trips", "2 to 3 day tours", "Treks", "Family tours", "Honeymoon", "Corporate"] },
       { key: "office", label: "Office location", type: "text" },
     ],
     documents: [CNIC, { key: "registration", label: "Company registration (SECP / DTS)", required: true }, PHOTOS],

@@ -3,7 +3,6 @@ import { AlertTriangle, ArrowUpRight, Clock, ClipboardCheck, Building, UserRound
 import { getActivity, getBusinessTypes, getListings, getStops } from "@/lib/data";
 import { getRoadLive } from "@/lib/road";
 import { isDemo } from "@/lib/supabase/config";
-import { SAMPLE_SUBMISSION_TREND } from "@/lib/seed";
 import { AdminHeader, Card, ago, hoursSince } from "@/components/admin/ui";
 import { SubmissionsChart, TypeDonut, StopBars } from "@/components/admin/Charts";
 import { StatusBadge, RoadBadge } from "@/components/ui/StatusBadge";
@@ -76,14 +75,14 @@ export default async function AdminHome() {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <Card title="Submissions vs approvals" action={<span className="font-mono text-xs text-muted">{isDemo ? "SAMPLE TREND" : "LAST 9 WEEKS"}</span>}>
-          <SubmissionsChart data={isDemo ? SAMPLE_SUBMISSION_TREND : weekly(all)} />
+        <Card title="Submissions vs approvals" action={<span className="font-mono text-xs text-muted">LAST 9 WEEKS</span>}>
+          <SubmissionsChart data={weekly(all)} />
         </Card>
         <Card title="Live listings by type"><TypeDonut data={byType} /></Card>
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-        <Card title="Queue — oldest first" action={<Link href="/admin/approvals" className="text-sm font-semibold text-maroon">Open queue →</Link>}>
+        <Card title="Queue, oldest first" action={<Link href="/admin/approvals" className="text-sm font-semibold text-maroon">Open queue →</Link>}>
           <ul className="flex flex-col">
             {pending.slice(0, 6).map((l) => {
               const h = hoursSince(l.submittedAt);

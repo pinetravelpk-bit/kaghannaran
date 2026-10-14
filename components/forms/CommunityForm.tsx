@@ -25,7 +25,7 @@ export function CommunityForm({ kind, stops }: { kind: "job" | "event"; stops: {
           <Field label="Venue / location" name="location" required />
         </div>
       )}
-      <Field label="Nearest stop" name="stop_slug" as="select" options={[["", "—"], ...stops.map((s) => [s.slug, s.name] as [string, string])]} />
+      <Field label="Nearest stop" name="stop_slug" as="select" options={[["", "Choose a stop"], ...stops.map((s) => [s.slug, s.name] as [string, string])]} />
       <Field label="Description" name="description" as="textarea" required />
       <Submit>Submit for review</Submit>
     </form>

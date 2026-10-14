@@ -93,7 +93,7 @@ export async function submitListing(_: ActionResult | null, form: FormData): Pro
     await logActivity(base.id ? "resubmitted" : "submitted a listing", base.name);
     revalidatePath("/dashboard");
     revalidatePath("/admin/approvals");
-    return { ok: true, id, message: base.id ? "Changes sent. A moderator will re-check them shortly." : "Submitted! We’ll review it and let you know — usually within 1–2 working days." };
+    return { ok: true, id, message: base.id ? "Changes sent. A moderator will re-check them shortly." : "Submitted! We’ll review it and let you know, usually within 1 to 2 working days." };
   } catch (e) {
     const msg = e instanceof z.ZodError ? e.issues[0]?.message ?? "Please check the form." : e instanceof Error ? e.message : "Something went wrong.";
     return { ok: false, message: msg };

@@ -71,7 +71,7 @@ for (let y = 0; y < GRID; y++) for (let x = 0; x < GRID; x++) {
   minH = Math.min(minH, h); maxH = Math.max(maxH, h);
 }
 fs.writeFileSync(`${OUT}/height.bin`, Buffer.from(grid.buffer));
-console.log(`  heights ${Math.round(minH)}–${Math.round(maxH)} m`);
+console.log(`  heights ${Math.round(minH)} to ${Math.round(maxH)} m`);
 
 // ── 2. imagery (zoom 13 tiles: 2×2 per terrain tile, same bounds) ──
 console.log("Imagery tiles…");

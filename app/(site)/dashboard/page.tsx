@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Plus, MessageSquareWarning, Pencil, ExternalLink, LogOut } from "lucide-react";
@@ -8,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { signOut } from "@/lib/actions/auth";
 import type { Listing } from "@/lib/types";
 
-export const metadata = { title: "My listings" };
+export const metadata = pageMeta({ title: "My listings", description: "Your Kaghan Naran listings.", path: "/dashboard", noindex: true });
 
 const STEPS = ["Submitted", "In review", "Verified", "Live"];
 const progress = (l: Listing) => (l.status === "approved" ? 4 : l.status === "pending" ? (Object.values(l.checklist).some(Boolean) ? 2 : 1) : 1);

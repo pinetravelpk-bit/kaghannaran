@@ -1,10 +1,11 @@
+import { pageMeta } from "@/lib/seo";
 import { notFound, redirect } from "next/navigation";
 import { getBusinessTypes, getCurrentUser, getListing, getStops } from "@/lib/data";
 import { ListingForm } from "@/components/forms/ListingForm";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { isDemo } from "@/lib/supabase/config";
 
-export const metadata = { title: "Edit listing" };
+export const metadata = pageMeta({ title: "Edit listing", description: "Edit your listing.", path: "/dashboard", noindex: true });
 
 export default async function EditListing({ params }: { params: Promise<{ id: string }> }) {
   const user = await getCurrentUser();

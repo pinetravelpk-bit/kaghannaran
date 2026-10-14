@@ -71,7 +71,7 @@ export async function getWeather(): Promise<WeatherNow[]> {
 }
 
 export function weatherLabel(code?: number): string {
-  if (code === undefined) return "—";
+  if (code === undefined) return "-";
   if (code === 0) return "Clear";
   if (code <= 3) return "Partly cloudy";
   if (code <= 48) return "Fog";

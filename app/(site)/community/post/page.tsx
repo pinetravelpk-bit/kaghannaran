@@ -1,8 +1,9 @@
+import { pageMeta } from "@/lib/seo";
 import { getStops } from "@/lib/data";
 import { PageHero } from "@/components/site/PageHero";
 import { CommunityForm } from "@/components/forms/CommunityForm";
 
-export const metadata = { title: "Post to the community board" };
+export const metadata = pageMeta({ title: "Post a job or event", description: "Post a job or an event in Kaghan Valley. Every post is reviewed before it goes live.", path: "/community/post", noindex: true });
 
 export default async function PostPage({ searchParams }: { searchParams: Promise<{ kind?: string }> }) {
   const { kind } = await searchParams;

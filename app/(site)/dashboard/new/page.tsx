@@ -1,8 +1,9 @@
+import { pageMeta } from "@/lib/seo";
 import { redirect } from "next/navigation";
 import { getBusinessTypes, getCurrentUser, getStops } from "@/lib/data";
 import { ListingForm } from "@/components/forms/ListingForm";
 
-export const metadata = { title: "Add a listing" };
+export const metadata = pageMeta({ title: "Add a listing", description: "Add your business to the Kaghan Naran directory.", path: "/dashboard/new", noindex: true });
 
 export default async function NewListing({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
   const user = await getCurrentUser();

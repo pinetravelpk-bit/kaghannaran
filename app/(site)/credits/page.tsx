@@ -1,12 +1,13 @@
+import { pageMeta } from "@/lib/seo";
 import { PHOTO_FILES, commonsPage, photo, type PhotoKey } from "@/lib/media";
 import { PageHero } from "@/components/site/PageHero";
 
-export const metadata = { title: "Credits" };
+export const metadata = pageMeta({ title: "Credits and data sources", description: "Photo credits and the data sources behind the Kaghan Naran 3D map: Sentinel-2 imagery, SRTM terrain and OpenStreetMap.", path: "/credits" });
 
 export default function CreditsPage() {
   return (
     <>
-      <PageHero kicker="Credits" title="Photo credits" sub="Placeholder photos are from Wikimedia Commons, used under each file’s Creative Commons licence. Open a file to see its author and licence." />
+      <PageHero kicker="Credits" title="Credits" sub="Photos are from Wikimedia Commons, used under each file’s Creative Commons licence. Open a file to see its author and licence." />
       <section className="px-4 pt-12 md:px-6">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-3 rounded-3xl border border-line bg-white p-6">
           <h2 className="font-display text-2xl font-bold">3D valley map</h2>

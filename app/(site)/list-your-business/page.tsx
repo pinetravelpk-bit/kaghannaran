@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { FileCheck2, PhoneCall, Search, BadgeCheck, RotateCcw, ArrowRight } from "lucide-react";
 import { getBusinessTypes } from "@/lib/data";
@@ -6,7 +7,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
 import { photo } from "@/lib/media";
 
-export const metadata = { title: "List your business or register as a guide" };
+export const metadata = pageMeta({ title: "List your hotel or business in Kaghan Valley for free", description: "Hotels, guest houses, restaurants, jeep drivers, guides and adventure operators in Kaghan, Naran and Shogran can list for free. Every listing is checked by our team.", path: "/list-your-business" });
 
 export default async function ListPage() {
   const types = (await getBusinessTypes()).filter((t) => !t.adminOnly);
@@ -38,7 +39,7 @@ export default async function ListPage() {
   );
   return (
     <>
-      <PageHero kicker="For hotels, shops, drivers & guides" title="Get your business in front of every visitor." sub="Listing is reviewed by our team so travellers can trust what they find. Most reviews finish within 1–2 working days." image={photo("handicraft")} />
+      <PageHero kicker="For hotels, shops, drivers & guides" title="Get your business in front of every visitor." sub="Listing is reviewed by our team so travellers can trust what they find. Most reviews finish within 1 to 2 working days." image={photo("handicraft")} />
       <section className="px-4 py-16 md:px-6">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-14">
           <Reveal>

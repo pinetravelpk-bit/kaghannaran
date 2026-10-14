@@ -5,7 +5,7 @@ import { getCurrentUser, isStaffRole } from "@/lib/data";
 
 export type ActionResult = { ok: boolean; message: string; demo?: boolean; id?: string };
 
-export const demoResult = (message: string): ActionResult => ({ ok: true, demo: true, message: `${message} (demo mode — nothing was saved)` });
+export const demoResult = (message: string): ActionResult => ({ ok: true, demo: true, message: `${message} (demo mode, nothing was saved)` });
 
 export async function requireUser() {
   const user = await getCurrentUser();

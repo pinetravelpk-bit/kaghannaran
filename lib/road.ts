@@ -72,7 +72,7 @@ export function assess(seg: RoadSegment, google: GoogleRoute | undefined, wx: Fo
 
   if (seg.openMonths?.length && !seg.openMonths.includes(month)) {
     const m = [...seg.openMonths].sort((a, b) => a - b);
-    return { ...base, status: "seasonal", note: `Closed for winter. Usually open ${MONTHS[m[0] - 1]}–${MONTHS[m[m.length - 1] - 1]}.` };
+    return { ...base, status: "seasonal", note: `Closed for winter. Usually open ${MONTHS[m[0] - 1]} to ${MONTHS[m[m.length - 1] - 1]}.` };
   }
   if (google && "noRoute" in google) return { ...base, status: "closed", note: "Google Maps finds no drivable route. Likely blocked." };
   if (google && seg.normalKm && google.km > seg.normalKm * 1.6) {

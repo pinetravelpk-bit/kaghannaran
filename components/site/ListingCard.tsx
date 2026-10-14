@@ -3,13 +3,19 @@ import { BadgeCheck, MapPin, Star } from "lucide-react";
 import type { BusinessType, Listing, Stop } from "@/lib/types";
 import { Photo } from "@/components/ui/Photo";
 import { Icon } from "@/components/ui/Icon";
-import { isDemo } from "@/lib/supabase/config";
 
 export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType; stop?: Stop }) {
   return (
     <Link href={`/listing/${l.slug}`} className="group flex flex-col overflow-hidden rounded-3xl border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(16,32,31,0.35)]">
       <span className="relative block aspect-[4/3] overflow-hidden">
-        <Photo src={l.image} alt={l.name} className="h-full w-full transition duration-700 group-hover:scale-105 [&_img]:transition [&_img]:duration-700 group-hover:[&_img]:scale-110" />
+        {l.image ? (
+          <Photo src={l.image} alt={l.name} className="h-full w-full transition duration-700 group-hover:scale-105 [&_img]:transition [&_img]:duration-700 group-hover:[&_img]:scale-110" />
+        ) : (
+          <span className="flex h-full w-full flex-col items-center justify-center gap-2 bg-pine text-signal">
+            {type ? <Icon name={type.icon} className="size-14" /> : null}
+            <span className="font-mono text-4xl font-semibold tracking-wider">{l.phone}</span>
+          </span>
+        )}
         <span className="absolute top-3 left-3 flex flex-wrap gap-1.5">
           {type ? (
             <span className="flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-ink">
@@ -17,7 +23,6 @@ export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType
             </span>
           ) : null}
           {l.featured ? <span className="rounded-full bg-amber px-3 py-1.5 text-xs font-semibold text-ink">Featured</span> : null}
-          {isDemo ? <span className="rounded-full bg-ink/80 px-3 py-1.5 text-xs font-semibold text-white">Sample</span> : null}
         </span>
       </span>
       <span className="flex flex-1 flex-col gap-2 p-5">

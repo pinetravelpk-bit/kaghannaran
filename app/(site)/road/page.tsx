@@ -1,3 +1,7 @@
+import { breadcrumbs, faqPage, graph, pageMeta } from "@/lib/seo";
+import { roadFaq } from "@/lib/faq";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Faq } from "@/components/seo/Faq";
 import { clsx } from "clsx";
 import { getWeather } from "@/lib/weather";
 import { getRoadLive, googleConnected } from "@/lib/road";
@@ -7,7 +11,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { photo } from "@/lib/media";
 import { Thermometer, Wind, TriangleAlert, Info, Radio, UserRoundCheck, Snowflake } from "lucide-react";
 
-export const metadata = { title: "Road status & weather" };
+export const metadata = pageMeta({ title: "Naran and Babusar road status today, with weather", description: "Is the N-15 open today? Hourly road status from Balakot to Naran, Babusar Top and Chilas, with live weather for Naran, Kaghan, Shogran, Saif-ul-Malook and Babusar.", path: "/road" });
 export const revalidate = 600;
 
 const fmt = (iso: string) => new Date(iso).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Karachi" });
@@ -18,9 +22,11 @@ export default async function RoadPage() {
   const how = googleConnected
     ? "Checked automatically every hour from Google Maps live traffic, the weather forecast and the pass season, and confirmed by our team when they have local reports."
     : "Checked automatically from the weather forecast and the pass season, and updated by our team from local reports.";
+  const faq = roadFaq(road);
   return (
     <>
-      <PageHero kicker="Live info" title="Road & weather, before you drive." sub={`${how} Weather is a live forecast from Open-Meteo.`} image={photo("naranWinter")} />
+      <JsonLd data={graph(breadcrumbs([["Road status and weather", "/road"]]), faqPage(faq))} />
+      <PageHero kicker="Live info · N-15" title="Kaghan Naran road status and weather today" sub={`${how} Weather is a live forecast from Open-Meteo.`} image={photo("naranWinter")} />
       <section className="px-4 py-14 md:px-6">
         <div className="mx-auto grid max-w-[1320px] gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <Reveal className="self-start rounded-3xl bg-board p-6 font-mono text-ground">
@@ -48,11 +54,11 @@ export default async function RoadPage() {
                 <StaggerItem key={w.slug} className="flex h-full flex-col gap-3 rounded-3xl border border-line bg-white p-5">
                   <span className="flex items-baseline justify-between"><span className="font-display text-2xl font-bold">{w.name}</span><span className="font-mono text-xs text-muted">{w.alt.toLocaleString("en-US")} m</span></span>
                   <span className="flex items-end gap-3">
-                    <span className="font-display text-6xl font-extrabold">{w.temp !== undefined ? `${Math.round(w.temp)}°` : "—"}</span>
+                    <span className="font-display text-6xl font-extrabold">{w.temp !== undefined ? `${Math.round(w.temp)}°` : "-"}</span>
                     <span className="pb-2 text-muted">{w.label}{w.overridden ? <span className="ms-1.5 rounded-full bg-sage px-2 py-0.5 text-[11px] font-semibold text-ink">local report</span> : null}</span>
                   </span>
                   <span className="flex gap-4 text-sm text-muted">
-                    <span className="flex items-center gap-1"><Wind className="size-4" />{w.wind !== undefined ? `${Math.round(w.wind)} km/h` : "—"}</span>
+                    <span className="flex items-center gap-1"><Wind className="size-4" />{w.wind !== undefined ? `${Math.round(w.wind)} km/h` : "-"}</span>
                     {Math.round(w.snowTodayCm ?? 0) >= 1 ? <span className="flex items-center gap-1"><Snowflake className="size-4" />{Math.round(w.snowTodayCm ?? 0)} cm snow today</span> : null}
                   </span>
                   {w.advisory ? (
@@ -76,6 +82,9 @@ export default async function RoadPage() {
             </Stagger>
           </div>
         </div>
+      </section>
+      <section className="px-4 pb-16 md:px-6">
+        <div className="mx-auto max-w-[1320px]"><Faq items={faq} title="Road questions" /></div>
       </section>
     </>
   );

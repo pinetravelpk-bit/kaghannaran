@@ -29,7 +29,7 @@ export function DocViewer({ docs, demo }: { docs: DocView[]; demo: boolean }) {
               <div className="flex items-center justify-between border-b border-line px-4 py-3"><span className="truncate font-semibold">{open.name}</span><button type="button" aria-label="Close" onClick={() => setOpen(null)} className="flex size-10 items-center justify-center rounded-full hover:bg-ground"><X className="size-5" /></button></div>
               <div className="flex min-h-80 items-center justify-center bg-ground p-4">
                 {demo || !open.url ? (
-                  <div className="flex flex-col items-center gap-2 text-center text-muted"><FileText className="size-12" /><b className="text-ink">Sample document</b><span>In live mode the uploaded file opens here.</span></div>
+                  <div className="flex flex-col items-center gap-2 text-center text-muted"><FileText className="size-12" /><b className="text-ink">No file in demo mode</b><span>Once Supabase is connected the uploaded file opens here.</span></div>
                 ) : /\.pdf($|\?)/i.test(open.name) ? (
                   <iframe src={open.url} title={open.name} className="h-[70vh] w-full rounded-lg bg-white" />
                 ) : (

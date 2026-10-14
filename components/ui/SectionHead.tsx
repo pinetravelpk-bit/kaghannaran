@@ -6,7 +6,7 @@ export function SectionHead({ num, kicker, title, sub, action, dark }: { num?: s
   return (
     <Reveal className="flex flex-wrap items-end justify-between gap-4">
       <div className="flex max-w-3xl flex-col gap-3">
-        <span className={clsx("eyebrow", dark ? "text-signal" : "text-maroon")}>{num ? `${num} — ` : ""}{kicker}</span>
+        <span className={clsx("eyebrow", dark ? "text-signal" : "text-maroon")}>{num ? `${num} · ` : ""}{kicker}</span>
         <h2 className="font-display text-4xl leading-none font-extrabold tracking-tight md:text-6xl">{title}</h2>
         {sub ? <p className={clsx("max-w-xl text-lg", dark ? "text-mist" : "text-muted")}>{sub}</p> : null}
       </div>

@@ -1,7 +1,8 @@
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT_EMAIL } from "@/lib/site";
 
-export const metadata = { title: "Privacy" };
+export const metadata = pageMeta({ title: "Privacy policy", description: "How Pine Travel (SMC-Private) Limited handles your information on kaghannaran.com.", path: "/privacy" });
 
 export default function PrivacyPage() {
   return (

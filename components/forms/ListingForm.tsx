@@ -56,7 +56,7 @@ export function ListingForm({ types, stops, initialType, listing }: { types: Bus
       ["name", "phone", "whatsapp", "address", "priceFrom"].forEach((k) => { const v = fd.get(k); if (v) rows.push([k, String(v)]); });
       rows.push(["stop", stops.find((s) => s.slug === fd.get("stop"))?.name ?? ""]);
       type?.fields.forEach((f) => { const v = f.type === "multiselect" ? fd.getAll(`attr_${f.key}`).join(", ") : f.type === "boolean" ? (fd.get(`attr_${f.key}`) ? "Yes" : "No") : fd.get(`attr_${f.key}`); if (v) rows.push([f.label, String(v)]); });
-      type?.documents.forEach((d) => { const n = fd.getAll(`doc_${d.key}`).filter((x) => x instanceof File && x.size > 0).length; rows.push([d.label, n ? `${n} file(s)` : d.required && !listing ? "MISSING" : "—"]); });
+      type?.documents.forEach((d) => { const n = fd.getAll(`doc_${d.key}`).filter((x) => x instanceof File && x.size > 0).length; rows.push([d.label, n ? `${n} file(s)` : d.required && !listing ? "MISSING" : "-"]); });
       setSummary(rows);
     }
     setStep(n);

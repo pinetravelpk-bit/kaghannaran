@@ -1,3 +1,6 @@
+import { breadcrumbs, graph, pageMeta, stopPlace } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { stopPoint } from "@/lib/geo";
 import Link from "next/link";
 import { getStops } from "@/lib/data";
 import { PageHero } from "@/components/site/PageHero";
@@ -5,14 +8,15 @@ import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Photo } from "@/components/ui/Photo";
 import { photo } from "@/lib/media";
 
-export const metadata = { title: "Places from Balakot to Babusar Top" };
+export const metadata = pageMeta({ title: "Places to visit in Kaghan Valley, stop by stop", description: "All 19 stops on the N-15 from Balakot to Babusar Top, with lakes, waterfalls, meadows and viewpoints at each, plus altitude and road distance.", path: "/places" });
 
 export default async function PlacesPage() {
   const stops = await getStops();
   const total = stops.reduce((a, s) => a + s.places.length, 0);
   return (
     <>
-      <PageHero kicker={`${stops.length} stops · ${total} places`} title="Every visiting place in the valley." sub="Waterfalls, lakes, meadows, viewpoints and trailheads, in road order from Balakot up to Babusar Top." image={photo("naranAerial")} />
+      <JsonLd data={graph(breadcrumbs([["Places", "/places"]]), { "@type": "ItemList", name: "Places to visit in Kaghan Valley", itemListElement: stops.map((s, i) => ({ "@type": "ListItem", position: i + 1, item: stopPlace(s, stopPoint(s.slug)) })) })} />
+      <PageHero kicker={`${stops.length} stops · ${total} places`} title="Places to visit in Kaghan Valley" sub="Waterfalls, lakes, meadows, viewpoints and trailheads, in road order from Balakot up to Babusar Top." image={photo("naranAerial")} />
       <section className="px-4 py-16 md:px-6">
         <Stagger className="mx-auto grid max-w-[1320px] gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {stops.map((s) => (
