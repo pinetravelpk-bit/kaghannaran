@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ground: #eef1ee;
+  --color-paper: #ffffff;
+  --color-ink: #10201f;
+  --color-ink-2: #33433f;
+  --color-muted: #4b5b58;
+  --color-line: #d7dce5;
+  --color-line-2: #c3cbc2;
+  --color-pine: #12302c;
+  --color-pine-2: #1c3d38;
+  --color-board: #0a1716;
+  --color-board-2: #1a2c2a;
+  --color-signal: #f3c64b;
+  --color-amber: #f2a33a;
+  --color-maroon: #8e1b1b;
+  --color-maroon-2: #6d1212;
+  --color-sky: #1f4e8c;
+  --color-sage: #dce5d9;
+  --color-mist: #c9d4cf;
+  --color-fog: #a9b9b3;
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+
+  --animate-kenburns: kenburns 22s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-flow: flow 3s linear infinite;
+
+  @keyframes kenburns {
+    0% { transform: scale(1.05) translate3d(0, 0, 0); }
+    100% { transform: scale(1.18) translate3d(-2%, -2%, 0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(243 198 75 / 0.6); }
+    50% { box-shadow: 0 0 0 8px rgb(243 198 75 / 0); }
+  }
+  @keyframes flow {
+    to { stroke-dashoffset: -40; }
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+/* Latin stays in Geist; Urdu glyphs fall through to Nastaliq */
+[dir="rtl"] body { font-family: "Geist", "Noto Nastaliq Urdu", serif; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "Bricolage Grotesque", "Noto Nastaliq Urdu", serif; line-height: 1.6 !important; letter-spacing: 0 !important; }
+
+a { text-decoration: none; }
+::selection { background: var(--color-signal); color: var(--color-ink); }
+
+.font-display { font-family: var(--font-display); }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Focus ring that works on light & dark */
+:focus-visible { outline: 3px solid var(--color-signal); outline-offset: 2px; border-radius: 6px; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}

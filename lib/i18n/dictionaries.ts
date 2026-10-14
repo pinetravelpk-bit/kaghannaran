@@ -1,0 +1,61 @@
+export type Locale = "en" | "ur";
+export const LOCALES: Locale[] = ["en", "ur"];
+
+const en = {
+  nav: { places: "Places", stay: "Stay", food: "Food", trails: "Jeep & hiking", guides: "Guides", services: "Services", live: "Road & weather", community: "Jobs & events", list: "List your business", signIn: "Sign in", dashboard: "My account", admin: "Admin" },
+  hero: {
+    kicker: "Kunhar valley · N-15 · Khyber Pakhtunkhwa",
+    title1: "Balakot to Babusar Top.",
+    title2: "Every stop, listed.",
+    sub: "Hotels, dhabas, jeep drivers, trekking guides, ATMs, police and health centres — plus today's road and weather — for the whole valley in one place.",
+    search: "Search", searchPlaceholder: "e.g. family hotel with parking", near: "Near", wholeValley: "Whole valley", popular: "Popular",
+  },
+  tabs: { all: "All", hotel: "Hotels", restaurant: "Restaurants", jeep: "Jeeps", guide: "Guides", adventure: "Adventure" },
+  sections: {
+    route: "The route", routeTitle: "Balakot to Babusar, stop by stop.", routeSub: "Pick a stop to see every place worth visiting there. New marks recently added spots; dashed circles are side trips off the N-15.",
+    numbers: "Valley by numbers", numbersTitle: "From 980 m to 4,173 m in one road.",
+    directory: "The directory", directoryTitle: "Everything in the valley.",
+    sights: "Lakes, meadows & viewpoints", sightsTitle: "The reasons people make the drive.",
+    trails: "Jeep tracks & hikes", trailsTitle: "Where the road ends.", trailsSub: "Times come from visitor reports — check conditions locally before you set off.",
+    live: "Road & weather", liveTitle: "Before you drive, check here.",
+    services: "Essential services", servicesTitle: "Good to know before you need it.",
+    film: "The valley in motion", filmTitle: "Ride the Kunhar from source to gate.",
+    featured: "Approved & verified", featuredTitle: "Trusted places to stay, eat and explore.",
+    jobs: "Valley jobs", events: "Events & news",
+    cta: "For hotels, shops, drivers & guides", ctaTitle: "Run a business in the valley? Get found before visitors arrive.", ctaSub: "Every listing is checked by our team before it goes live — so travellers can trust what they find.",
+  },
+  common: { viewAll: "View all", new: "New", sideTrip: "Side trip", places: "places", from: "from", perNight: "/ night", verified: "Verified", featured: "Featured", sample: "Sample", allStops: "All stops", back: "Back", submit: "Submit", next: "Next", previous: "Previous", save: "Save", cancel: "Cancel", open: "Open", caution: "Caution", closed: "Closed", seasonal: "Seasonal", updated: "Updated", call: "Call", whatsapp: "WhatsApp" },
+  footer: { about: "The local directory for the Kaghan valley, from Balakot to Babusar Top.", alerts: "Road alerts on WhatsApp", alertsTitle: "Know about landslides and closures before you leave.", mobile: "Mobile number", getAlerts: "Get alerts", credits: "Photo credits" },
+};
+
+type Dict = typeof en;
+
+const ur: Dict = {
+  nav: { places: "مقامات", stay: "رہائش", food: "کھانا", trails: "جیپ اور ہائیکنگ", guides: "گائیڈ", services: "سہولیات", live: "سڑک اور موسم", community: "نوکریاں اور ایونٹس", list: "اپنا کاروبار شامل کریں", signIn: "سائن ان", dashboard: "میرا اکاؤنٹ", admin: "ایڈمن" },
+  hero: {
+    kicker: "وادیٔ کنہار · این-15 · خیبر پختونخوا",
+    title1: "بالاکوٹ سے بابوسر ٹاپ تک۔",
+    title2: "ہر پڑاؤ، ایک جگہ۔",
+    sub: "ہوٹل، ڈھابے، جیپ ڈرائیور، ٹریکنگ گائیڈ، اے ٹی ایم، پولیس اور مراکز صحت — اور آج کی سڑک اور موسم — پوری وادی ایک جگہ۔",
+    search: "تلاش", searchPlaceholder: "مثلاً پارکنگ والا فیملی ہوٹل", near: "قریب", wholeValley: "پوری وادی", popular: "مقبول",
+  },
+  tabs: { all: "سب", hotel: "ہوٹل", restaurant: "ریسٹورنٹ", jeep: "جیپیں", guide: "گائیڈ", adventure: "ایڈونچر" },
+  sections: {
+    route: "راستہ", routeTitle: "بالاکوٹ سے بابوسر، پڑاؤ بہ پڑاؤ۔", routeSub: "کسی پڑاؤ کو چنیں اور وہاں کی ہر دیکھنے والی جگہ دیکھیں۔ ’نیا‘ حال ہی میں شامل جگہیں ہیں؛ نقطہ دار دائرے این-15 سے ہٹ کر سائیڈ ٹرپ ہیں۔",
+    numbers: "وادی اعداد میں", numbersTitle: "ایک سڑک پر 980 میٹر سے 4,173 میٹر تک۔",
+    directory: "ڈائریکٹری", directoryTitle: "وادی کی ہر چیز۔",
+    sights: "جھیلیں، میدان اور ویو پوائنٹس", sightsTitle: "وہ وجوہات جن کے لیے لوگ یہاں آتے ہیں۔",
+    trails: "جیپ ٹریک اور ہائیک", trailsTitle: "جہاں سڑک ختم ہوتی ہے۔", trailsSub: "اوقات سیاحوں کی رپورٹس سے ہیں — روانگی سے پہلے مقامی طور پر حالات معلوم کریں۔",
+    live: "سڑک اور موسم", liveTitle: "سفر سے پہلے یہاں دیکھیں۔",
+    services: "ضروری سہولیات", servicesTitle: "ضرورت سے پہلے جان لیں۔",
+    film: "وادی حرکت میں", filmTitle: "کنہار کے ساتھ منبع سے دروازے تک۔",
+    featured: "منظور شدہ اور تصدیق شدہ", featuredTitle: "رہنے، کھانے اور گھومنے کی قابلِ اعتماد جگہیں۔",
+    jobs: "وادی کی نوکریاں", events: "ایونٹس اور خبریں",
+    cta: "ہوٹل، دکانیں، ڈرائیور اور گائیڈ", ctaTitle: "وادی میں کاروبار ہے؟ سیاحوں کے آنے سے پہلے نظر آئیں۔", ctaSub: "ہر لسٹنگ شائع ہونے سے پہلے ہماری ٹیم چیک کرتی ہے — تاکہ سیاح بھروسہ کر سکیں۔",
+  },
+  common: { viewAll: "سب دیکھیں", new: "نیا", sideTrip: "سائیڈ ٹرپ", places: "مقامات", from: "سے شروع", perNight: "/ رات", verified: "تصدیق شدہ", featured: "نمایاں", sample: "نمونہ", allStops: "تمام پڑاؤ", back: "واپس", submit: "جمع کریں", next: "اگلا", previous: "پچھلا", save: "محفوظ کریں", cancel: "منسوخ", open: "کھلا", caution: "احتیاط", closed: "بند", seasonal: "موسمی", updated: "اپ ڈیٹ", call: "کال", whatsapp: "واٹس ایپ" },
+  footer: { about: "وادیٔ کاغان کی مقامی ڈائریکٹری، بالاکوٹ سے بابوسر ٹاپ تک۔", alerts: "واٹس ایپ پر سڑک الرٹس", alertsTitle: "روانگی سے پہلے لینڈ سلائیڈ اور بندش کا جانیں۔", mobile: "موبائل نمبر", getAlerts: "الرٹس حاصل کریں", credits: "تصاویر کا حوالہ" },
+};
+
+export const DICTIONARIES: Record<Locale, Dict> = { en, ur };
+export type Dictionary = Dict;
