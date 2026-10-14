@@ -1,14 +1,37 @@
 "use client";
+import dynamic from "next/dynamic";
 import { motion, useInView, useReducedMotion } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { clsx } from "clsx";
 import type { Stop } from "@/lib/types";
 import { Counter } from "@/components/ui/Counter";
+import type { ProfileStop } from "./ElevationScene";
+
+const ElevationScene = dynamic(() => import("./ElevationScene"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 animate-pulse bg-board-2/40" />,
+});
+
+const hasWebGL = () => {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch {
+    return false;
+  }
+};
 
 /** Animated elevation profile + "valley by numbers" + places-per-stop bars. All numbers come from the data. */
 export function Infographic({ stops, trails }: { stops: Stop[]; trails: number }) {
   const ref = useRef<SVGSVGElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const reduce = useReducedMotion();
+  const box = useRef<HTMLDivElement>(null);
+  const seen = useInView(box, { once: true, margin: "-120px" });
+  const visible = useInView(box, { margin: "200px" }); // pause the 3D render loop when off-screen
+  const [view, setView] = useState<"3d" | "2d">("3d");
+  const [webgl, setWebgl] = useState(true);
+  useEffect(() => { if (!hasWebGL()) { setWebgl(false); setView("2d"); } }, []);
   const main = stops.filter((s) => !s.sideTrip);
   const known = main.filter((s) => s.altitude);
   const W = 1000, H = 300, PAD = 40;
@@ -24,6 +47,7 @@ export function Infographic({ stops, trails }: { stops: Stop[]; trails: number }
     const pi = main.indexOf(prev), ni = main.indexOf(next);
     return prev.altitude! + ((next.altitude! - prev.altitude!) * (i - pi)) / (ni - pi);
   });
+  const profile: ProfileStop[] = main.map((s, i) => ({ slug: s.slug, name: s.name, alt: Math.round(alts[i]), known: !!s.altitude, kind: s.kind }));
   const pts = alts.map((a, i) => [xOf(i), yOf(a)] as const);
   const line = pts.map((p, i) => {
     if (i === 0) return `M ${p[0]} ${p[1]}`;
@@ -62,8 +86,31 @@ export function Infographic({ stops, trails }: { stops: Stop[]; trails: number }
       <div className="rounded-3xl border border-[#2E4A45] bg-board p-5 md:p-8">
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
           <h3 className="font-display text-2xl font-bold text-ground">Elevation along the N-15</h3>
-          <span className="font-mono text-xs tracking-widest text-[#7F9893]">APPROXIMATE · LABELLED HEIGHTS KNOWN, OTHERS INTERPOLATED</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-mono text-xs tracking-widest text-[#7F9893]">APPROXIMATE · LABELLED HEIGHTS KNOWN, OTHERS INTERPOLATED</span>
+            {webgl ? (
+              <div role="radiogroup" aria-label="Chart view" className="flex rounded-full border border-[#2E4A45] p-0.5 font-mono text-xs">
+                {(["3d", "2d"] as const).map((v) => (
+                  <button key={v} role="radio" aria-checked={view === v} onClick={() => setView(v)} className={clsx("min-h-8 rounded-full px-3 tracking-widest uppercase transition", view === v ? "bg-signal text-ink" : "text-mist hover:text-white")}>{v}</button>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </div>
+        {view === "3d" ? (
+          <div className="overflow-x-auto">
+            <div ref={box} role="img" aria-label={`3D model of the N-15 from Balakot (${bottom} m) to Babusar Top (${top} m), with mountains, the road, the Kunhar river and the bazaars along the way.`} className="relative aspect-[1000/430] min-w-[760px] overflow-hidden rounded-2xl">
+              {seen || visible ? <ElevationScene stops={profile} started={seen} active={visible} reduce={!!reduce} /> : null}
+            </div>
+            <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[11px] tracking-wide text-[#7F9893]">
+              <span><span className="me-1.5 inline-block size-2 rounded-full bg-amber" />Known height</span>
+              <span><span className="me-1.5 inline-block size-2 rounded-full bg-mist" />Stop</span>
+              <span><span className="me-1.5 inline-block h-0.5 w-4 bg-signal align-middle" />N-15 road</span>
+              <span><span className="me-1.5 inline-block h-0.5 w-4 bg-[#5fc4e6] align-middle" />Kunhar river</span>
+              <span><span className="me-1.5 inline-block size-2 bg-maroon" />Bazaars &amp; hotels</span>
+            </p>
+          </div>
+        ) : (
         <div className="overflow-x-auto">
           <svg ref={ref} viewBox={`0 0 ${W} ${H + 60}`} className="min-w-[760px]" role="img" aria-label={`Elevation rises from about ${bottom} metres at Balakot to ${top} metres at Babusar Top.`}>
             {[1000, 2000, 3000, 4000].map((a) => (
@@ -87,6 +134,7 @@ export function Infographic({ stops, trails }: { stops: Stop[]; trails: number }
             ))}
           </svg>
         </div>
+        )}
       </div>
 
       <div className="rounded-3xl border border-[#2E4A45] bg-board p-5 md:p-8">
