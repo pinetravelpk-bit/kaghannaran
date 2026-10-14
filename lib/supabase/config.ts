@@ -4,3 +4,9 @@ export const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ""
 /** When Supabase isn't configured the site runs in DEMO MODE on sample data. */
 export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 export const isDemo = !isSupabaseConfigured;
+
+/**
+ * In demo mode every visitor is signed in as "Demo Admin". That is handy locally but must
+ * never happen on the public site, so it is off in production unless DEMO_ADMIN=true.
+ */
+export const isDemoAdmin = isDemo && (process.env.NODE_ENV !== "production" || process.env.DEMO_ADMIN === "true");

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getDict } from "@/lib/i18n/server";
 import { getCurrentUser, getSettings, isStaffRole } from "@/lib/data";
-import { isDemo } from "@/lib/supabase/config";
+import { isDemo, isDemoAdmin } from "@/lib/supabase/config";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { MobileMenu } from "./MobileMenu";
 import { Phone, TriangleAlert, LayoutDashboard, UserRound } from "lucide-react";
@@ -22,7 +22,7 @@ export async function Header() {
     <>
       {isDemo ? (
         <div className="bg-signal px-4 py-1.5 text-center text-xs font-semibold text-ink">
-          Demo mode: showing sample data. Connect Supabase in <code className="font-mono">.env.local</code> to go live.
+          {isDemoAdmin ? <>Demo mode: showing sample data. Connect Supabase in <code className="font-mono">.env.local</code> to go live.</> : "Preview: listings marked “Sample” are examples. Business sign-up opens soon."}
         </div>
       ) : null}
       <div className="bg-board text-[13px] text-mist">

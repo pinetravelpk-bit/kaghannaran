@@ -1,12 +1,12 @@
 "use server";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { isDemo } from "@/lib/supabase/config";
+import { isDemo, isDemoAdmin } from "@/lib/supabase/config";
 import { supabaseServer } from "@/lib/supabase/server";
 import type { ActionResult } from "./util";
 
 export async function signIn(_: ActionResult | null, form: FormData): Promise<ActionResult> {
-  if (isDemo) return { ok: false, message: "Demo mode: sign-in is disabled. You’re already browsing as Demo Admin — open /admin or /dashboard." };
+  if (isDemo) return { ok: false, message: isDemoAdmin ? "Demo mode: sign-in is disabled. You’re already browsing as Demo Admin — open /admin or /dashboard." : "Accounts open soon. Please check back shortly." };
   const email = String(form.get("email") ?? "");
   const password = String(form.get("password") ?? "");
   const next = String(form.get("next") ?? "/dashboard");
@@ -27,7 +27,7 @@ const SignUp = z.object({
 export async function signUp(_: ActionResult | null, form: FormData): Promise<ActionResult> {
   const parsed = SignUp.safeParse(Object.fromEntries(form.entries()));
   if (!parsed.success) return { ok: false, message: parsed.error.issues[0]?.message ?? "Check the form." };
-  if (isDemo) return { ok: true, demo: true, message: "Demo mode: account not created. Connect Supabase to enable sign-up." };
+  if (isDemo) return { ok: true, demo: true, message: isDemoAdmin ? "Demo mode: account not created. Connect Supabase to enable sign-up." : "Accounts open soon. Please check back shortly." };
   const { email, password, ...meta } = parsed.data;
   const s = (await supabaseServer())!;
   const site = process.env.NEXT_PUBLIC_SITE_URL ?? "";

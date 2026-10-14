@@ -6,11 +6,13 @@ import { Photo } from "@/components/ui/Photo";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { isDemo } from "@/lib/supabase/config";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const l = await getListing(slug);
-  return { title: l?.name ?? "Listing", description: l?.description };
+  // sample listings are not real businesses, so keep them out of search engines
+  return { title: l?.name ?? "Listing", description: l?.description, robots: isDemo ? { index: false } : undefined };
 }
 
 export default async function ListingPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -67,7 +69,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
               <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a>
               <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />Reviewed by the Kaghan Naran team before publishing. Book directly with the owner.</p>
             </div>
-            <a href={`mailto:[your-email]?subject=${encodeURIComponent("Report: " + l.name)}`} className="text-center text-sm text-muted underline">Report a problem with this listing</a>
+            <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Report: " + l.name)}`} className="text-center text-sm text-muted underline">Report a problem with this listing</a>
           </aside>
         </div>
       </section>

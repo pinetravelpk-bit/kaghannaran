@@ -1,7 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { supabaseServer } from "@/lib/supabase/server";
-import { isDemo } from "@/lib/supabase/config";
+import { isDemo, isDemoAdmin } from "@/lib/supabase/config";
 import * as seed from "@/lib/seed";
 import type { ActivityItem, BusinessType, EventItem, Job, Listing, ListingStatus, Profile, Role, RoadSegment, SiteSettings, Stop, Trail } from "@/lib/types";
 
@@ -162,7 +162,8 @@ export async function getActivity(limit = 50): Promise<ActivityItem[]> {
 export type SessionUser = { id: string; email: string; name: string; role: Role; demo?: boolean };
 
 export const getCurrentUser = cache(async (): Promise<SessionUser | null> => {
-  if (isDemo) return { id: "demo", email: "admin@example.com", name: "Demo Admin", role: "admin", demo: true };
+  if (isDemoAdmin) return { id: "demo", email: "admin@example.com", name: "Demo Admin", role: "admin", demo: true };
+  if (isDemo) return null;
   const s = await supabaseServer();
   if (!s) return null;
   const { data: { user } } = await s.auth.getUser();

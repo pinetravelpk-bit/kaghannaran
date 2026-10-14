@@ -101,3 +101,30 @@ components/home/   3D hero, explorer…    components/admin/   queue, review, ed
 lib/seed/          stops, types, trails  lib/actions/        server actions (submit, moderate, auth)
 lib/data.ts        data layer (Supabase or demo)   supabase/   SQL schema + seed
 ```
+
+---
+
+## kaghannaran.com hosting (VPS)
+
+The live site runs on the Inventive Clicks VPS behind nginx, the same way as the other sites there.
+
+| What | Where |
+| --- | --- |
+| App | `/var/www/kaghannaran/current` (symlink to the newest folder in `releases/`) |
+| Env vars | `/var/www/kaghannaran/shared/.env.production` (copied into each build) |
+| Service | `systemctl status kaghannaran` → `next start` on `127.0.0.1:3106` |
+| nginx | `/etc/nginx/sites-available/kaghannaran.com` (+ Let's Encrypt via certbot) |
+
+**Deploy a new version:** push to `main`, then on the server run `bash /var/www/kaghannaran/current/deploy/deploy.sh`.
+
+**Go live with Supabase:** follow steps 1–5 of *Going live* above, put the keys in `shared/.env.production`, and deploy again (the `NEXT_PUBLIC_*` keys are baked in at build time):
+
+```
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+NEXT_PUBLIC_SITE_URL=https://kaghannaran.com
+NEXT_PUBLIC_CONTACT_EMAIL=info@kaghannaran.com
+```
+
+Until Supabase is connected the site shows sample data. Unlike local development, production does **not** sign visitors in as Demo Admin, so `/admin` and `/dashboard` redirect to the sign-in page.

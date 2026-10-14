@@ -1,0 +1,19 @@
+[Unit]
+Description=Kaghan Naran Next.js site (kaghannaran.com)
+After=network.target
+
+[Service]
+Type=simple
+User=kaghannaran
+Group=kaghannaran
+WorkingDirectory=/var/www/kaghannaran/current
+Environment=NODE_ENV=production
+Environment=PORT=3106
+EnvironmentFile=-/var/www/kaghannaran/shared/.env.production
+ExecStart=/usr/bin/node /var/www/kaghannaran/current/node_modules/next/dist/bin/next start -H 127.0.0.1 -p 3106
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

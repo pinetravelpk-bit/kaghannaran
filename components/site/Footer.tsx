@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getDict } from "@/lib/i18n/server";
 import { AlertSignup } from "./AlertSignup";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export async function Footer() {
   const { t } = await getDict();
@@ -8,7 +9,7 @@ export async function Footer() {
     { title: "Explore", links: [["/places", "Towns & stops"], ["/places#sights", "Lakes & viewpoints"], ["/trails", "Jeep & hiking tracks"], ["/directory?type=adventure", "Adventure activities"]] },
     { title: "Live info", links: [["/road", "Road updates"], ["/road#weather", "Weather"], ["/community#events", "Events"], ["/community#jobs", "Jobs"]] },
     { title: "Businesses", links: [["/list-your-business", "List your business"], ["/list-your-business#guides", "Register as a guide"], ["/dashboard", "My listings"], ["/auth/sign-in", "Sign in"]] },
-    { title: "Pine Travel", links: [["/credits", t.footer.credits], ["mailto:[your-email]", "Contact"], ["/privacy", "Privacy"], ["/admin", "Staff login"]] },
+    { title: "Pine Travel", links: [["/credits", t.footer.credits], [`mailto:${CONTACT_EMAIL}`, "Contact"], ["/privacy", "Privacy"], ["/admin", "Staff login"]] },
   ];
   return (
     <footer className="bg-pine text-ground">

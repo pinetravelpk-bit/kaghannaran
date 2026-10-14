@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getDict } from "@/lib/i18n/server";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: { default: "Kaghan Naran · Valley Directory", template: "%s · Kaghan Naran" },
   description: "Hotels, restaurants, jeep tracks, hiking trails, guides, services, road updates and weather for the Kaghan valley — Balakot to Babusar Top.",
   icons: { icon: "/logo.png" },
-  openGraph: { images: ["/logo.png"] },
+  openGraph: { type: "website", siteName: "Kaghan Naran", locale: "en_PK", images: ["/logo.png"] },
 };
 
 export const viewport: Viewport = { themeColor: "#12302C" };
