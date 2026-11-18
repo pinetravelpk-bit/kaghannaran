@@ -11,9 +11,9 @@ export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType
         {l.image ? (
           <Photo src={l.image} alt={l.name} className="h-full w-full transition duration-700 group-hover:scale-105 [&_img]:transition [&_img]:duration-700 group-hover:[&_img]:scale-110" />
         ) : (
-          <span className="flex h-full w-full flex-col items-center justify-center gap-2 bg-pine text-signal">
+          <span className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[radial-gradient(circle_at_30%_20%,#1C3D38,#12302C_70%)] text-signal">
             {type ? <Icon name={type.icon} className="size-14" /> : null}
-            <span className="font-mono text-4xl font-semibold tracking-wider">{l.phone}</span>
+            {l.phone ? <span className="font-mono text-4xl font-semibold tracking-wider">{l.phone}</span> : <span className="font-mono text-xs tracking-widest text-fog uppercase">{stop?.name ?? "Kaghan Valley"} · photos coming soon</span>}
           </span>
         )}
         <span className="absolute top-3 left-3 flex flex-wrap gap-1.5">
@@ -35,7 +35,7 @@ export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType
         <span className="mt-auto flex items-center justify-between pt-3 text-sm">
           {l.rating ? (
             <span className="flex items-center gap-1 font-semibold"><Star className="size-4 fill-amber text-amber" aria-hidden /> {l.rating.toFixed(1)} <span className="font-normal text-muted">({l.reviews})</span></span>
-          ) : <span className="text-muted">New listing</span>}
+          ) : <span className="text-muted">{l.attributes.claimed === false ? "Unclaimed listing" : "New listing"}</span>}
           {l.priceFrom ? <span className="font-mono text-ink">from PKR {l.priceFrom.toLocaleString("en-US")}</span> : null}
         </span>
       </span>

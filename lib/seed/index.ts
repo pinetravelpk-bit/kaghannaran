@@ -1,6 +1,7 @@
 import type { ActivityItem, EventItem, Job, Listing, ListingStatus, Profile, RoadSegment, SiteSettings, Trail, WeatherArea } from "@/lib/types";
 import { photo } from "@/lib/media";
 import { getType } from "./business-types";
+import HOTELS from "./hotels.json";
 
 export * from "./stops";
 export * from "./business-types";
@@ -82,7 +83,7 @@ const mk = (s: Seed): Listing => {
  */
 const TEAM = { ownerName: "Kaghan Naran team", ownerEmail: "", status: "approved" as const, verified: true, daysAgo: 1 };
 const VALLEY = "Valley-wide, Mansehra District, Khyber Pakhtunkhwa";
-export const LISTINGS: Listing[] = [
+const PUBLIC_SERVICES: Listing[] = [
   mk({ ...TEAM, id: "kp-911", type: "govt", name: "Pakhtunkhwa Emergency Helpline 911", phone: "911", stop: "", address: VALLEY,
     description: "Khyber Pakhtunkhwa's single emergency number, live since July 2026. One call reaches the police, Rescue 1122, tourist assistance and disaster response, 24 hours a day.",
     attributes: { department: "KP Home and Tribal Affairs", source: "https://www.zameen.com/news/kp-rolls-out-911-emergency-response-service.html" } }),
@@ -105,6 +106,20 @@ export const LISTINGS: Listing[] = [
     description: "Edhi Foundation's nationwide ambulance service, a second option if Rescue 1122 is busy.",
     attributes: { emergency: true, source: "https://edhi.org" } }),
 ];
+
+/**
+ * Hotels from a Google Maps list (scripts/import-hotels.mjs): name, map position and Maps link only.
+ * They are unclaimed: no phone, prices or photos until the owner claims the listing and staff approve it.
+ */
+const IMPORTED_AT = "2026-11-19T00:00:00+05:00";
+const IMPORTED: Listing[] = HOTELS.map((h) => ({
+  id: h.id, slug: h.id.slice(3), type: h.type, name: h.name, ownerName: "", ownerEmail: "", phone: "",
+  stop: h.stop, address: h.address, description: h.description, status: "approved", verified: false,
+  attributes: { lat: h.lat, lon: h.lon, mapsUrl: h.mapsUrl, claimed: false },
+  documents: [], checklist: {}, history: [], submittedAt: IMPORTED_AT, updatedAt: IMPORTED_AT,
+}));
+
+export const LISTINGS: Listing[] = [...PUBLIC_SERVICES, ...IMPORTED];
 
 export const EVENTS: EventItem[] = [
   { id: "babusar-opening", title: "Babusar Pass season opening", where: "Babusar Top", stop: "babusar-top", description: "The pass usually reopens in June once snow is cleared. The date is announced by the highway authority each year, so follow the road status page.", status: "approved" },

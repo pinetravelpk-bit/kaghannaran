@@ -1,6 +1,6 @@
 import "server-only";
 import type { QA } from "@/lib/seo";
-import type { RoadReading, Stop } from "@/lib/types";
+import type { Listing, RoadReading, Stop } from "@/lib/types";
 import { roadKm, routeKm, stopGeo } from "@/lib/geo";
 
 /**
@@ -52,7 +52,7 @@ export function homeFaq(stops: Stop[]): QA[] {
   ];
 }
 
-export function stopFaq(s: Stop, stops: Stop[]): QA[] {
+export function stopFaq(s: Stop, stops: Stop[], listings: Listing[] = []): QA[] {
   const g = stopGeo(s.slug);
   const out: QA[] = [];
   const height = s.altitude ?? g?.ele;
@@ -68,6 +68,11 @@ export function stopFaq(s: Stop, stops: Stop[]): QA[] {
   if (s.places.length) {
     const names = s.places.map((p) => p.name);
     out.push({ q: `What is there to see in ${s.name}?`, a: `Places to visit in and around ${s.name}: ${names.slice(0, -1).join(", ")}${names.length > 1 ? " and " : ""}${names.at(-1)}.` });
+  }
+  const hotels = listings.filter((l) => l.type === "hotel" || l.type === "guest-house");
+  if (hotels.length) {
+    const names = hotels.slice(0, 6).map((l) => l.name);
+    out.push({ q: `Where can I stay in ${s.name}?`, a: `There are ${hotels.length} hotels listed in ${s.name} on Kaghan Naran, including ${names.join(", ")}. See the directory for the full list with map locations.` });
   }
   const i = stops.findIndex((x) => x.slug === s.slug);
   const next = stops.slice(i + 1).find((x) => !x.sideTrip);

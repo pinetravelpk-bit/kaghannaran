@@ -41,7 +41,7 @@ export default async function StopPage({ params }: { params: Promise<{ slug: str
   const myTrails = trails.filter((x) => x.stop === slug);
   const g = stopGeo(s.slug), pt = stopPoint(s.slug);
   const height = s.altitude ?? g?.ele;
-  const faq = stopFaq(s, stops);
+  const faq = stopFaq(s, stops, listings);
   return (
     <>
       <JsonLd data={graph(stopPlace(s, pt ? { ...pt, ele: height } : undefined), breadcrumbs([["Places", "/places"], [s.name, `/places/${s.slug}`]]), ...(faq.length ? [faqPage(faq)] : []))} />
@@ -84,9 +84,13 @@ export default async function StopPage({ params }: { params: Promise<{ slug: str
             </div>
             {listings.length ? (
               <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {listings.map((l) => <StaggerItem key={l.id}><ListingCard l={l} type={tBy[l.type]} stop={s} /></StaggerItem>)}
+                {listings.slice(0, 9).map((l) => <StaggerItem key={l.id}><ListingCard l={l} type={tBy[l.type]} stop={s} /></StaggerItem>)}
               </Stagger>
-            ) : (
+            ) : null}
+            {listings.length > 9 ? (
+              <Link href={`/directory?stop=${s.slug}`} className="self-start rounded-full bg-ink px-6 py-3 font-semibold text-ground hover:bg-maroon">See all {listings.length} in {s.name}</Link>
+            ) : null}
+            {listings.length ? null : (
               <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-sage p-6">
                 <p className="text-lg">No approved listings here yet. Run a business in {s.name}?</p>
                 <Link href="/list-your-business" className="rounded-full bg-ink px-6 py-3 font-semibold text-ground">List it free</Link>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BadgeCheck, MapPin, MessageCircle, Phone, Star, ShieldCheck } from "lucide-react";
+import { BadgeCheck, MapPin, MessageCircle, Phone, Star, ShieldCheck, Navigation, Map as MapIcon, Store } from "lucide-react";
 import { getBusinessTypes, getListing, getStops } from "@/lib/data";
 import { Photo } from "@/components/ui/Photo";
 import { Icon } from "@/components/ui/Icon";
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const l = await getListing(slug);
   if (!l) return { title: "Listing not found" };
   const where = (await getStops()).find((x) => x.slug === l.stop)?.name;
-  return pageMeta({ title: `${l.name}${where ? `, ${where}` : ""}: phone and details`, description: `${l.description} Phone: ${l.phone}.`.slice(0, 300), path: `/listing/${l.slug}`, image: l.image });
+  return pageMeta({ title: `${l.name}${where ? `, ${where}` : ""}: ${l.phone ? "phone and details" : "location and details"}`, description: `${l.description}${l.phone ? ` Phone: ${l.phone}.` : ""}`, path: `/listing/${l.slug}`, image: l.image });
 }
 
 export default async function ListingPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -26,9 +26,13 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
   const stop = stops.find((x) => x.slug === l.stop);
   const fmt = (v: unknown) => (Array.isArray(v) ? v.join(", ") : typeof v === "boolean" ? (v ? "Yes" : "No") : String(v));
   const wa = (l.whatsapp ?? l.phone).replace(/\D/g, "").replace(/^0/, "92");
+  const a = l.attributes;
+  const unclaimed = a.claimed === false;
+  const pos = typeof a.lat === "number" && typeof a.lon === "number" ? { lat: a.lat, lon: a.lon } : undefined;
+  const mapsUrl = typeof a.mapsUrl === "string" ? a.mapsUrl : pos ? `https://www.google.com/maps/search/?api=1&query=${pos.lat},${pos.lon}` : undefined;
   return (
     <>
-      <JsonLd data={graph(listingSchema(l, type, stop, stop ? stopPoint(stop.slug) : undefined), breadcrumbs([["Directory", "/directory"], ...(type ? [[type.name, `/directory?type=${type.slug}`] as [string, string]] : []), [l.name, `/listing/${l.slug}`]]))} />
+      <JsonLd data={graph(listingSchema(l, type, stop, pos ?? (stop ? stopPoint(stop.slug) : undefined)), breadcrumbs([["Directory", "/directory"], ...(type ? [[type.name, `/directory?type=${type.slug}`] as [string, string]] : []), [l.name, `/listing/${l.slug}`]]))} />
       <section className="relative isolate overflow-hidden bg-pine text-ground">
         <Photo src={l.image} alt={l.name} eager className="absolute inset-0 -z-10 h-full w-full opacity-70 [&_img]:animate-kenburns" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,#12302C_5%,rgba(18,48,44,0.2)_70%)]" />
@@ -36,6 +40,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-wrap gap-2">
             {type ? <span className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-ink"><Icon name={type.icon} className="size-4" />{type.name}</span> : null}
             {l.verified ? <span className="flex items-center gap-1.5 rounded-full bg-emerald-700 px-3 py-1.5 text-sm font-semibold"><BadgeCheck className="size-4" />Verified</span> : null}
+            {unclaimed ? <span className="rounded-full border border-white/40 px-3 py-1.5 text-sm font-semibold">Unclaimed listing</span> : null}
           </div>
           <h1 className="font-display text-5xl leading-none font-extrabold tracking-tight md:text-7xl">{l.name}</h1>
           <p className="flex flex-wrap items-center gap-4 text-mist">
@@ -51,6 +56,8 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
             <Reveal className="rounded-3xl border border-line bg-white p-6">
               <h2 className="mb-4 font-display text-2xl font-bold">Details</h2>
               <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+                <div className="border-t border-line pt-3"><dt className="text-sm text-muted">Address</dt><dd className="font-semibold">{l.address}</dd></div>
+                {pos ? <div className="border-t border-line pt-3"><dt className="text-sm text-muted">Map position</dt><dd className="font-mono font-semibold">{pos.lat.toFixed(5)}, {pos.lon.toFixed(5)}</dd></div> : null}
                 {type?.fields.filter((f) => l.attributes[f.key] !== undefined && l.attributes[f.key] !== "").map((f) => (
                   <div key={f.key} className="border-t border-line pt-3"><dt className="text-sm text-muted">{f.label}</dt><dd className="font-semibold">{fmt(l.attributes[f.key])}</dd></div>
                 ))}
@@ -68,11 +75,20 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
           <aside className="flex flex-col gap-3 lg:sticky lg:top-28 lg:self-start">
             <div className="flex flex-col gap-3 rounded-3xl bg-ink p-6 text-ground">
               {l.priceFrom ? <span className="font-display text-3xl font-extrabold">PKR {l.priceFrom.toLocaleString("en-US")} <span className="text-base font-normal text-fog">from</span></span> : null}
-              <a href={`tel:${l.phone}`} className="flex min-h-13 items-center justify-center gap-2 rounded-2xl bg-amber font-semibold text-ink"><Phone className="size-4" />Call {l.phone}</a>
-              {wa.length >= 10 ? <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a> : null}
-              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />{type?.adminOnly ? "Public service number, checked by the Kaghan Naran team." : "Reviewed by the Kaghan Naran team before publishing. Book directly with the owner."}</p>
+              {l.phone ? <a href={`tel:${l.phone}`} className="flex min-h-13 items-center justify-center gap-2 rounded-2xl bg-amber font-semibold text-ink"><Phone className="size-4" />Call {l.phone}</a> : null}
+              {mapsUrl ? <a href={mapsUrl} target="_blank" rel="noreferrer" className={`flex min-h-13 items-center justify-center gap-2 rounded-2xl font-semibold ${l.phone ? "border border-[#3C5A55]" : "bg-amber text-ink"}`}><MapIcon className="size-4" />Open in Google Maps</a> : null}
+              {pos ? <a href={`https://www.google.com/maps/dir/?api=1&destination=${pos.lat},${pos.lon}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><Navigation className="size-4" />Directions</a> : null}
+              {l.phone && wa.length >= 10 ? <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a> : null}
+              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />{type?.adminOnly ? "Public service number, checked by the Kaghan Naran team." : unclaimed ? "Added from public map data. Contact details, prices and photos appear once the owner claims this listing." : "Reviewed by the Kaghan Naran team before publishing. Book directly with the owner."}</p>
               {typeof l.attributes.source === "string" ? <a href={l.attributes.source} target="_blank" rel="noreferrer" className="text-sm text-fog underline">Source</a> : null}
             </div>
+            {unclaimed ? (
+              <div className="flex flex-col gap-2 rounded-3xl border border-line bg-white p-6">
+                <span className="flex items-center gap-2 font-display text-xl font-bold"><Store className="size-5 text-maroon" aria-hidden />Is this your {l.type === "restaurant" ? "restaurant" : "hotel"}?</span>
+                <p className="text-ink-2">Claim it for free to add your phone number, room prices and photos, and get the Verified badge.</p>
+                <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Claim listing: " + l.name)}`} className="self-start rounded-full bg-ink px-5 py-2.5 font-semibold text-ground hover:bg-maroon">Claim this listing</a>
+              </div>
+            ) : null}
             <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Report: " + l.name)}`} className="text-center text-sm text-muted underline">Report a problem with this listing</a>
           </aside>
         </div>

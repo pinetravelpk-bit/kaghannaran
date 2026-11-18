@@ -37,7 +37,12 @@ export default async function Home() {
   ]);
   // businesses only; public service numbers have their own section
   const businesses = listings.filter((l) => !types.find((x) => x.slug === l.type)?.adminOnly);
-  const featured = businesses.filter((l) => l.featured).concat(businesses.filter((l) => !l.featured)).slice(0, 6);
+  // "approved & verified" only for listings staff have actually verified or featured
+  const trusted = businesses.filter((l) => l.verified || l.featured);
+  // otherwise show a spread of places to stay across the valley (two per town where possible)
+  const stays = businesses.filter((l) => l.type === "hotel");
+  const spread = [...new Set(stays.map((l) => l.stop))].flatMap((stop) => stays.filter((l) => l.stop === stop).slice(0, 2)).slice(0, 6);
+  const featured = trusted.length ? trusted.slice(0, 6) : spread;
   const services = listings.filter((l) => types.find((x) => x.slug === l.type)?.adminOnly);
   const faq = homeFaq(stops);
   let n = 0;
@@ -111,7 +116,7 @@ export default async function Home() {
       {/* FEATURED BUSINESSES */}
       {featured.length ? <section className="px-4 pb-24 md:px-6">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-9">
-          <SectionHead num={num()} kicker={t.sections.featured} title={t.sections.featuredTitle} action={<Link href="/directory" className="border-b-2 border-ink pb-0.5 font-semibold">{t.common.viewAll} →</Link>} />
+          <SectionHead num={num()} kicker={trusted.length ? t.sections.featured : `${stays.length} hotels`} title={trusted.length ? t.sections.featuredTitle : "Where to stay in Kaghan, Naran and Batakundi"} action={<Link href={trusted.length ? "/directory" : "/directory?type=hotel"} className="border-b-2 border-ink pb-0.5 font-semibold">{trusted.length ? t.common.viewAll : `All ${stays.length} hotels`} →</Link>} />
           <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((l) => (
               <StaggerItem key={l.id}><ListingCard l={l} type={typeBySlug[l.type]} stop={stopBySlug[l.stop]} /></StaggerItem>

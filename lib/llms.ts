@@ -15,6 +15,8 @@ const when = (iso: string) => new Date(iso).toLocaleString("en-GB", { dateStyle:
 export async function llmsText(full: boolean) {
   const [stops, trails, road, weather, listings, types] = await Promise.all([getStops(), getTrails(), getRoadLive(), getWeather(), getListings(), getBusinessTypes()]);
   const services = listings.filter((l) => types.find((t) => t.slug === l.type)?.adminOnly);
+  const hotels = listings.filter((l) => l.type === "hotel");
+  const hotelsBy = stops.map((s) => ({ s, h: hotels.filter((l) => l.stop === s.slug) })).filter((x) => x.h.length);
   const lines: string[] = [];
   const push = (...x: string[]) => lines.push(...x);
 
@@ -35,6 +37,9 @@ export async function llmsText(full: boolean) {
     "",
     "## Emergency and help numbers",
     ...services.map((l) => `- ${l.phone}: ${l.name}. ${l.description}`),
+    "",
+    `## Hotels (${hotels.length} listed)`,
+    ...hotelsBy.map(({ s, h }) => `- ${s.name}: ${h.length} hotels. ${abs(`/directory?type=hotel&stop=${s.slug}`)}`),
     "",
     "## Main pages",
     `- [Home](${abs("/")}): overview, 3D map, FAQ`,
@@ -58,6 +63,8 @@ export async function llmsText(full: boolean) {
     for (const s of stops) {
       push("", `### ${s.name}`, ...s.places.map((p) => `- ${p.name}${p.note ? `: ${p.note}` : ""}${p.warning ? ` Warning: ${p.warning}` : ""}`));
     }
+    push("", "## Hotels by town");
+    for (const { s, h } of hotelsBy) push("", `### ${s.name}`, ...h.map((l) => `- [${l.name}](${abs(`/listing/${l.slug}`)}): ${l.address}`));
     push("", "## Jeep tracks and hikes", ...trails.map((t) => `- ${t.name} (${t.mode}), from ${t.from}, about ${t.time}.`));
     push("", "## Frequently asked questions", ...homeFaq(stops).flatMap((x) => [`### ${x.q}`, x.a, ""]));
   }
