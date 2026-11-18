@@ -100,8 +100,8 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
             </div>
             {unclaimed ? (
               <div className="flex flex-col gap-2 rounded-3xl border border-line bg-white p-6">
-                <span className="flex items-center gap-2 font-display text-xl font-bold"><Store className="size-5 text-maroon" aria-hidden />Is this your {l.type === "restaurant" ? "restaurant" : "hotel"}?</span>
-                <p className="text-ink-2">Claim it for free to add your phone number, room prices and photos, and get the Verified badge.</p>
+                <span className="flex items-center gap-2 font-display text-xl font-bold"><Store className="size-5 text-maroon" aria-hidden />Is this your {l.type === "hotel" ? "hotel" : l.type === "restaurant" ? "restaurant" : "business"}?</span>
+                <p className="text-ink-2">Claim it for free to add your phone number, {l.type === "hotel" ? "room prices" : "opening hours"} and photos, and get the Verified badge.</p>
                 <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Claim listing: " + l.name)}`} className="self-start rounded-full bg-ink px-5 py-2.5 font-semibold text-ground hover:bg-maroon">Claim this listing</a>
               </div>
             ) : null}

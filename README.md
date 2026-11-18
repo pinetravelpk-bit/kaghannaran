@@ -154,9 +154,9 @@ The home page "N-15 in 3D" view uses real data, built once into `public/terrain/
 - For AI assistants: `/llms.txt` and `/llms-full.txt` (live summaries), `/api/road` and `/api/places` (JSON). `robots.txt` welcomes search and AI crawlers and keeps accounts and admin private.
 - Optional env: `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` add the Search Console and Bing Webmaster verification tags.
 
-## Hotel listings from Google Maps
+## Listings from Google Maps
 
-`scripts/import-hotels.mjs` imports a Google Maps list export (CSV): `node scripts/import-hotels.mjs path/to/maps_data.csv`. It keeps only the name, the map position from each Maps link and the link itself. Addresses come from OpenStreetMap (Nominatim). Phone numbers, ratings, prices and photos are not copied. They appear when an owner claims the listing. Output goes to `lib/seed/hotels.json` and `supabase/migrations/0004_hotels.sql`.
+`scripts/import-places.mjs` imports Google Maps list exports (CSV): `node scripts/import-places.mjs hotels.csv shops.csv`. It keeps only the name, business type, the map position from each Maps link and the link itself, and lists a business once even if it appears in several files. Addresses come from OpenStreetMap (Nominatim). Phone numbers, ratings, prices and photos are not copied. They appear when an owner claims the listing. Output goes to `lib/seed/imported.json` and `supabase/migrations/0004_imported_places.sql`.
 
 ## Hotel photos (Google Places API)
 

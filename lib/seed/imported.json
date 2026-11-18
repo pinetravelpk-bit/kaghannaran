@@ -8,6 +8,7 @@
   "lat": 34.908851,
   "lon": 73.665335,
   "mapsUrl": "https://www.google.com/maps/place/Eagle+Resorts+%26+Apartments/data=!4m10!3m9!1s0x38e74e22ab46f4a7:0x7cd0e6c863ba5356!5m2!4m1!1i2!8m2!3d34.908851!4d73.665335!16s%2Fg%2F11ygdzhjm7!19sChIJp_RGqyJO5zgRVlO6Y8jm0Hw",
+  "attrs": {},
   "description": "Eagle Resorts & Apartments is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -19,6 +20,7 @@
   "lat": 34.829602,
   "lon": 73.527665,
   "mapsUrl": "https://www.google.com/maps/place/Kaghan+Hills+Resort/data=!4m10!3m9!1s0x38e7550047d0690f:0xb9bfdd7a8226bf6b!5m2!4m1!1i2!8m2!3d34.8296024!4d73.5276655!16s%2Fg%2F11vywk6b9l!19sChIJD2nQRwBV5zgRa78mgnrdv7k",
+  "attrs": {},
   "description": "Kaghan Hills Resort is a hotel about 6 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -30,6 +32,7 @@
   "lat": 34.763658,
   "lon": 73.527026,
   "mapsUrl": "https://www.google.com/maps/place/Walnut+Riverside+Resort/data=!4m10!3m9!1s0x38e0abf7adfcec6f:0x33ec2b417ddba4d4!5m2!4m1!1i2!8m2!3d34.7636577!4d73.5270263!16s%2Fg%2F11szccdftz!19sChIJb-z8rfer4DgR1KTbfUEr7DM",
+  "attrs": {},
   "description": "Walnut Riverside Resort is a hotel in Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -41,18 +44,20 @@
   "lat": 34.909008,
   "lon": 73.663131,
   "mapsUrl": "https://www.google.com/maps/place/Rose+Valley+Hotel+Naran/data=!4m10!3m9!1s0x38e74e228567bf21:0x87da4051549be7d6!5m2!4m1!1i2!8m2!3d34.9090078!4d73.6631308!16s%2Fg%2F11b806kg8m!19sChIJIb9nhSJO5zgR1uebVFFA2oc",
+  "attrs": {},
   "description": "Rose Valley Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
   "id": "gm-parhena-cottages-restaurant-bella-naran",
   "name": "Parhena Cottages & Restaurant Bella Naran",
   "type": "hotel",
-  "stop": "naran",
-  "address": "Naran, Kaghan Valley, Mansehra",
+  "stop": "kaghan",
+  "address": "Kaghan, Kaghan Valley, Mansehra",
   "lat": 34.839275,
   "lon": 73.541254,
   "mapsUrl": "https://www.google.com/maps/place/Parhena+Cottages+%26+Restaurant+Bella+Naran/data=!4m10!3m9!1s0x38e75468b6089b0d:0xdc1c493e5258cb65!5m2!4m1!1i2!8m2!3d34.839275!4d73.541254!16s%2Fg%2F11b75g6bbp!19sChIJDZsItmhU5zgRZctYUj5JHNw",
-  "description": "Parhena Cottages & Restaurant Bella Naran is a hotel about 13 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+  "attrs": {},
+  "description": "Parhena Cottages & Restaurant Bella Naran is a hotel about 7 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
   "id": "gm-hotel-ever-green",
@@ -63,6 +68,7 @@
   "lat": 34.907851,
   "lon": 73.650968,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Ever+Green/data=!4m10!3m9!1s0x38e75100167c0249:0x43234d380b885478!5m2!4m1!1i2!8m2!3d34.9078505!4d73.6509682!16s%2Fg%2F11z8h4j68j!19sChIJSQJ8FgBR5zgReFSICzhNI0M",
+  "attrs": {},
   "description": "Hotel Ever Green is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -74,6 +80,7 @@
   "lat": 34.904265,
   "lon": 73.677763,
   "mapsUrl": "https://www.google.com/maps/place/Al-Cazar+Fort+-+Hotel+%26+Restaurant/data=!4m10!3m9!1s0x38e74f68e6056c99:0xd59f404561227e20!5m2!4m1!1i2!8m2!3d34.9042647!4d73.6777628!16s%2Fg%2F11t0pb69v2!19sChIJmWwF5mhP5zgRIH4iYUVAn9U",
+  "attrs": {},
   "description": "Al-Cazar Fort - Hotel & Restaurant is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -85,6 +92,7 @@
   "lat": 34.825159,
   "lon": 73.524445,
   "mapsUrl": "https://www.google.com/maps/place/The+Abbott+Crown+Hotel/data=!4m10!3m9!1s0x38e755a9102dd98d:0xcf6a9a6cd7988e80!5m2!4m1!1i2!8m2!3d34.8251591!4d73.5244446!16s%2Fg%2F11vb3cv3lr!19sChIJjdktEKlV5zgRgI6Y12yaas8",
+  "attrs": {},
   "description": "The Abbott Crown Hotel is a hotel about 5 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -96,6 +104,7 @@
   "lat": 34.908526,
   "lon": 73.665846,
   "mapsUrl": "https://www.google.com/maps/place/Sunrise+Valley+Hotel/data=!4m10!3m9!1s0x38e74f24efd82327:0xfdfd15bebc0c1b9d!5m2!4m1!1i2!8m2!3d34.9085258!4d73.6658461!16s%2Fg%2F11r433bvkn!19sChIJJyPY7yRP5zgRnRsMvL4V_f0",
+  "attrs": {},
   "description": "Sunrise Valley Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -107,6 +116,7 @@
   "lat": 34.885688,
   "lon": 73.639813,
   "mapsUrl": "https://www.google.com/maps/place/Rockwood+Resort+Naran/data=!4m10!3m9!1s0x38e751e440f80875:0x558b8579bdc69dcf!5m2!4m1!1i2!8m2!3d34.8856875!4d73.6398125!16s%2Fg%2F11c0xysrxm!19sChIJdQj4QORR5zgRz53GvXmFi1U",
+  "attrs": {},
   "description": "Rockwood Resort Naran is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -118,6 +128,7 @@
   "lat": 34.933803,
   "lon": 73.689517,
   "mapsUrl": "https://www.google.com/maps/place/Serene+Resorts+Naran/data=!4m10!3m9!1s0x38e74fc5b6baf28b:0x61b7902944f9793c!5m2!4m1!1i2!8m2!3d34.9338026!4d73.6895175!16s%2Fg%2F11hnc92lsp!19sChIJi_K6tsVP5zgRPHn5RCmQt2E",
+  "attrs": {},
   "description": "Serene Resorts Naran is a hotel about 4 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -129,6 +140,7 @@
   "lat": 34.828545,
   "lon": 73.526722,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Chateau+De+North/data=!4m10!3m9!1s0x38e75505846d292b:0x9a54d2da72cd239d!5m2!4m1!1i2!8m2!3d34.8285447!4d73.5267224!16s%2Fg%2F11n8y9_q8t!19sChIJKylthAVV5zgRnSPNctrSVJo",
+  "attrs": {},
   "description": "Hotel Chateau De North is a hotel about 6 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -140,6 +152,7 @@
   "lat": 34.909347,
   "lon": 73.660626,
   "mapsUrl": "https://www.google.com/maps/place/Relax+Inn/data=!4m10!3m9!1s0x38e74f002eab1f33:0x16e7abcda2d5fdd9!5m2!4m1!1i2!8m2!3d34.9093468!4d73.6606257!16s%2Fg%2F11x_4kk8g7!19sChIJMx-rLgBP5zgR2f3Vos2r5xY",
+  "attrs": {},
   "description": "Relax Inn is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -151,6 +164,7 @@
   "lat": 34.906867,
   "lon": 73.66868,
   "mapsUrl": "https://www.google.com/maps/place/Village+Inn+Naran+%7C+Best+Hotel+in+Naran/data=!4m10!3m9!1s0x38e74f135f00af0b:0xff0b366cbdf03dba!5m2!4m1!1i2!8m2!3d34.9068667!4d73.6686798!16s%2Fg%2F11r9gk6fpl!19sChIJC68AXxNP5zgRuj3wvWw2C_8",
+  "attrs": {},
   "description": "Village Inn Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -162,6 +176,7 @@
   "lat": 34.906763,
   "lon": 73.65063,
   "mapsUrl": "https://www.google.com/maps/place/Manila+Huts+Naran/data=!4m10!3m9!1s0x38e751de3fffffff:0x5686ed8740b25b1!5m2!4m1!1i2!8m2!3d34.9067626!4d73.6506299!16s%2Fg%2F11b86njb6x!19sChIJ____P95R5zgRsSULdNhuaAU",
+  "attrs": {},
   "description": "Manila Huts Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -173,6 +188,7 @@
   "lat": 34.907187,
   "lon": 73.649312,
   "mapsUrl": "https://www.google.com/maps/place/Royal+Palace/data=!4m10!3m9!1s0x38e751b52eec0b5f:0x3398ea97ba1db8d9!5m2!4m1!1i2!8m2!3d34.9071875!4d73.6493125!16s%2Fg%2F11z8k_2sf4!19sChIJXwvsLrVR5zgR2bgdupfqmDM",
+  "attrs": {},
   "description": "Royal Palace is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -184,6 +200,7 @@
   "lat": 34.899627,
   "lon": 73.649563,
   "mapsUrl": "https://www.google.com/maps/place/Milson+Hotel+%26+Resort/data=!4m10!3m9!1s0x38e751d0d93c8899:0x7af35c29b91af286!5m2!4m1!1i2!8m2!3d34.8996269!4d73.6495629!16s%2Fg%2F11z60l9v8j!19sChIJmYg82dBR5zgRhvIauSlc83o",
+  "attrs": {},
   "description": "Milson Hotel & Resort is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -195,6 +212,7 @@
   "lat": 34.779179,
   "lon": 73.523852,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Al+Makkah+Palace+kaghan/data=!4m10!3m9!1s0x38e0abbf7e5626fb:0xdffc24559c46323b!5m2!4m1!1i2!8m2!3d34.7791792!4d73.5238519!16s%2Fg%2F11hz1gx5t3!19sChIJ-yZWfr-r4DgROzJGnFUk_N8",
+  "attrs": {},
   "description": "Hotel Al Makkah Palace Kaghan is a hotel in Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -206,6 +224,7 @@
   "lat": 34.900517,
   "lon": 73.647467,
   "mapsUrl": "https://www.google.com/maps/place/Al-Habib+Hotel/data=!4m10!3m9!1s0x38e7512aade1f8a5:0x3af8584577641217!5m2!4m1!1i2!8m2!3d34.9005171!4d73.6474671!16s%2Fg%2F11tp9r5dml!19sChIJpfjhrSpR5zgRFxJkd0VY-Do",
+  "attrs": {},
   "description": "Al-Habib Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -217,6 +236,7 @@
   "lat": 34.90375,
   "lon": 73.648786,
   "mapsUrl": "https://www.google.com/maps/place/Fairy+Meadows+Hotel/data=!4m10!3m9!1s0x38e751e0d92675b3:0x75c0107d58111522!5m2!4m1!1i2!8m2!3d34.9037495!4d73.6487858!16s%2Fg%2F11c1plzg2d!19sChIJs3Um2eBR5zgRIhURWH0QwHU",
+  "attrs": {},
   "description": "Fairy Meadows Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -228,6 +248,7 @@
   "lat": 34.934784,
   "lon": 73.752494,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+De+Rose+Wood+Batakundi/data=!4m10!3m9!1s0x38e7492c39a2a175:0x8fdafa114dd93bde!5m2!4m1!1i2!8m2!3d34.9347837!4d73.7524941!16s%2Fg%2F11f02c426q!19sChIJdaGiOSxJ5zgR3jvZTRH62o8",
+  "attrs": {},
   "description": "Hotel De Rose Wood Batakundi is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -239,6 +260,7 @@
   "lat": 34.909096,
   "lon": 73.661333,
   "mapsUrl": "https://www.google.com/maps/place/Faletti%27s+Grand+Naran/data=!4m10!3m9!1s0x38e7515703c430a7:0x6a1befdf0d6db079!5m2!4m1!1i2!8m2!3d34.909096!4d73.6613328!16s%2Fg%2F11kpxy61px!19sChIJpzDEA1dR5zgRebBtDd_vG2o",
+  "attrs": {},
   "description": "Faletti's Grand Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -250,6 +272,7 @@
   "lat": 34.904221,
   "lon": 73.65009,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Home+Naran/data=!4m10!3m9!1s0x38e7517eee306ad7:0x965497a456556f76!5m2!4m1!1i2!8m2!3d34.9042206!4d73.6500904!16s%2Fg%2F11jx2mb49j!19sChIJ12ow7n5R5zgRdm9VVqSXVJY",
+  "attrs": {},
   "description": "Hotel Home Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -261,6 +284,7 @@
   "lat": 34.902451,
   "lon": 73.64979,
   "mapsUrl": "https://www.google.com/maps/place/Afaq+Hotel+Naran/data=!4m10!3m9!1s0x38e751e112d0fcc1:0xc3dba5abb3639d68!5m2!4m1!1i2!8m2!3d34.9024515!4d73.6497897!16s%2Fg%2F11fy4yw4j5!19sChIJwfzQEuFR5zgRaJ1js6ul28M",
+  "attrs": {},
   "description": "Afaq Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -272,6 +296,7 @@
   "lat": 34.934742,
   "lon": 73.763574,
   "mapsUrl": "https://www.google.com/maps/place/Batakundi+Eco+Hotel/data=!4m10!3m9!1s0x38e749245f19a173:0x56a8e3216ce737d9!5m2!4m1!1i2!8m2!3d34.9347416!4d73.7635739!16s%2Fg%2F12qh7_cjx!19sChIJc6EZXyRJ5zgR2TfnbCHjqFY",
+  "attrs": {},
   "description": "Batakundi Eco Hotel is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -283,6 +308,7 @@
   "lat": 34.908354,
   "lon": 73.652485,
   "mapsUrl": "https://www.google.com/maps/place/Swiss+Wood+Cottages/data=!4m10!3m9!1s0x38e751df935b0325:0x56df8c680d5e06f9!5m2!4m1!1i2!8m2!3d34.9083543!4d73.6524846!16s%2Fg%2F11g7z6b7m8!19sChIJJQNbk99R5zgR-QZeDWiM31Y",
+  "attrs": {},
   "description": "Swiss Wood Cottages is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -294,6 +320,7 @@
   "lat": 34.90153,
   "lon": 73.64641,
   "mapsUrl": "https://www.google.com/maps/place/Seven+Peaks+Resort/data=!4m10!3m9!1s0x38e7515ffd52d945:0x471d94dc74fe1349!5m2!4m1!1i2!8m2!3d34.9015298!4d73.6464103!16s%2Fg%2F11t71ysql5!19sChIJRdlS_V9R5zgRSRP-dNyUHUc",
+  "attrs": {},
   "description": "Seven Peaks Resort is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -305,6 +332,7 @@
   "lat": 34.885881,
   "lon": 73.638867,
   "mapsUrl": "https://www.google.com/maps/place/Manila+Heights+Hotel+Naran/data=!4m10!3m9!1s0x38e751e6bb32045b:0x8f62daa230bb40a7!5m2!4m1!1i2!8m2!3d34.8858813!4d73.6388666!16s%2Fg%2F11hz5vp6tq!19sChIJWwQyu-ZR5zgRp0C7MKLaYo8",
+  "attrs": {},
   "description": "Manila Heights Hotel Naran is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -316,6 +344,7 @@
   "lat": 34.906061,
   "lon": 73.651949,
   "mapsUrl": "https://www.google.com/maps/place/Centurian+Hotel+Naran/data=!4m10!3m9!1s0x38e751e0587e2a99:0x3e6bbf5b2e5d017e!5m2!4m1!1i2!8m2!3d34.9060608!4d73.6519488!16s%2Fg%2F11cly5v97l!19sChIJmSp-WOBR5zgRfgFdLlu_az4",
+  "attrs": {},
   "description": "Centurian Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -327,6 +356,7 @@
   "lat": 34.907609,
   "lon": 73.666767,
   "mapsUrl": "https://www.google.com/maps/place/Al+Noor+Hotel+Naran/data=!4m10!3m9!1s0x38e0aea14910e28f:0x74c034a5a85dc296!5m2!4m1!1i2!8m2!3d34.9076089!4d73.6667672!16s%2Fg%2F11byxfn8mq!19sChIJj-IQSaGu4DgRlsJdqKU0wHQ",
+  "attrs": {},
   "description": "Al Noor Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -338,6 +368,7 @@
   "lat": 34.909034,
   "lon": 73.663746,
   "mapsUrl": "https://www.google.com/maps/place/Rest+Over+Hotel/data=!4m10!3m9!1s0x38e74e2297532e11:0x97efbe3a13b495fe!5m2!4m1!1i2!8m2!3d34.9090337!4d73.6637457!16s%2Fg%2F11d_1bsyxy!19sChIJES5TlyJO5zgR_pW0Ezq-75c",
+  "attrs": {},
   "description": "Rest Over Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -349,6 +380,7 @@
   "lat": 34.838901,
   "lon": 73.540758,
   "mapsUrl": "https://www.google.com/maps/place/Bela+Resorts/data=!4m10!3m9!1s0x38e755c482aa8b1f:0xa23bc076454d77cb!5m2!4m1!1i2!8m2!3d34.8389007!4d73.5407582!16s%2Fg%2F11rsr109_1!19sChIJH4uqgsRV5zgRy3dNRXbAO6I",
+  "attrs": {},
   "description": "Bela Resorts is a hotel about 7 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -360,6 +392,7 @@
   "lat": 34.886293,
   "lon": 73.639654,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+1947/data=!4m10!3m9!1s0x38e751dd6fd243a5:0x896d7c267c1c07b4!5m2!4m1!1i2!8m2!3d34.8862934!4d73.6396542!16s%2Fg%2F11q2qh0r37!19sChIJpUPSb91R5zgRtAccfCZ8bYk",
+  "attrs": {},
   "description": "Hotel 1947 is a hotel about 3 km from Naran Picnic Point, Kaghan Valley. Naran Picnic Point is about 74 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -371,6 +404,7 @@
   "lat": 34.901242,
   "lon": 73.649533,
   "mapsUrl": "https://www.google.com/maps/place/LEGEND+HOTEL+NARAN/data=!4m10!3m9!1s0x38e751d1e837f0df:0x282271fc056486ee!5m2!4m1!1i2!8m2!3d34.9012422!4d73.6495333!16s%2Fg%2F11h4zr15f8!19sChIJ3_A36NFR5zgR7oZkBfxxIig",
+  "attrs": {},
   "description": "Legend Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -382,6 +416,7 @@
   "lat": 34.926425,
   "lon": 73.778655,
   "mapsUrl": "https://www.google.com/maps/place/Taj+pearl+continental+hotel/data=!4m10!3m9!1s0x38e74977ea97b649:0xd32b152cb7e0d8aa!5m2!4m1!1i2!8m2!3d34.9264249!4d73.7786549!16s%2Fg%2F11h3k__k23!19sChIJSbaX6ndJ5zgRqtjgtywVK9M",
+  "attrs": {},
   "description": "Taj Pearl Continental Hotel is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -393,6 +428,7 @@
   "lat": 34.906507,
   "lon": 73.666994,
   "mapsUrl": "https://www.google.com/maps/place/Fabssgo+Hotel/data=!4m10!3m9!1s0x38e74e17a26b4bcf:0x68a5b7f97b55f2fe!5m2!4m1!1i2!8m2!3d34.9065072!4d73.6669937!16s%2Fg%2F11c51x4g9t!19sChIJz0trohdO5zgR_vJVe_m3pWg",
+  "attrs": {},
   "description": "Fabssgo Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -404,6 +440,7 @@
   "lat": 34.887127,
   "lon": 73.640637,
   "mapsUrl": "https://www.google.com/maps/place/Iconic+Hotel+%26+Restaurant+Naran/data=!4m10!3m9!1s0x38e7513c910de95d:0x683041c599e7a743!5m2!4m1!1i2!8m2!3d34.8871273!4d73.6406373!16s%2Fg%2F11hdqp2rhf!19sChIJXekNkTxR5zgRQ6fnmcVBMGg",
+  "attrs": {},
   "description": "Iconic Hotel & Restaurant Naran is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -415,6 +452,7 @@
   "lat": 34.902831,
   "lon": 73.649813,
   "mapsUrl": "https://www.google.com/maps/place/Flora+Inn+Hotel+Naran/data=!4m10!3m9!1s0x38e751e11115bcd5:0x46abaaec6fda2837!5m2!4m1!1i2!8m2!3d34.9028312!4d73.6498128!16s%2Fg%2F11bvcvlh5_!19sChIJ1bwVEeFR5zgRNyjab-yqq0Y",
+  "attrs": {},
   "description": "Flora Inn Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -426,6 +464,7 @@
   "lat": 34.905088,
   "lon": 73.648332,
   "mapsUrl": "https://www.google.com/maps/place/Imperial+Hotel+Naran/data=!4m10!3m9!1s0x38e7514e1ef8f9c7:0xece1ee8873c957b!5m2!4m1!1i2!8m2!3d34.9050883!4d73.6483316!16s%2Fg%2F11g1mw0kj1!19sChIJx_n4Hk5R5zgRe5U8h-gezg4",
+  "attrs": {},
   "description": "Imperial Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -437,6 +476,7 @@
   "lat": 34.900338,
   "lon": 73.648413,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Moonlodges/data=!4m10!3m9!1s0x38e751e3fae5b6e7:0x92544f85df6f1d73!5m2!4m1!1i2!8m2!3d34.9003383!4d73.6484132!16s%2Fg%2F11c2y7nl52!19sChIJ57bl-uNR5zgRcx1v34VPVJI",
+  "attrs": {},
   "description": "Hotel Moonlodges is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -448,6 +488,7 @@
   "lat": 34.906496,
   "lon": 73.667298,
   "mapsUrl": "https://www.google.com/maps/place/The+Sarai+Hotel+%26+Resort+Naran/data=!4m10!3m9!1s0x38e74f185b33e355:0x3be17ae0489d78eb!5m2!4m1!1i2!8m2!3d34.9064959!4d73.6672976!16s%2Fg%2F11lh3d9m4h!19sChIJVeMzWxhP5zgR63idSOB64Ts",
+  "attrs": {},
   "description": "The Sarai Hotel & Resort Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -459,6 +500,7 @@
   "lat": 34.903613,
   "lon": 73.649738,
   "mapsUrl": "https://www.google.com/maps/place/Hilton+Hotel/data=!4m10!3m9!1s0x38e751e64bd76643:0x5b2672d33ae46b01!5m2!4m1!1i2!8m2!3d34.9036131!4d73.6497383!16s%2Fg%2F11f8jhp3f8!19sChIJQ2bXS-ZR5zgRAWvkOtNyJls",
+  "attrs": {},
   "description": "Hilton Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -470,6 +512,7 @@
   "lat": 34.824986,
   "lon": 73.523692,
   "mapsUrl": "https://www.google.com/maps/place/Luna+Resort/data=!4m10!3m9!1s0x38e755ecf17d8bbb:0x2659ffed93a2b044!5m2!4m1!1i2!8m2!3d34.824986!4d73.5236923!16s%2Fg%2F11svnlccym!19sChIJu4t98exV5zgRRLCik-3_WSY",
+  "attrs": {},
   "description": "Luna Resort is a hotel about 5 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -481,6 +524,7 @@
   "lat": 34.903556,
   "lon": 73.647873,
   "mapsUrl": "https://www.google.com/maps/place/Himalaya+inn+Hotel+%26+Restaurant/data=!4m10!3m9!1s0x38e751e085f27701:0xd243c84acd4cf806!5m2!4m1!1i2!8m2!3d34.9035562!4d73.6478728!16s%2Fg%2F11xk8f8x8!19sChIJAXfyheBR5zgRBvhMzUrIQ9I",
+  "attrs": {},
   "description": "Himalaya Inn Hotel & Restaurant is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -492,6 +536,7 @@
   "lat": 34.907649,
   "lon": 73.664406,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Deep+Forest/data=!4m10!3m9!1s0x38e74f8dee6de59d:0x4fe1446a2a5d5dd3!5m2!4m1!1i2!8m2!3d34.9076487!4d73.6644055!16s%2Fg%2F11g0l350_c!19sChIJneVt7o1P5zgR011dKmpE4U8",
+  "attrs": {},
   "description": "Hotel Deep Forest is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -503,6 +548,7 @@
   "lat": 34.90669,
   "lon": 73.652434,
   "mapsUrl": "https://www.google.com/maps/place/Naran+Creek+Hotel/data=!4m10!3m9!1s0x38e751de1542266b:0x9a0b578b06fb8079!5m2!4m1!1i2!8m2!3d34.9066901!4d73.6524338!16s%2Fg%2F11q39cnrdj!19sChIJayZCFd5R5zgReYD7BotXC5o",
+  "attrs": {},
   "description": "Naran Creek Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -514,6 +560,7 @@
   "lat": 34.917337,
   "lon": 73.803835,
   "mapsUrl": "https://www.google.com/maps/place/Northridge+By+Roomy,+Batakundi/data=!4m10!3m9!1s0x38e749224bdddf61:0xa303662d84fcee84!5m2!4m1!1i2!8m2!3d34.9173371!4d73.8038353!16s%2Fg%2F11t7zf71qp!19sChIJYd_dSyJJ5zgRhO78hC1mA6M",
+  "attrs": {},
   "description": "Northridge By Roomy, Batakundi is a hotel about 3 km from Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -525,6 +572,7 @@
   "lat": 34.910563,
   "lon": 73.653438,
   "mapsUrl": "https://www.google.com/maps/place/GreenPak+Riverfront+Naran/data=!4m10!3m9!1s0x38e751df674c91ad:0x1498d65f72c71cc!5m2!4m1!1i2!8m2!3d34.910563!4d73.653438!16s%2Fg%2F1tdwhwrq!19sChIJrZFMZ99R5zgRzHEs92WNSQE",
+  "attrs": {},
   "description": "GreenPak Riverfront Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -536,6 +584,7 @@
   "lat": 34.90706,
   "lon": 73.66683,
   "mapsUrl": "https://www.google.com/maps/place/Auzzi+Hotel+Naran/data=!4m10!3m9!1s0x38e74f93b3351c55:0xb0a501eea92070b3!5m2!4m1!1i2!8m2!3d34.9070597!4d73.6668299!16s%2Fg%2F11ygrlq8pr!19sChIJVRw1s5NP5zgRs3Agqe4BpbA",
+  "attrs": {},
   "description": "Auzzi Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -547,6 +596,7 @@
   "lat": 34.917262,
   "lon": 73.802858,
   "mapsUrl": "https://www.google.com/maps/place/Roomy+Mountain+Top+Resort,+Batakundi/data=!4m10!3m9!1s0x38e749fce3727257:0x7f365b33294ab554!5m2!4m1!1i2!8m2!3d34.9172624!4d73.8028578!16s%2Fg%2F11szkl04v8!19sChIJV3Jy4_xJ5zgRVLVKKTNbNn8",
+  "attrs": {},
   "description": "Roomy Mountain Top Resort, Batakundi is a hotel about 3 km from Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -558,6 +608,7 @@
   "lat": 34.907648,
   "lon": 73.664402,
   "mapsUrl": "https://www.google.com/maps/place/Grey+Walls+Mountain+Huts+%26+Cottages/data=!4m10!3m9!1s0x38e74e18705fc495:0x6ba8fced0b3dd592!5m2!4m1!1i2!8m2!3d34.9076476!4d73.6644022!16s%2Fg%2F11b5pjdvrp!19sChIJlcRfcBhO5zgRktU9C-38qGs",
+  "attrs": {},
   "description": "Grey Walls Mountain Huts & Cottages is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -569,6 +620,7 @@
   "lat": 34.901973,
   "lon": 73.649726,
   "mapsUrl": "https://www.google.com/maps/place/Clouds+View+Hotel+and+Restaurant/data=!4m10!3m9!1s0x38de3d76803b8777:0x7a8934863ba53e87!5m2!4m1!1i2!8m2!3d34.9019734!4d73.6497265!16s%2Fg%2F11j30f6qxx!19sChIJd4c7gHY93jgRhz6lO4Y0iXo",
+  "attrs": {},
   "description": "Clouds View Hotel and Restaurant is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -580,6 +632,7 @@
   "lat": 34.90106,
   "lon": 73.647109,
   "mapsUrl": "https://www.google.com/maps/place/Diamond+Hills+Hotel+Naran/data=!4m10!3m9!1s0x38e751b498bc88d9:0xd12f5bb9548a9e9d!5m2!4m1!1i2!8m2!3d34.9010598!4d73.6471089!16s%2Fg%2F11fm7kbk1q!19sChIJ2Yi8mLRR5zgRnZ6KVLlbL9E",
+  "attrs": {},
   "description": "Diamond Hills Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -591,6 +644,7 @@
   "lat": 34.780408,
   "lon": 73.521401,
   "mapsUrl": "https://www.google.com/maps/place/Alpha+Riverside/data=!4m10!3m9!1s0x38e0abd788d0f465:0x1ca0f7599b8885b4!5m2!4m1!1i2!8m2!3d34.7804083!4d73.5214014!16s%2Fg%2F11svlb6zkq!19sChIJZfTQiNer4DgRtIWIm1n3oBw",
+  "attrs": {},
   "description": "Alpha Riverside is a hotel in Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -602,6 +656,7 @@
   "lat": 34.900238,
   "lon": 73.647025,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Mi-Amore/data=!4m10!3m9!1s0x38e751579762cfe7:0x96cc5339417fae0a!5m2!4m1!1i2!8m2!3d34.9002383!4d73.647025!16s%2Fg%2F11f9yf1gjv!19sChIJ589il1dR5zgRCq5_QTlTzJY",
+  "attrs": {},
   "description": "Hotel Mi-Amore is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -613,6 +668,7 @@
   "lat": 34.904457,
   "lon": 73.649176,
   "mapsUrl": "https://www.google.com/maps/place/Star+Rise+Hotel/data=!4m10!3m9!1s0x38e751dfd0de4d73:0xab06a48001e1f1a2!5m2!4m1!1i2!8m2!3d34.9044566!4d73.649176!16s%2Fg%2F11y7y__1b!19sChIJc03e0N9R5zgRovHhAYCkBqs",
+  "attrs": {},
   "description": "Star Rise Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -624,6 +680,7 @@
   "lat": 34.904578,
   "lon": 73.648644,
   "mapsUrl": "https://www.google.com/maps/place/Pine+Top+Hotel+Naran/data=!4m10!3m9!1s0x38e751e0cf642ead:0x3782df854bc6c10a!5m2!4m1!1i2!8m2!3d34.9045785!4d73.6486442!16s%2Fg%2F11dxq4bkc7!19sChIJrS5kz-BR5zgRCsHGS4Xfgjc",
+  "attrs": {},
   "description": "Pine Top Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -635,7 +692,8 @@
   "lat": 34.905282,
   "lon": 73.650911,
   "mapsUrl": "https://www.google.com/maps/place/Clifton+Hotel/data=!4m10!3m9!1s0x38e751e111bd5de7:0x70bba1bbdd8cc035!5m2!4m1!1i2!8m2!3d34.9052822!4d73.6509113!16s%2Fg%2F11c1p5sbjk!19sChIJ5129EeFR5zgRNcCM3buhu3A",
-  "description": "Clifton Hotel is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the restaurant directly to confirm rooms, prices and season dates."
+  "attrs": {},
+  "description": "Clifton Hotel is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
  },
  {
   "id": "gm-woodland-resort",
@@ -646,6 +704,7 @@
   "lat": 34.852247,
   "lon": 73.586531,
   "mapsUrl": "https://www.google.com/maps/place/Woodland+Resort/data=!4m10!3m9!1s0x38e753ebffe25ae3:0xf4f8d1dd32d359d6!5m2!4m1!1i2!8m2!3d34.8522468!4d73.5865306!16s%2Fg%2F11npx6nrj6!19sChIJ41ri_-tT5zgR1lnTMt3R-PQ",
+  "attrs": {},
   "description": "Woodland Resort is a hotel about 4 km from Naran Picnic Point, Kaghan Valley. Naran Picnic Point is about 74 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -657,6 +716,7 @@
   "lat": 34.904255,
   "lon": 73.649117,
   "mapsUrl": "https://www.google.com/maps/place/Mount+Hayat+Hotel+Naran/data=!4m10!3m9!1s0x38e7510060cb59ef:0x9f59f71aa40cacda!5m2!4m1!1i2!8m2!3d34.9042555!4d73.6491171!16s%2Fg%2F11vy2d9ccr!19sChIJ71nLYABR5zgR2qwMpBr3WZ8",
+  "attrs": {},
   "description": "Mount Hayat Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -668,6 +728,7 @@
   "lat": 34.886787,
   "lon": 73.639671,
   "mapsUrl": "https://www.google.com/maps/place/Mount+Feast+Hotel+Naran/data=!4m10!3m9!1s0x38e751f809a0fe3d:0xf3430ac4de399efc!5m2!4m1!1i2!8m2!3d34.8867874!4d73.6396713!16s%2Fg%2F11j2wn511q!19sChIJPf6gCfhR5zgR_J453sQKQ_M",
+  "attrs": {},
   "description": "Mount Feast Hotel Naran is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -679,6 +740,7 @@
   "lat": 34.908972,
   "lon": 73.660237,
   "mapsUrl": "https://www.google.com/maps/place/Nawab%27s+Hotels+and+Resorts/data=!4m10!3m9!1s0x38e74fc632bfaa11:0xa5ad327c360af509!5m2!4m1!1i2!8m2!3d34.9089724!4d73.6602374!16s%2Fg%2F11w1rdwj7z!19sChIJEaq_MsZP5zgRCfUKNnwyraU",
+  "attrs": {},
   "description": "Nawab's Hotels and Resorts is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -690,6 +752,7 @@
   "lat": 34.907438,
   "lon": 73.664812,
   "mapsUrl": "https://www.google.com/maps/place/Royal+Saeed+Hotel+jheel+road+Naran/data=!4m10!3m9!1s0x38e74e1819015555:0x914caa634c122a02!5m2!4m1!1i2!8m2!3d34.9074375!4d73.6648125!16s%2Fg%2F11f03ppn0d!19sChIJVVUBGRhO5zgRAioSTGOqTJE",
+  "attrs": {},
   "description": "Royal Saeed Hotel Jheel Road Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -701,6 +764,7 @@
   "lat": 34.909087,
   "lon": 73.664298,
   "mapsUrl": "https://www.google.com/maps/place/Pine+Track+Hotel+jheel+road+Naran./data=!4m10!3m9!1s0x38e7517a9c711c43:0x7c3feb6c46b5e3c3!5m2!4m1!1i2!8m2!3d34.9090867!4d73.6642976!16s%2Fg%2F11g30n3dnw!19sChIJQxxxnHpR5zgRw-O1RmzrP3w",
+  "attrs": {},
   "description": "Pine Track Hotel Jheel Road Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -712,18 +776,20 @@
   "lat": 34.907142,
   "lon": 73.649421,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Lucky+Inn/data=!4m10!3m9!1s0x38e75195dcd238ff:0xf2c92c81b258c646!5m2!4m1!1i2!8m2!3d34.9071417!4d73.6494207!16s%2Fg%2F11gxvsgnm2!19sChIJ_zjS3JVR5zgRRsZYsoEsyfI",
+  "attrs": {},
   "description": "Hotel Lucky Inn is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
   "id": "gm-bela-off-grid-cottages-naran",
   "name": "Bela Off Grid Cottages Naran",
   "type": "hotel",
-  "stop": "naran",
+  "stop": "kaghan",
   "address": "Babusar Highway, Kaghan, Kaghan Valley, Mansehra",
   "lat": 34.823321,
   "lon": 73.52207,
   "mapsUrl": "https://www.google.com/maps/place/Bela+Off+Grid+Cottages+Naran/data=!4m10!3m9!1s0x38e7553a4e64cc57:0xf2d7fc8195477155!5m2!4m1!1i2!8m2!3d34.8233209!4d73.5220701!16s%2Fg%2F11z61zv5_x!19sChIJV8xkTjpV5zgRVXFHlYH81_I",
-  "description": "Bela Off Grid Cottages Naran is a hotel about 15 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+  "attrs": {},
+  "description": "Bela Off Grid Cottages Naran is a hotel about 5 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
   "id": "gm-trout-lodges",
@@ -734,6 +800,7 @@
   "lat": 34.908446,
   "lon": 73.662055,
   "mapsUrl": "https://www.google.com/maps/place/Trout+Lodges/data=!4m10!3m9!1s0x38e74f6b6efe3919:0x92c45682aa1c1522!5m2!4m1!1i2!8m2!3d34.908446!4d73.6620554!16s%2Fg%2F11h4cwdx72!19sChIJGTn-bmtP5zgRIhUcqoJWxJI",
+  "attrs": {},
   "description": "Trout Lodges is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -745,6 +812,7 @@
   "lat": 34.931601,
   "lon": 73.77322,
   "mapsUrl": "https://www.google.com/maps/place/Eden+Garden+Resorts+Battakundi/data=!4m10!3m9!1s0x38e749c15b86fd89:0xa53e8a9eaf9b0d02!5m2!4m1!1i2!8m2!3d34.9316014!4d73.7732205!16s%2Fg%2F11kqdwv4k4!19sChIJif2GW8FJ5zgRAg2br56KPqU",
+  "attrs": {},
   "description": "Eden Garden Resorts Battakundi is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -756,6 +824,7 @@
   "lat": 34.909047,
   "lon": 73.651589,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+River+Edge/data=!4m10!3m9!1s0x38e7513219eb6913:0xf327b81bffb3d11f!5m2!4m1!1i2!8m2!3d34.9090473!4d73.6515888!16s%2Fg%2F11rgfx8jpf!19sChIJE2nrGTJR5zgRH9Gz_xu4J_M",
+  "attrs": {},
   "description": "Hotel River Edge is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -767,6 +836,7 @@
   "lat": 34.822912,
   "lon": 73.521522,
   "mapsUrl": "https://www.google.com/maps/place/Bono+Motels/data=!4m10!3m9!1s0x38e7559944dad82d:0x4b16f901cc802d7e!5m2!4m1!1i2!8m2!3d34.8229124!4d73.5215215!16s%2Fg%2F11vkh0b79f!19sChIJLdjaRJlV5zgRfi2AzAH5Fks",
+  "attrs": {},
   "description": "Bono Motels is a hotel about 5 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -778,6 +848,7 @@
   "lat": 34.881762,
   "lon": 73.629932,
   "mapsUrl": "https://www.google.com/maps/place/Hotel+Nature+View/data=!4m10!3m9!1s0x38e753756c3dfb4d:0xb6605fcaf496ceb9!5m2!4m1!1i2!8m2!3d34.8817616!4d73.6299322!16s%2Fg%2F11krqd5x_j!19sChIJTfs9bHVT5zgRuc6W9MpfYLY",
+  "attrs": {},
   "description": "Hotel Nature View is a hotel in Naran Picnic Point, Kaghan Valley. Naran Picnic Point is about 74 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -789,6 +860,7 @@
   "lat": 34.904705,
   "lon": 73.648734,
   "mapsUrl": "https://www.google.com/maps/place/Lalazar+Hotel+Naran/data=!4m10!3m9!1s0x38e751e151f7a123:0x48a01fb2a27a8958!5m2!4m1!1i2!8m2!3d34.9047054!4d73.6487335!16s%2Fg%2F11x9gh78w!19sChIJI6H3UeFR5zgRWIl6orIfoEg",
+  "attrs": {},
   "description": "Lalazar Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -800,6 +872,7 @@
   "lat": 34.90733,
   "lon": 73.666396,
   "mapsUrl": "https://www.google.com/maps/place/Arcadian+Cottages,+Naran/data=!4m10!3m9!1s0x38e74f385454fe91:0xa9e7e84a7d99665f!5m2!4m1!1i2!8m2!3d34.9073295!4d73.6663957!16s%2Fg%2F11w1f2g1w5!19sChIJkf5UVDhP5zgRX2aZfUro56k",
+  "attrs": {},
   "description": "Arcadian Cottages, Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -811,6 +884,7 @@
   "lat": 34.901748,
   "lon": 73.647044,
   "mapsUrl": "https://www.google.com/maps/place/River+View+Hotel/data=!4m10!3m9!1s0x38e751e6b76b72cb:0xfb8ad0e60dfd4d22!5m2!4m1!1i2!8m2!3d34.9017476!4d73.6470443!16s%2Fg%2F12qhjgp88!19sChIJy3Jrt-ZR5zgRIk39DebQivs",
+  "attrs": {},
   "description": "River View Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -822,6 +896,7 @@
   "lat": 34.914671,
   "lon": 73.804266,
   "mapsUrl": "https://www.google.com/maps/place/Amaan+Mountain+Resort/data=!4m10!3m9!1s0x38e74900303a4239:0xed430091746615c!5m2!4m1!1i2!8m2!3d34.9146709!4d73.8042661!16s%2Fg%2F11w3pfmgd3!19sChIJOUI6MABJ5zgRXGFGFwkw1A4",
+  "attrs": {},
   "description": "Amaan Mountain Resort is a hotel in Burawai, Kaghan Valley. Burawai is about 101 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -833,6 +908,7 @@
   "lat": 34.927484,
   "lon": 73.778772,
   "mapsUrl": "https://www.google.com/maps/place/Hummingbird+Resort+and+Executive+Suites+Batakundi/data=!4m10!3m9!1s0x38e74940aa34ad71:0x2bf705c1e9b7e3d8!5m2!4m1!1i2!8m2!3d34.9274836!4d73.778772!16s%2Fg%2F11sx2d46hz!19sChIJca00qkBJ5zgR2OO36cEF9ys",
+  "attrs": {},
   "description": "Hummingbird Resort and Executive Suites Batakundi is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -844,6 +920,7 @@
   "lat": 34.910442,
   "lon": 73.649775,
   "mapsUrl": "https://www.google.com/maps/place/Riviera+Resort+Naran/data=!4m10!3m9!1s0x38e7515b284e287d:0x7c065b5342c713ae!5m2!4m1!1i2!8m2!3d34.9104421!4d73.6497745!16s%2Fg%2F11x98b3669!19sChIJfShOKFtR5zgRrhPHQlNbBnw",
+  "attrs": {},
   "description": "Riviera Resort Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -855,6 +932,7 @@
   "lat": 34.90817,
   "lon": 73.664315,
   "mapsUrl": "https://www.google.com/maps/place/Snow+Crest+Lodges/data=!4m10!3m9!1s0x38e74f15e802dcd1:0xd29f85352005e893!5m2!4m1!1i2!8m2!3d34.9081696!4d73.6643145!16s%2Fg%2F11sx2943tg!19sChIJ0dwC6BVP5zgRk-gFIDWFn9I",
+  "attrs": {},
   "description": "Snow Crest Lodges is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -866,6 +944,7 @@
   "lat": 34.901497,
   "lon": 73.64949,
   "mapsUrl": "https://www.google.com/maps/place/Jovial+Gold+Hotel+Naran/data=!4m10!3m9!1s0x38e751decdc402a3:0x7b863e4213946e97!5m2!4m1!1i2!8m2!3d34.9014968!4d73.6494903!16s%2Fg%2F11q27k6vqj!19sChIJowLEzd5R5zgRl26UE0I-hns",
+  "attrs": {},
   "description": "Jovial Gold Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -877,6 +956,7 @@
   "lat": 34.901459,
   "lon": 73.64619,
   "mapsUrl": "https://www.google.com/maps/place/Kunhar+Hotel+River+Side+Block+Naran/data=!4m10!3m9!1s0x38e7511eeeb13183:0x3f6bd539af8e9f5b!5m2!4m1!1i2!8m2!3d34.9014593!4d73.6461899!16s%2Fg%2F11l1ycrgtp!19sChIJgzGx7h5R5zgRW5-OrznVaz8",
+  "attrs": {},
   "description": "Kunhar Hotel River Side Block Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -888,6 +968,7 @@
   "lat": 34.908794,
   "lon": 73.664851,
   "mapsUrl": "https://www.google.com/maps/place/The+Croft+Family+Cottages/data=!4m10!3m9!1s0x38e74f1075e69013:0xaa6e148f5090a360!5m2!4m1!1i2!8m2!3d34.9087936!4d73.6648507!16s%2Fg%2F11svv6y5r6!19sChIJE5DmdRBP5zgRYKOQUI8Ubqo",
+  "attrs": {},
   "description": "The Croft Family Cottages is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -899,6 +980,7 @@
   "lat": 34.884503,
   "lon": 73.693995,
   "mapsUrl": "https://www.google.com/maps/place/Lalazar+Lakeview+Hotel+Saif-ul-Malook/data=!4m10!3m9!1s0x38e74dd143148209:0xaac7689aa39c5ffd!5m2!4m1!1i2!8m2!3d34.8845025!4d73.6939945!16s%2Fg%2F11g6mk_223!19sChIJCYIUQ9FN5zgR_V-co5pox6o",
+  "attrs": {},
   "description": "Lalazar Lakeview Hotel Saif-ul-Malook is a hotel about 5 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -910,6 +992,7 @@
   "lat": 34.9074,
   "lon": 73.665619,
   "mapsUrl": "https://www.google.com/maps/place/Le+Rivage+Inn/data=!4m10!3m9!1s0x38e74fc765138de5:0xf134ca26c8e5d33a!5m2!4m1!1i2!8m2!3d34.9074001!4d73.6656188!16s%2Fg%2F11k1kyc0h8!19sChIJ5Y0TZcdP5zgROtPlyCbKNPE",
+  "attrs": {},
   "description": "Le Rivage Inn is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -921,6 +1004,7 @@
   "lat": 34.885795,
   "lon": 73.63915,
   "mapsUrl": "https://www.google.com/maps/place/LOKAL+Rooms+x+Naran+%28Kunhar+River%29/data=!4m10!3m9!1s0x38e7511195a6dd15:0xe38ccbf4fffe9035!5m2!4m1!1i2!8m2!3d34.8857951!4d73.6391502!16s%2Fg%2F11s1w3p1m9!19sChIJFd2mlRFR5zgRNZD-__TLjOM",
+  "attrs": {},
   "description": "LOKAL Rooms x Naran (Kunhar River) is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -932,6 +1016,7 @@
   "lat": 34.908014,
   "lon": 73.664509,
   "mapsUrl": "https://www.google.com/maps/place/Pine+Grove+Hotel/data=!4m10!3m9!1s0x38e74f76499a0867:0xb88ba51609909606!5m2!4m1!1i2!8m2!3d34.9080135!4d73.6645091!16s%2Fg%2F11vbppwl45!19sChIJZwiaSXZP5zgRBpaQCRali7g",
+  "attrs": {},
   "description": "Pine Grove Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -943,6 +1028,7 @@
   "lat": 34.907945,
   "lon": 73.666275,
   "mapsUrl": "https://www.google.com/maps/place/Peridot,+Naran/data=!4m10!3m9!1s0x38e74fccb3b56725:0xff6809b7335d9e30!5m2!4m1!1i2!8m2!3d34.9079446!4d73.6662755!16s%2Fg%2F11h3v6lnxq!19sChIJJWe1s8xP5zgRMJ5dM7cJaP8",
+  "attrs": {},
   "description": "Peridot, Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -954,6 +1040,7 @@
   "lat": 34.909026,
   "lon": 73.660657,
   "mapsUrl": "https://www.google.com/maps/place/Pine+Park+Lake+Luxury+Resort/data=!4m10!3m9!1s0x38e74f22d2b93da7:0x669a0ee81029635a!5m2!4m1!1i2!8m2!3d34.9090262!4d73.6606566!16s%2Fg%2F11rrt_b3w7!19sChIJpz250iJP5zgRWmMpEOgOmmY",
+  "attrs": {},
   "description": "Pine Park Lake Luxury Resort is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -965,6 +1052,7 @@
   "lat": 34.930646,
   "lon": 73.772975,
   "mapsUrl": "https://www.google.com/maps/place/Pine+Top+Resort+Batakundi/data=!4m10!3m9!1s0x38e749b8adee8f0b:0x30dedda039766ce4!5m2!4m1!1i2!8m2!3d34.9306461!4d73.7729748!16s%2Fg%2F11fcqsz0vl!19sChIJC4_urbhJ5zgR5Gx2OaDd3jA",
+  "attrs": {},
   "description": "Pine Top Resort Batakundi is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -976,6 +1064,7 @@
   "lat": 34.904678,
   "lon": 73.648032,
   "mapsUrl": "https://www.google.com/maps/place/Islamabad+Tourism+Hotel/data=!4m10!3m9!1s0x38e751e0ca94bb23:0x132a5f5e7358dbe5!5m2!4m1!1i2!8m2!3d34.9046777!4d73.6480323!16s%2Fg%2F11c0t96ts0!19sChIJI7uUyuBR5zgR5dtYc15fKhM",
+  "attrs": {},
   "description": "Islamabad Tourism Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -987,6 +1076,7 @@
   "lat": 34.909045,
   "lon": 73.664106,
   "mapsUrl": "https://www.google.com/maps/place/Rozhok+Hotel+Naran/data=!4m10!3m9!1s0x38e74f4a6f96eaef:0x47d006d1a421e1e5!5m2!4m1!1i2!8m2!3d34.9090449!4d73.6641059!16s%2Fg%2F11t6mft66p!19sChIJ7-qWb0pP5zgR5eEhpNEG0Ec",
+  "attrs": {},
   "description": "Rozhok Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -998,6 +1088,7 @@
   "lat": 34.778152,
   "lon": 73.524405,
   "mapsUrl": "https://www.google.com/maps/place/Walnut+Cottage/data=!4m10!3m9!1s0x38e0ab3276ea93a3:0x4a8d8f22cc429900!5m2!4m1!1i2!8m2!3d34.7781517!4d73.5244045!16s%2Fg%2F11stnvrpwm!19sChIJo5PqdjKr4DgRAJlCzCKPjUo",
+  "attrs": {},
   "description": "Walnut Cottage is a hotel in Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1009,6 +1100,7 @@
   "lat": 34.905938,
   "lon": 73.671937,
   "mapsUrl": "https://www.google.com/maps/place/Glacier+Inn+Naran,+Jheel+Road/data=!4m10!3m9!1s0x38e74fb82421ade3:0xbc1fd7485e778a5f!5m2!4m1!1i2!8m2!3d34.9059375!4d73.6719375!16s%2Fg%2F11qq0ctsxd!19sChIJ460hJLhP5zgRX4p3XkjXH7w",
+  "attrs": {},
   "description": "Glacier Inn Naran, Jheel Road is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1020,6 +1112,7 @@
   "lat": 34.90518,
   "lon": 73.648053,
   "mapsUrl": "https://www.google.com/maps/place/7+Creek+Hotel+Naran/data=!4m10!3m9!1s0x38e751e0b461d633:0x3483abaffe29a6f5!5m2!4m1!1i2!8m2!3d34.9051796!4d73.6480531!16s%2Fg%2F11dxm6d5bt!19sChIJM9ZhtOBR5zgR9aYp_q-rgzQ",
+  "attrs": {},
   "description": "7 Creek Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1031,6 +1124,7 @@
   "lat": 34.906048,
   "lon": 73.668923,
   "mapsUrl": "https://www.google.com/maps/place/Belmont+Naran/data=!4m10!3m9!1s0x38e74f7ecabb8151:0x3a2525e93e56decd!5m2!4m1!1i2!8m2!3d34.9060484!4d73.6689229!16s%2Fg%2F11sx0fd574!19sChIJUYG7yn5P5zgRzd5WPuklJTo",
+  "attrs": {},
   "description": "Belmont Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1042,6 +1136,7 @@
   "lat": 34.899304,
   "lon": 73.64997,
   "mapsUrl": "https://www.google.com/maps/place/Waterstone%27s+Hotel+Naran/data=!4m10!3m9!1s0x38e7511a0d0ad815:0xa89412e4e2df6eaf!5m2!4m1!1i2!8m2!3d34.8993036!4d73.6499704!16s%2Fg%2F11hdxc7h25!19sChIJFdgKDRpR5zgRr27f4uQSlKg",
+  "attrs": {},
   "description": "Waterstone's Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1053,6 +1148,7 @@
   "lat": 34.935183,
   "lon": 73.764071,
   "mapsUrl": "https://www.google.com/maps/place/Iceland+hotel+%26+Resort+Batakundi/data=!4m10!3m9!1s0x38e74942a6027efb:0x33ae0adb93fb540b!5m2!4m1!1i2!8m2!3d34.9351827!4d73.7640712!16s%2Fg%2F11f73sy4m4!19sChIJ-34CpkJJ5zgRC1T7k9sKrjM",
+  "attrs": {},
   "description": "Iceland Hotel & Resort Batakundi is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1064,6 +1160,7 @@
   "lat": 34.902912,
   "lon": 73.647612,
   "mapsUrl": "https://www.google.com/maps/place/Silver+Peaks+Hotel+Naran/data=!4m10!3m9!1s0x38e751f3daf3f6d1:0x357414a8e144ef3!5m2!4m1!1i2!8m2!3d34.9029123!4d73.6476118!16s%2Fg%2F11nxrz0qtc!19sChIJ0fbz2vNR5zgR804UjkpBVwM",
+  "attrs": {},
   "description": "Silver Peaks Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1075,6 +1172,7 @@
   "lat": 34.899863,
   "lon": 73.647801,
   "mapsUrl": "https://www.google.com/maps/place/Naran+Mountain+Chalets/data=!4m10!3m9!1s0x38e751e3f673cc55:0xc1c9ea7d0994b10a!5m2!4m1!1i2!8m2!3d34.8998631!4d73.6478011!16s%2Fg%2F11b66hy7_1!19sChIJVcxz9uNR5zgRCrGUCX3qycE",
+  "attrs": {},
   "description": "Naran Mountain Chalets is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1086,6 +1184,7 @@
   "lat": 34.902901,
   "lon": 73.648628,
   "mapsUrl": "https://www.google.com/maps/place/Royal+Hotel+Naran/data=!4m10!3m9!1s0x38e0a900c3bcf029:0xd5c8bf352accbffc!5m2!4m1!1i2!8m2!3d34.9029006!4d73.6486282!16s%2Fg%2F11xc2k5_c!19sChIJKfC8wwCp4DgR_L_MKjW_yNU",
+  "attrs": {},
   "description": "Royal Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1097,6 +1196,7 @@
   "lat": 34.907263,
   "lon": 73.652516,
   "mapsUrl": "https://www.google.com/maps/place/Luxus+Naran/data=!4m10!3m9!1s0x38e751003a6e2165:0x12f0ae2e984edfd7!5m2!4m1!1i2!8m2!3d34.9072625!4d73.6525156!16s%2Fg%2F11xkhj419_!19sChIJZSFuOgBR5zgR199OmC6u8BI",
+  "attrs": {},
   "description": "Luxus Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1108,6 +1208,7 @@
   "lat": 34.92537,
   "lon": 73.779836,
   "mapsUrl": "https://www.google.com/maps/place/La+Serene+Resort/data=!4m10!3m9!1s0x38e74969750e274f:0x246249178b7537a2!5m2!4m1!1i2!8m2!3d34.9253696!4d73.779836!16s%2Fg%2F11n097rj8r!19sChIJTycOdWlJ5zgRojd1ixdJYiQ",
+  "attrs": {},
   "description": "La Serene Resort is a hotel in Batakundi, Kaghan Valley. Batakundi is about 97 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1119,6 +1220,7 @@
   "lat": 34.820597,
   "lon": 73.5207,
   "mapsUrl": "https://www.google.com/maps/place/Dream-World+Hotel+%26+Restaurant./data=!4m10!3m9!1s0x38e751c71b9cbe79:0x321d465e88cb5406!5m2!4m1!1i2!8m2!3d34.8205974!4d73.5206999!16s%2Fg%2F11g22z97p0!19sChIJeb6cG8dR5zgRBlTLiF5GHTI",
+  "attrs": {},
   "description": "Dream-World Hotel & Restaurant is a hotel about 5 km from Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
  },
  {
@@ -1130,6 +1232,751 @@
   "lat": 34.907485,
   "lon": 73.664155,
   "mapsUrl": "https://www.google.com/maps/place/Musketeers+Resort+Naran/data=!4m10!3m9!1s0x38e74f4e5bf539c3:0x2111b849a6c51dca!5m2!4m1!1i2!8m2!3d34.9074852!4d73.6641548!16s%2Fg%2F11w248nrd2!19sChIJwzn1W05P5zgRyh3Fpkm4ESE",
+  "attrs": {},
   "description": "Musketeers Resort Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-naran-bazaar",
+  "name": "Naran Bazaar",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908466,
+  "lon": 73.652313,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Bazaar/data=!4m7!3m6!1s0x38e7512d4b704cb7:0xba92a7f449b05eab!8m2!3d34.9084661!4d73.6523132!16s%2Fg%2F11v10q0wmz!19sChIJt0xwSy1R5zgRq16wSfSnkro",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Naran Bazaar is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-srinagar-shawl-naran",
+  "name": "Srinagar Shawl Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.906874,
+  "lon": 73.650547,
+  "mapsUrl": "https://www.google.com/maps/place/Srinagar+shawl+Naran/data=!4m7!3m6!1s0x38e74fc22c631241:0x6d55d62069ad8a32!8m2!3d34.9068735!4d73.6505469!16s%2Fg%2F11fm6jy38j!19sChIJQRJjLMJP5zgRMoqtaSDWVW0",
+  "attrs": {
+   "category": "Clothing"
+  },
+  "description": "Srinagar Shawl Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-china-cash-and-carry-naran",
+  "name": "China Cash and Carry, Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.906787,
+  "lon": 73.650689,
+  "mapsUrl": "https://www.google.com/maps/place/China+Cash+and+Carry,+Naran/data=!4m7!3m6!1s0x38e751f7ae0671a5:0x5c5cdbe5bf518584!8m2!3d34.9067874!4d73.6506886!16s%2Fg%2F11t53zhbrr!19sChIJpXEGrvdR5zgRhIVRv-XbXFw",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "China Cash and Carry, Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-alham-shopping-mall-naran",
+  "name": "Alham Shopping Mall Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90925,
+  "lon": 73.650678,
+  "mapsUrl": "https://www.google.com/maps/place/ALHAM+SHOPPING+MALL+NARAN/data=!4m7!3m6!1s0x38e751fc8a5866fd:0x88b38042e74d2c!8m2!3d34.9092505!4d73.6506776!16s%2Fg%2F11l29h82cj!19sChIJ_WZYivxR5zgRLE3nQoCziAA",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Alham Shopping Mall Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-gull-shopping-center-naran",
+  "name": "Gull Shopping Center Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907257,
+  "lon": 73.651107,
+  "mapsUrl": "https://www.google.com/maps/place/Gull+Shopping+Center+Naran/data=!4m7!3m6!1s0x38e7511300c8a623:0xa32d07a37960b079!8m2!3d34.9072569!4d73.6511073!16s%2Fg%2F11xh8qvkmy!19sChIJI6bIABNR5zgRebBgeaMHLaM",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Gull Shopping Center Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-styles-mall",
+  "name": "Styles Mall",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.898819,
+  "lon": 73.64683,
+  "mapsUrl": "https://www.google.com/maps/place/Styles+Mall/data=!4m7!3m6!1s0x38e751af35a88575:0xcdb8aaf6f0b64dea!8m2!3d34.898819!4d73.6468303!16s%2Fg%2F11lbztzwx8!19sChIJdYWoNa9R5zgR6k228PaquM0",
+  "attrs": {
+   "category": "Clothing"
+  },
+  "description": "Styles Mall is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-n-15-cafe-deli",
+  "name": "N-15 Cafe & Deli",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.902422,
+  "lon": 73.647788,
+  "mapsUrl": "https://www.google.com/maps/place/N-15+Cafe+%26+Deli/data=!4m7!3m6!1s0x38e751fe64c86e4b:0xabbac806ebc0cb92!8m2!3d34.902422!4d73.647788!16s%2Fg%2F11rfnhrzvw!19sChIJS27IZP5R5zgRksvA6wbIuqs",
+  "attrs": {},
+  "description": "N-15 Cafe & Deli is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-fotoking-aljanat-super-store",
+  "name": "Fotoking-Aljanat Super Store",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908795,
+  "lon": 73.652555,
+  "mapsUrl": "https://www.google.com/maps/place/Fotoking-Aljanat+Super+store/data=!4m7!3m6!1s0x38e751dfc7f40887:0x997693db773c2254!8m2!3d34.9087955!4d73.6525548!16s%2Fg%2F11c5b6nrkn!19sChIJhwj0x99R5zgRVCI8d9uTdpk",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Fotoking-Aljanat Super Store is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-kaghan-hotel",
+  "name": "Naran Kaghan Hotel",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.902437,
+  "lon": 73.649812,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Kaghan+Hotel/data=!4m7!3m6!1s0x38e751e11b267fd7:0xefb6507cae474b25!8m2!3d34.9024375!4d73.6498125!16s%2Fg%2F11f121ynsh!19sChIJ138mG-FR5zgRJUtHrnxQtu8",
+  "attrs": {},
+  "description": "Naran Kaghan Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-welldone-shawl-house",
+  "name": "Welldone Shawl House",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.899796,
+  "lon": 73.647432,
+  "mapsUrl": "https://www.google.com/maps/place/Welldone+shawl+House/data=!4m7!3m6!1s0x38e75101cb4ec5cf:0xedb3068a907f8ea1!8m2!3d34.8997962!4d73.647432!16s%2Fg%2F11v5xx0zkw!19sChIJz8VOywFR5zgRoY5_kIoGs-0",
+  "attrs": {
+   "category": "Clothing"
+  },
+  "description": "Welldone Shawl House is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-karachi-super-store",
+  "name": "Karachi Super Store",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.903126,
+  "lon": 73.648011,
+  "mapsUrl": "https://www.google.com/maps/place/Karachi+Super+store/data=!4m7!3m6!1s0x38e75154d11c4d53:0x4ddaf6f09a6df768!8m2!3d34.9031259!4d73.648011!16s%2Fg%2F11h3vdg_fd!19sChIJU00c0VRR5zgRaPdtmvD22k0",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Karachi Super Store is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-market",
+  "name": "Naran Market",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907856,
+  "lon": 73.651605,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Market+%D9%86%D8%A7%D8%B1%D8%A7%D9%86+%D9%85%D8%A7%D8%B1%DA%A9%DB%8C%D9%B9%E2%80%AD/data=!4m7!3m6!1s0x38e751005cd2879f:0x5f948501bd521df9!8m2!3d34.9078558!4d73.6516051!16s%2Fg%2F11zfpcm0z3!19sChIJn4fSXABR5zgR-R1SvQGFlF8",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Naran Market is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-mobile-shop",
+  "name": "Naran Mobile Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.906151,
+  "lon": 73.64978,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Mobile+Shop/data=!4m7!3m6!1s0x38e7510006cb4be3:0x676a8591d821820a!8m2!3d34.906151!4d73.64978!16s%2Fg%2F11yd6g8vmq!19sChIJ40vLBgBR5zgRCoIh2JGFamc",
+  "attrs": {
+   "category": "Mobile & SIM"
+  },
+  "description": "Naran Mobile Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-arkam-kite-shop",
+  "name": "Arkam Kite Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907108,
+  "lon": 73.651097,
+  "mapsUrl": "https://www.google.com/maps/place/ARKAM+KITE+SHOP/data=!4m7!3m6!1s0x38e751686675a453:0x7afeeda5cad48a84!8m2!3d34.9071075!4d73.6510974!16s%2Fg%2F11v4mnkc8q!19sChIJU6R1ZmhR5zgRhIrUyqXt_no",
+  "attrs": {
+   "category": "Handicrafts"
+  },
+  "description": "Arkam Kite Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-rental-camping",
+  "name": "Rental Camping",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.892657,
+  "lon": 73.646333,
+  "mapsUrl": "https://www.google.com/maps/place/Rental+Camping/data=!4m7!3m6!1s0x38e751fb753c0f53:0xfd0f87a32152affe!8m2!3d34.8926572!4d73.6463329!16s%2Fg%2F11fy4wbfkl!19sChIJUw88dftR5zgR_q9SIaOHD_0",
+  "attrs": {
+   "category": "Outdoor gear"
+  },
+  "description": "Rental Camping is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-kaghan-chakn-shop",
+  "name": "Kaghan Chakn Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Saif-ul-Maluk Road, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908717,
+  "lon": 73.652735,
+  "mapsUrl": "https://www.google.com/maps/place/Kaghan+chakn+shop/data=!4m7!3m6!1s0x38e751005e5d010b:0xe60024db100da8e1!8m2!3d34.9087168!4d73.6527348!16s%2Fg%2F11nj1rxx65!19sChIJCwFdXgBR5zgR4agNENskAOY",
+  "attrs": {
+   "category": "Other"
+  },
+  "description": "Kaghan Chakn Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-gb-super-store",
+  "name": "GB Super Store",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.901016,
+  "lon": 73.650106,
+  "mapsUrl": "https://www.google.com/maps/place/GB+super+store/data=!4m7!3m6!1s0x38e75126a620fccb:0x210b42f08e0eaf84!8m2!3d34.9010162!4d73.6501062!16s%2Fg%2F11v07jk25v!19sChIJy_wgpiZR5zgRhK8OjvBCCyE",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "GB Super Store is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-swati-handicraft-shop",
+  "name": "Swati Handicraft Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907805,
+  "lon": 73.651739,
+  "mapsUrl": "https://www.google.com/maps/place/Swati+Handicraft+Shop/data=!4m7!3m6!1s0x38e751d4e9064ecf:0xe25463b5700961d5!8m2!3d34.9078046!4d73.6517386!16s%2Fg%2F11fcnb1trr!19sChIJz04G6dRR5zgR1WEJcLVjVOI",
+  "attrs": {
+   "category": "Handicrafts"
+  },
+  "description": "Swati Handicraft Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-handicraft-and-toys",
+  "name": "Naran Handicraft And Toys",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907876,
+  "lon": 73.651604,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Handicraft+And+Toys/data=!4m7!3m6!1s0x38e7513d05d57c4b:0x60c9b63dab661b6!8m2!3d34.907876!4d73.6516044!16s%2Fg%2F11kq3shp8x!19sChIJS3zVBT1R5zgRtmG22mObDAY",
+  "attrs": {
+   "category": "Handicrafts"
+  },
+  "description": "Naran Handicraft And Toys is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-grand-ridge-naran",
+  "name": "Grand Ridge Naran",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.899739,
+  "lon": 73.65004,
+  "mapsUrl": "https://www.google.com/maps/place/Grand+Ridge+Naran/data=!4m10!3m9!1s0x38e751133f284a97:0x11bdab8fbad6e0dc!5m2!4m1!1i2!8m2!3d34.8997388!4d73.6500403!16s%2Fg%2F11q2sy8d1v!19sChIJl0ooPxNR5zgR3ODWuo-rvRE",
+  "attrs": {},
+  "description": "Grand Ridge Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-bonair-shopping-center",
+  "name": "Bonair Shopping Center",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.906212,
+  "lon": 73.64972,
+  "mapsUrl": "https://www.google.com/maps/place/Bonair+Shopping+Center/data=!4m7!3m6!1s0x38e751007f3e4a3f:0x58d9708b876f095f!8m2!3d34.9062124!4d73.64972!16s%2Fg%2F11xlrz721q!19sChIJP0o-fwBR5zgRXwlvh4tw2Vg",
+  "attrs": {
+   "category": "Handicrafts"
+  },
+  "description": "Bonair Shopping Center is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-billa-g-pan-shop-naran",
+  "name": "Billa G Pan Shop Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90238,
+  "lon": 73.647987,
+  "mapsUrl": "https://www.google.com/maps/place/Billa+G+pan+Shop+Naran/data=!4m7!3m6!1s0x38e751982025b64b:0x41e1372259d7d07e!8m2!3d34.9023805!4d73.647987!16s%2Fg%2F11g1gs5nnq!19sChIJS7YlIJhR5zgRftDXWSI34UE",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Billa G Pan Shop Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-sweet-creme-naran",
+  "name": "Sweet Creme - Naran",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.900208,
+  "lon": 73.647692,
+  "mapsUrl": "https://www.google.com/maps/place/Sweet+Creme+-+Naran/data=!4m7!3m6!1s0x38e751c66189cb5f:0xe069c94f5e0f0ae3!8m2!3d34.9002077!4d73.6476916!16s%2Fg%2F11z7vrpj5p!19sChIJX8uJYcZR5zgR4woPXk_JaeA",
+  "attrs": {},
+  "description": "Sweet Creme - Naran is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-swiss-rock-hotel-resort-naran",
+  "name": "Swiss Rock Hotel & Resort Naran",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.902951,
+  "lon": 73.64776,
+  "mapsUrl": "https://www.google.com/maps/place/Swiss+Rock+Hotel+%26+Resort+Naran/data=!4m10!3m9!1s0x38e751e6f4f4ac11:0xeff10ac7b718031e!5m2!4m1!1i2!8m2!3d34.9029512!4d73.6477598!16s%2Fg%2F11kb87qz08!19sChIJEaz09OZR5zgRHgMYt8cK8e8",
+  "attrs": {},
+  "description": "Swiss Rock Hotel & Resort Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-usman-hardware-store-naran",
+  "name": "Usman Hardware Store Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.905338,
+  "lon": 73.649028,
+  "mapsUrl": "https://www.google.com/maps/place/Usman+Hardware+Store+Naran/data=!4m7!3m6!1s0x38e75169bd6e8e03:0xa42d5cd149a0067e!8m2!3d34.9053384!4d73.6490276!16s%2Fg%2F11h4w144ml!19sChIJA45uvWlR5zgRfgagSdFcLaQ",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Usman Hardware Store Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-punjab-tikka-house",
+  "name": "Punjab Tikka House",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.901576,
+  "lon": 73.647746,
+  "mapsUrl": "https://www.google.com/maps/place/Punjab+Tikka+House/data=!4m7!3m6!1s0x38e7510833d52ae9:0x393ad8870e057af4!8m2!3d34.901576!4d73.6477458!16s%2Fg%2F11fmykrh0n!19sChIJ6SrVMwhR5zgR9HoFDofYOjk",
+  "attrs": {},
+  "description": "Punjab Tikka House is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-bajaur-gift-center-naran",
+  "name": "Bajaur Gift Center Naran",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907677,
+  "lon": 73.651383,
+  "mapsUrl": "https://www.google.com/maps/place/%D8%A8%D8%A7%D8%AC%D9%88%DA%91+%DA%AF%D9%81%D9%B9+%D8%B3%D9%86%D9%B9%D8%B1+%D9%86%D8%A7%D8%B1%D8%A7%D9%86%E2%80%AD/data=!4m7!3m6!1s0x38e7513ec5630b6b:0xdf1f4b39b4aadb1f!8m2!3d34.9076771!4d73.6513826!16s%2Fg%2F11h4c0gbk2!19sChIJawtjxT5R5zgRH9uqtDlLH98",
+  "attrs": {
+   "category": "Handicrafts"
+  },
+  "description": "Bajaur Gift Center Naran is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-food-lab",
+  "name": "Food Lab",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908028,
+  "lon": 73.651822,
+  "mapsUrl": "https://www.google.com/maps/place/Food+Lab/data=!4m7!3m6!1s0x38e751c2983df8ef:0x5f7dafc83687f0b0!8m2!3d34.9080277!4d73.651822!16s%2Fg%2F11t7b6tjt8!19sChIJ7_g9mMJR5zgRsPCHNsivfV8",
+  "attrs": {},
+  "description": "Food Lab is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-moon-restaurant",
+  "name": "Moon Restaurant",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.902969,
+  "lon": 73.647781,
+  "mapsUrl": "https://www.google.com/maps/place/Moon+Restaurant/data=!4m7!3m6!1s0x38e751e12b2f2793:0x8537524c8585d464!8m2!3d34.9029693!4d73.6477813!16s%2Fg%2F11b8t66nj7!19sChIJkycvK-FR5zgRZNSFhUxSN4U",
+  "attrs": {},
+  "description": "Moon Restaurant is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-chicken-shop",
+  "name": "Naran Chicken Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.905149,
+  "lon": 73.64889,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Chicken+shop/data=!4m7!3m6!1s0x38e751c9623db3e9:0xc0146d45bfccc361!8m2!3d34.9051493!4d73.6488904!16s%2Fg%2F11qg5dynsh!19sChIJ6bM9YslR5zgRYcPMv0VtFMA",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Naran Chicken Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-dunkin-donuts",
+  "name": "Dunkin' Donuts",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.900118,
+  "lon": 73.647723,
+  "mapsUrl": "https://www.google.com/maps/place/Dunkin%27+Donuts/data=!4m7!3m6!1s0x38e751006bfb5541:0xf2f6c7d6ac361ad0!8m2!3d34.900118!4d73.647723!16s%2Fg%2F11w8ybxjlh!19sChIJQVX7awBR5zgR0Bo2rNbH9vI",
+  "attrs": {},
+  "description": "Dunkin' Donuts is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-baig-suzuki-center-rental-bike-naran",
+  "name": "Baig Suzuki Center & Rental Bike Naran",
+  "type": "jeep-operator",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.897231,
+  "lon": 73.647899,
+  "mapsUrl": "https://www.google.com/maps/place/Baig+Suzuki+center%26+Rental+Bike+Naran/data=!4m7!3m6!1s0x38e751c8f1fef20f:0x812a1989e79e6ba6!8m2!3d34.8972306!4d73.6478993!16s%2Fg%2F11zgmn9k3b!19sChIJD_L-8chR5zgRpmue54kZKoE",
+  "attrs": {},
+  "description": "Baig Suzuki Center & Rental Bike Naran is a bike and transport rental in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-shisha-coffee-shop",
+  "name": "Shisha + Coffee Shop",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908829,
+  "lon": 73.65256,
+  "mapsUrl": "https://www.google.com/maps/place/Shisha+%2B+Coffee+shop/data=!4m7!3m6!1s0x38e75100077e8ef7:0x4165c8597a13cacc!8m2!3d34.9088293!4d73.6525596!16s%2Fg%2F11y75z5_sl!19sChIJ945-BwBR5zgRzMoTelnIZUE",
+  "attrs": {},
+  "description": "Shisha + Coffee Shop is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-northern-retreat-by-hotel-demanchi",
+  "name": "Northern Retreat by Hotel Demanchi",
+  "type": "hotel",
+  "stop": "naran-picnic-point",
+  "address": "Naran Picnic Point, Kaghan Valley, Mansehra",
+  "lat": 34.885027,
+  "lon": 73.640455,
+  "mapsUrl": "https://www.google.com/maps/place/Northern+Retreat+by+Hotel+Demanchi/data=!4m10!3m9!1s0x38e75132d48b0bc9:0x154922754ebe9db1!5m2!4m1!1i2!8m2!3d34.8850269!4d73.6404549!16s%2Fg%2F11h4w1tzt6!19sChIJyQuL1DJR5zgRsZ2-TnUiSRU",
+  "attrs": {},
+  "description": "Northern Retreat by Hotel Demanchi is a hotel in Naran Picnic Point, Kaghan Valley. Naran Picnic Point is about 74 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-hunza-dry-fruit-shop",
+  "name": "Hunza Dry Fruit Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90925,
+  "lon": 73.650678,
+  "mapsUrl": "https://www.google.com/maps/place/Hunza+dry+fruit+shop/data=!4m7!3m6!1s0x38e7510011c99327:0x1657489f6107cf8d!8m2!3d34.9092505!4d73.6506776!16s%2Fg%2F11y90zx4p8!19sChIJJ5PJEQBR5zgRjc8HYZ9IVxY",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Hunza Dry Fruit Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-grace-hill-hotel-naran",
+  "name": "Grace Hill Hotel Naran",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907525,
+  "lon": 73.65079,
+  "mapsUrl": "https://www.google.com/maps/place/GRACE+HILL+HOTEL+NARAN/data=!4m7!3m6!1s0x38e751cbae7c3675:0x8316e8fc02fa6bcb!8m2!3d34.907525!4d73.6507903!16s%2Fg%2F11f64jlbp1!19sChIJdTZ8rstR5zgRy2v6AvzoFoM",
+  "attrs": {},
+  "description": "Grace Hill Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-naran-retreat-hotel",
+  "name": "Naran Retreat Hotel",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.885785,
+  "lon": 73.639198,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Retreat+Hotel/data=!4m7!3m6!1s0x38e751287596fd61:0xd75ee80b800059d1!8m2!3d34.8857854!4d73.639198!16s%2Fg%2F11t0plk29y!19sChIJYf2WdShR5zgR0VkAgAvoXtc",
+  "attrs": {},
+  "description": "Naran Retreat Hotel is a hotel about 3 km from Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-saif-ul-malook-hotel-restaurant",
+  "name": "Saif Ul Malook Hotel & Restaurant",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908699,
+  "lon": 73.652711,
+  "mapsUrl": "https://www.google.com/maps/place/Saif+ul+Malook+Hotel+%26+Restaurant/data=!4m10!3m9!1s0x38e751df91bfdd59:0xff3ecb07cb7d3950!5m2!4m1!1i2!8m2!3d34.908699!4d73.6527109!16s%2Fg%2F11c5rvjc29!19sChIJWd2_kd9R5zgRUDl9ywfLPv8",
+  "attrs": {},
+  "description": "Saif Ul Malook Hotel & Restaurant is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-aha-adventure-club-naran",
+  "name": "Aha Adventure Club Naran",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.900183,
+  "lon": 73.647478,
+  "mapsUrl": "https://www.google.com/maps/place/Aha+adventure+club+naran/data=!4m7!3m6!1s0x38e7517567b745bb:0xfbd93620d01e1fc4!8m2!3d34.9001826!4d73.6474782!16s%2Fg%2F11rggv79lq!19sChIJu0W3Z3VR5zgRxB8e0CA22fs",
+  "attrs": {},
+  "description": "Aha Adventure Club Naran is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-rashid-mobile-and-electronic-benazir-and-support-program-nadra-e-sahult",
+  "name": "Rashid Mobile and Electronic Benazir and Support Program Nadra E Sahult",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907017,
+  "lon": 73.650769,
+  "mapsUrl": "https://www.google.com/maps/place/Rashid+mobile+and+electronic+benazir+and+support+program+Nadra+E+Sahult/data=!4m7!3m6!1s0x38e751c0631b2423:0x16d718019b39b2e0!8m2!3d34.9070169!4d73.6507691!16s%2Fg%2F11z7ht_1mt!19sChIJIyQbY8BR5zgR4LI5mwEY1xY",
+  "attrs": {
+   "category": "Mobile & SIM"
+  },
+  "description": "Rashid Mobile and Electronic Benazir and Support Program Nadra E Sahult is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-the-landmark-hotel-naran",
+  "name": "The Landmark Hotel Naran",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.904196,
+  "lon": 73.649602,
+  "mapsUrl": "https://www.google.com/maps/place/The+Landmark+Hotel+Naran/data=!4m10!3m9!1s0x38e751e0e6a78b41:0x63f51e7dc72b0e68!5m2!4m1!1i2!8m2!3d34.9041965!4d73.6496017!16s%2Fg%2F11ddz75_l8!19sChIJQYun5uBR5zgRaA4rx30e9WM",
+  "attrs": {},
+  "description": "The Landmark Hotel Naran is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-billa-g-pan-shop-naran-main-branch",
+  "name": "Billa G Pan Shop Naran Main Branch",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90925,
+  "lon": 73.650678,
+  "mapsUrl": "https://www.google.com/maps/place/Billa+G+Pan+Shop+Naran+Main+Branch/data=!4m7!3m6!1s0x38e751793868c451:0xfaae6194b7ebb5f4!8m2!3d34.9092505!4d73.6506776!16s%2Fg%2F11s49_jzhg!19sChIJUcRoOHlR5zgR9LXrt5Rhrvo",
+  "attrs": {
+   "category": "Other"
+  },
+  "description": "Billa G Pan Shop Naran Main Branch is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-roohullah-tyre-punchure-service-naran",
+  "name": "Roohullah Tyre & Punchure Service Naran",
+  "type": "fuel",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.897213,
+  "lon": 73.647655,
+  "mapsUrl": "https://www.google.com/maps/place/Roohullah+Tyre+%26+Punchure+service+Naran/data=!4m7!3m6!1s0x38e751e26e2ce52d:0xde5310dd57a93210!8m2!3d34.8972131!4d73.6476546!16s%2Fg%2F11ntcmqgjz!19sChIJLeUsbuJR5zgREDKpV90QU94",
+  "attrs": {
+   "services": [
+    "Tyre repair",
+    "Mechanic"
+   ]
+  },
+  "description": "Roohullah Tyre & Punchure Service Naran is a repair and recovery service in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-burhan-mobile-accessories",
+  "name": "Burhan Mobile Accessories",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.908686,
+  "lon": 73.652734,
+  "mapsUrl": "https://www.google.com/maps/place/Burhan+Mobile+Accessories/data=!4m7!3m6!1s0x38e7515c0839e2cf:0x475b9aca4b1067c3!8m2!3d34.9086857!4d73.6527337!16s%2Fg%2F11kb29z4vm!19sChIJz-I5CFxR5zgRw2cQS8qaW0c",
+  "attrs": {
+   "category": "Mobile & SIM"
+  },
+  "description": "Burhan Mobile Accessories is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-mian-mobile-easypasy-shop",
+  "name": "Mian Mobile Easypasy Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.900431,
+  "lon": 73.647681,
+  "mapsUrl": "https://www.google.com/maps/place/Mian+mobile+easypasy+shop/data=!4m7!3m6!1s0x38e751002e5bfb29:0x3bc89f258b8a3951!8m2!3d34.9004314!4d73.6476811!16s%2Fg%2F11nr4lvl8b!19sChIJKftbLgBR5zgRUTmKiyWfyDs",
+  "attrs": {
+   "category": "Mobile & SIM"
+  },
+  "description": "Mian Mobile Easypasy Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-kaghan-valley-local-tour-guide",
+  "name": "Kaghan Valley Local Tour Guide",
+  "type": "tour-company",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.907232,
+  "lon": 73.651337,
+  "mapsUrl": "https://www.google.com/maps/place/Kaghan+Valley+Local+Tour+Guide/data=!4m7!3m6!1s0x38de23d06b1c431f:0x6ebf55235b5eb3c6!8m2!3d34.9072318!4d73.6513372!16s%2Fg%2F11srbkyrl6!19sChIJH0Mca9Aj3jgRxrNeWyNVv24",
+  "attrs": {},
+  "description": "Kaghan Valley Local Tour Guide is a tour operator in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-karachi-general-store",
+  "name": "Karachi General Store",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90925,
+  "lon": 73.650678,
+  "mapsUrl": "https://www.google.com/maps/place/Karachi+general+store/data=!4m7!3m6!1s0x38e7513ec21ef67b:0x3682d5731667c363!8m2!3d34.9092505!4d73.6506776!16s%2Fg%2F11fm71yjxj!19sChIJe_Yewj5R5zgRY8NnFnPVgjY",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Karachi General Store is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-naran-rent-bike-125",
+  "name": "Naran Rent Bike 125",
+  "type": "jeep-operator",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.897137,
+  "lon": 73.647382,
+  "mapsUrl": "https://www.google.com/maps/place/Naran+Rent+Bike+125/data=!4m7!3m6!1s0x38e7514ea2e8d01d:0x48830fcc82850083!8m2!3d34.8971371!4d73.6473821!16s%2Fg%2F11xmy2rv81!19sChIJHdDook5R5zgRgwCFgswPg0g",
+  "attrs": {},
+  "description": "Naran Rent Bike 125 is a bike and transport rental in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-nadra-e-sahulat",
+  "name": "Nadra e Sahulat",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90811,
+  "lon": 73.651236,
+  "mapsUrl": "https://www.google.com/maps/place/Nadra+e+sahulat/data=!4m7!3m6!1s0x38e7510056e6db0f:0xda4aeeef93aca6aa!8m2!3d34.9081097!4d73.651236!16s%2Fg%2F11zbq5044f!19sChIJD9vmVgBR5zgRqqask-_uSto",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Nadra e Sahulat is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-errum-hotel",
+  "name": "Errum Hotel",
+  "type": "hotel",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.902056,
+  "lon": 73.647937,
+  "mapsUrl": "https://www.google.com/maps/place/Errum+Hotel/data=!4m10!3m9!1s0x38e751e14a59bf3b:0x21277ee8f091aa82!5m2!4m1!1i2!8m2!3d34.9020556!4d73.6479371!16s%2Fg%2F11byn0902q!19sChIJO79ZSuFR5zgRgqqR8Oh-JyE",
+  "attrs": {},
+  "description": "Errum Hotel is a hotel in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact the hotel directly to confirm rooms, prices and season dates."
+ },
+ {
+  "id": "gm-subway",
+  "name": "Subway",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.909245,
+  "lon": 73.652766,
+  "mapsUrl": "https://www.google.com/maps/place/Subway/data=!4m7!3m6!1s0x38e74d8aae1d8d49:0x84b7ca3a0137f281!8m2!3d34.9092453!4d73.6527662!16s%2Fg%2F11fn0zgpvf!19sChIJSY0dropN5zgRgfI3ATrKt4Q",
+  "attrs": {},
+  "description": "Subway is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-valley-adventures-pakistan",
+  "name": "Valley Adventures Pakistan",
+  "type": "tour-company",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.909182,
+  "lon": 73.652623,
+  "mapsUrl": "https://www.google.com/maps/place/Valley+Adventures+Pakistan/data=!4m7!3m6!1s0x38e74f8fbff5cf6d:0x32d0a682b04ffe11!8m2!3d34.9091823!4d73.6526228!16s%2Fg%2F11spp1ykl2!19sChIJbc_1v49P5zgREf5PsIKm0DI",
+  "attrs": {},
+  "description": "Valley Adventures Pakistan is a tour operator in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-kaghan-bazar",
+  "name": "Kaghan Bazar",
+  "type": "shop",
+  "stop": "kaghan",
+  "address": "Babusar Highway, Kaghan, Kaghan Valley, Mansehra",
+  "lat": 34.779182,
+  "lon": 73.523824,
+  "mapsUrl": "https://www.google.com/maps/place/Kaghan+Bazar/data=!4m7!3m6!1s0x38e0ab0046dc0d5f:0xf2115d48383a7e81!8m2!3d34.7791823!4d73.5238243!16s%2Fg%2F11nqz5msqh!19sChIJXw3cRgCr4DgRgX46OEhdEfI",
+  "attrs": {
+   "category": "General store"
+  },
+  "description": "Kaghan Bazar is a shop in Kaghan, Kaghan Valley. Kaghan is about 58 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-al-noor-restaurant-naran",
+  "name": "Al Noor Restaurant Naran",
+  "type": "restaurant",
+  "stop": "naran",
+  "address": "Mansehra-Chilas Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.899434,
+  "lon": 73.647149,
+  "mapsUrl": "https://www.google.com/maps/place/Al+Noor+Restaurant+Naran/data=!4m7!3m6!1s0x38e751001ea22c85:0x682d672a381549a5!8m2!3d34.8994336!4d73.6471491!16s%2Fg%2F11z7smnz2p!19sChIJhSyiHgBR5zgRpUkVOCpnLWg",
+  "attrs": {},
+  "description": "Al Noor Restaurant Naran is a restaurant in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-tourist-madadgar-car-recovery-service",
+  "name": "Tourist Madadgar Car Recovery Service",
+  "type": "fuel",
+  "stop": "naran",
+  "address": "Babusar Highway, Naran, Kaghan Valley, Mansehra",
+  "lat": 34.896414,
+  "lon": 73.647186,
+  "mapsUrl": "https://www.google.com/maps/place/Tourist+Madadgar+Car+recovery+service/data=!4m7!3m6!1s0x38e751dc9d189025:0x5a9d5d83b101e564!8m2!3d34.8964136!4d73.647186!16s%2Fg%2F11rgfx99jk!19sChIJJZAYndxR5zgRZOUBsYNdnVo",
+  "attrs": {
+   "services": [
+    "Mechanic",
+    "Towing"
+   ]
+  },
+  "description": "Tourist Madadgar Car Recovery Service is a repair and recovery service in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
+ },
+ {
+  "id": "gm-khyzar-mobile-shop",
+  "name": "Khyzar Mobile Shop",
+  "type": "shop",
+  "stop": "naran",
+  "address": "Naran, Kaghan Valley, Mansehra",
+  "lat": 34.90925,
+  "lon": 73.650678,
+  "mapsUrl": "https://www.google.com/maps/place/Khyzar+Mobile+Shop/data=!4m7!3m6!1s0x38e751e5ad133c4b:0xe9428ab2f69ec660!8m2!3d34.9092505!4d73.6506776!16s%2Fg%2F11h6m36bxm!19sChIJSzwTreVR5zgRYMae9rKKQuk",
+  "attrs": {
+   "category": "Mobile & SIM"
+  },
+  "description": "Khyzar Mobile Shop is a shop in Naran, Kaghan Valley. Naran is about 80 km from Balakot on the N-15. Contact them directly to confirm opening hours, as many places in the valley close in winter."
  }
 ]

@@ -1,7 +1,7 @@
 import type { ActivityItem, EventItem, Job, Listing, ListingStatus, Profile, RoadSegment, SiteSettings, Trail, WeatherArea } from "@/lib/types";
 import { photo } from "@/lib/media";
 import { getType } from "./business-types";
-import HOTELS from "./hotels.json";
+import IMPORTED_PLACES from "./imported.json";
 
 export * from "./stops";
 export * from "./business-types";
@@ -108,14 +108,14 @@ const PUBLIC_SERVICES: Listing[] = [
 ];
 
 /**
- * Hotels from a Google Maps list (scripts/import-hotels.mjs): name, map position and Maps link only.
+ * Hotels, shops, restaurants and services from Google Maps lists (scripts/import-places.mjs): name, type, map position and Maps link only.
  * They are unclaimed: no phone, prices or photos until the owner claims the listing and staff approve it.
  */
 const IMPORTED_AT = "2026-11-19T00:00:00+05:00";
-const IMPORTED: Listing[] = HOTELS.map((h) => ({
+const IMPORTED: Listing[] = IMPORTED_PLACES.map((h) => ({
   id: h.id, slug: h.id.slice(3), type: h.type, name: h.name, ownerName: "", ownerEmail: "", phone: "",
   stop: h.stop, address: h.address, description: h.description, status: "approved", verified: false,
-  attributes: { lat: h.lat, lon: h.lon, mapsUrl: h.mapsUrl, claimed: false },
+  attributes: { ...(h.attrs as Record<string, string | string[]>), lat: h.lat, lon: h.lon, mapsUrl: h.mapsUrl, claimed: false },
   documents: [], checklist: {}, history: [], submittedAt: IMPORTED_AT, updatedAt: IMPORTED_AT,
 }));
 

@@ -74,6 +74,12 @@ export function stopFaq(s: Stop, stops: Stop[], listings: Listing[] = []): QA[] 
     const names = hotels.slice(0, 6).map((l) => l.name);
     out.push({ q: `Where can I stay in ${s.name}?`, a: `There are ${hotels.length} hotels listed in ${s.name} on Kaghan Naran, including ${names.join(", ")}. See the directory for the full list with map locations.` });
   }
+  const listed = (types: string[], q: string, what: string) => {
+    const xs = listings.filter((l) => types.includes(l.type));
+    if (xs.length >= 3) out.push({ q, a: `Kaghan Naran lists ${xs.length} ${what} in ${s.name}, including ${xs.slice(0, 5).map((l) => l.name).join(", ")}. See the directory for map locations.` });
+  };
+  listed(["restaurant"], `Where can I eat in ${s.name}?`, "restaurants and cafes");
+  listed(["shop"], `Where can I shop in ${s.name}?`, "shops and markets");
   const i = stops.findIndex((x) => x.slug === s.slug);
   const next = stops.slice(i + 1).find((x) => !x.sideTrip);
   if (next) out.push({ q: `What is the next stop after ${s.name}?`, a: `Heading up the valley, the next stop on the N-15 is ${next.name}. ${next.desc}` });
