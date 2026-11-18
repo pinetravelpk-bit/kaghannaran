@@ -56,6 +56,19 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-col gap-8">
             <Reveal><p className="text-xl leading-relaxed text-ink-2">{l.description}</p></Reveal>
             {placesEnabled && placeIdOf(l) ? <PlaceGallery placeId={placeIdOf(l)!} name={l.name} /> : null}
+            {pos ? (
+              // Google's free "embed a map" iframe (no API key): map, place card, rating and directions from Google itself
+              <Reveal className="flex flex-col gap-3">
+                <h2 className="font-display text-2xl font-bold">Location</h2>
+                <iframe
+                  title={`Map of ${l.name}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(`${l.name}, ${stop?.name ?? "Kaghan Valley"}`)}&ll=${pos.lat},${pos.lon}&z=15&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="aspect-[16/10] w-full rounded-3xl border border-line bg-sage"
+                />
+              </Reveal>
+            ) : null}
             <Reveal className="rounded-3xl border border-line bg-white p-6">
               <h2 className="mb-4 font-display text-2xl font-bold">Details</h2>
               <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
