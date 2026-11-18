@@ -2,7 +2,8 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
 // Search and AI answer engines are welcome on the public pages; accounts and admin stay private.
-const PRIVATE = ["/admin", "/dashboard", "/auth", "/community/post"];
+// /api/photos is blocked so crawlers rendering pages do not run up Google Places charges
+const PRIVATE = ["/admin", "/dashboard", "/auth", "/community/post", "/api/photos"];
 const AI_BOTS = [
   "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User",
   "Google-Extended", "Applebot-Extended", "Bingbot", "DuckAssistBot", "Meta-ExternalAgent", "Amazonbot", "CCBot",

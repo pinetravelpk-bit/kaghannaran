@@ -3,6 +3,8 @@ import { BadgeCheck, MapPin, Star } from "lucide-react";
 import type { BusinessType, Listing, Stop } from "@/lib/types";
 import { Photo } from "@/components/ui/Photo";
 import { Icon } from "@/components/ui/Icon";
+import { PlaceCover } from "@/components/ui/PlacePhotos";
+import { placeIdOf, placesEnabled } from "@/lib/places";
 
 export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType; stop?: Stop }) {
   return (
@@ -10,6 +12,8 @@ export function ListingCard({ l, type, stop }: { l: Listing; type?: BusinessType
       <span className="relative block aspect-[4/3] overflow-hidden">
         {l.image ? (
           <Photo src={l.image} alt={l.name} className="h-full w-full transition duration-700 group-hover:scale-105 [&_img]:transition [&_img]:duration-700 group-hover:[&_img]:scale-110" />
+        ) : placesEnabled && placeIdOf(l) ? (
+          <PlaceCover placeId={placeIdOf(l)!} alt={l.name} fallback={<span className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#1C3D38,#12302C_70%)] text-signal">{type ? <Icon name={type.icon} className="size-14" /> : null}</span>} />
         ) : (
           <span className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[radial-gradient(circle_at_30%_20%,#1C3D38,#12302C_70%)] text-signal">
             {type ? <Icon name={type.icon} className="size-14" /> : null}

@@ -9,6 +9,8 @@ import { CONTACT_EMAIL } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbs, graph, listingSchema, pageMeta } from "@/lib/seo";
 import { stopPoint } from "@/lib/geo";
+import { PlaceGallery } from "@/components/ui/PlacePhotos";
+import { placeIdOf, placesEnabled } from "@/lib/places";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -53,6 +55,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
         <div className="mx-auto grid max-w-[1320px] gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
           <div className="flex flex-col gap-8">
             <Reveal><p className="text-xl leading-relaxed text-ink-2">{l.description}</p></Reveal>
+            {placesEnabled && placeIdOf(l) ? <PlaceGallery placeId={placeIdOf(l)!} name={l.name} /> : null}
             <Reveal className="rounded-3xl border border-line bg-white p-6">
               <h2 className="mb-4 font-display text-2xl font-bold">Details</h2>
               <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
@@ -79,7 +82,7 @@ export default async function ListingPage({ params }: { params: Promise<{ slug: 
               {mapsUrl ? <a href={mapsUrl} target="_blank" rel="noreferrer" className={`flex min-h-13 items-center justify-center gap-2 rounded-2xl font-semibold ${l.phone ? "border border-[#3C5A55]" : "bg-amber text-ink"}`}><MapIcon className="size-4" />Open in Google Maps</a> : null}
               {pos ? <a href={`https://www.google.com/maps/dir/?api=1&destination=${pos.lat},${pos.lon}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><Navigation className="size-4" />Directions</a> : null}
               {l.phone && wa.length >= 10 ? <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-[#3C5A55] font-semibold"><MessageCircle className="size-4" />WhatsApp</a> : null}
-              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />{type?.adminOnly ? "Public service number, checked by the Kaghan Naran team." : unclaimed ? "Added from public map data. Contact details, prices and photos appear once the owner claims this listing." : "Reviewed by the Kaghan Naran team before publishing. Book directly with the owner."}</p>
+              <p className="flex items-start gap-2 text-sm text-fog"><ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal" />{type?.adminOnly ? "Public service number, checked by the Kaghan Naran team." : unclaimed ? "Added from public map data. Contact details and prices appear once the owner claims this listing." : "Reviewed by the Kaghan Naran team before publishing. Book directly with the owner."}</p>
               {typeof l.attributes.source === "string" ? <a href={l.attributes.source} target="_blank" rel="noreferrer" className="text-sm text-fog underline">Source</a> : null}
             </div>
             {unclaimed ? (

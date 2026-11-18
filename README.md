@@ -157,3 +157,9 @@ The home page "N-15 in 3D" view uses real data, built once into `public/terrain/
 ## Hotel listings from Google Maps
 
 `scripts/import-hotels.mjs` imports a Google Maps list export (CSV): `node scripts/import-hotels.mjs path/to/maps_data.csv`. It keeps only the name, the map position from each Maps link and the link itself. Addresses come from OpenStreetMap (Nominatim). Phone numbers, ratings, prices and photos are not copied. They appear when an owner claims the listing. Output goes to `lib/seed/hotels.json` and `supabase/migrations/0004_hotels.sql`.
+
+## Hotel photos (Google Places API)
+
+Imported hotels show their Google Maps photos live through the Places API (New), with each photo's author and "Google Maps" credited as Google requires. Nothing is downloaded or stored, and the key stays on the server (`/api/photos/*` only answers for places that are listed on the site).
+
+To switch it on: in Google Cloud enable **Places API (New)**, create a key restricted to that API, then add `GOOGLE_PLACES_API_KEY=...` to `shared/.env.production` and redeploy. Photos load only when a card scrolls into view: one Place Details (photos) call plus one photo call per card, and up to seven calls on a hotel page. Set a daily quota or budget alert in Google Cloud. When an owner claims a listing and uploads their own photos, those replace the Google ones.
