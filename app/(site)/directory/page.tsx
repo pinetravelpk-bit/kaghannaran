@@ -7,7 +7,10 @@ import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
 import { photo } from "@/lib/media";
 import { X } from "lucide-react";
-import { pageMeta } from "@/lib/seo";
+import { abs, breadcrumbs, faqPage, graph, pageMeta } from "@/lib/seo";
+import { directorySummary } from "@/lib/listing-content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Faq } from "@/components/seo/Faq";
 import { FILTER_PARAMS, STAY_TYPES, filterValueLabel, matchesFilters, type FilterParams } from "@/lib/search";
 
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ stop?: string; q?: string } & FilterParams> }) {
@@ -20,14 +23,14 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   // index the category and stop pages; searches and attribute filters stay out of the index
   const canonical = `/directory${type || stop ? `?${new URLSearchParams({ ...(type ? { type: type.slug } : {}), ...(stop ? { stop: stop.slug } : {}) })}` : ""}`;
   const filtered = !!sp.q || Object.keys(FILTER_PARAMS).some((k) => sp[k as keyof FilterParams]);
-  return pageMeta({ title: `${what} in ${where}`, description: `${what} in ${where}, from Balakot and Kaghan to Naran and Babusar Top. Listings are checked by our team, with phone numbers, prices and locations.`, path: canonical, noindex: filtered });
+  return pageMeta({ title: `${what} in ${where}`, description: `${what} in ${where}: every listing with its map position, height, directions and what is nearby, plus live road status. From Balakot and Kaghan to Naran and Batakundi.`, path: canonical, noindex: filtered });
 }
 
 export default async function DirectoryPage({ searchParams }: { searchParams: Promise<{ stop?: string; q?: string } & FilterParams> }) {
   const sp = await searchParams;
   const [types, stops, all] = await Promise.all([getBusinessTypes(), getStops(), getListings({ stop: sp.stop, q: sp.q })]);
   const listings = all.filter((l) => matchesFilters(l, sp));
-  const active = Object.keys(FILTER_PARAMS).filter((k) => sp[k as keyof FilterParams]);;
+  const active = Object.keys(FILTER_PARAMS).filter((k) => sp[k as keyof FilterParams]);
   const type = types.find((x) => x.slug === sp.type);
   const stop = stops.find((x) => x.slug === sp.stop);
   const tBy = Object.fromEntries(types.map((x) => [x.slug, x]));
@@ -40,9 +43,19 @@ export default async function DirectoryPage({ searchParams }: { searchParams: Pr
     const s = u.toString();
     return `/directory${s ? `?${s}` : ""}`;
   };
+  const plural = sp.type === STAY_TYPES ? "Places to stay" : type ? `${type.name.split(" /")[0]}s` : "Businesses";
+  const heading = stop ? `${plural} in ${stop.name}` : type ? `${plural} in Kaghan Valley` : "Everything in the valley";
+  // a written introduction and FAQ for clean category and town pages (not for searches or filters)
+  const summary = !sp.q && !active.length && (type || stop) ? directorySummary(listings, plural, stop) : undefined;
+  const path = `/directory${type || stop ? `?${new URLSearchParams({ ...(type ? { type: type.slug } : {}), ...(stop ? { stop: stop.slug } : {}) })}` : ""}`;
   return (
     <>
-      <PageHero kicker="The directory" title={sp.type === STAY_TYPES ? "Places to stay" : type ? type.name : "Everything in the valley"} sub={sp.type === STAY_TYPES ? "Hotels, guest houses and campsites across the valley." : type?.description ?? "Approved hotels, restaurants, jeeps, guides, shops and services from Balakot to Babusar Top."} image={photo("naranNight")} />
+      <JsonLd data={graph(
+        breadcrumbs([["Directory", "/directory"], ...(type || stop ? [[heading, path] as [string, string]] : [])]),
+        { "@type": "ItemList", name: heading, numberOfItems: listings.length, itemListElement: listings.slice(0, 100).map((l, i) => ({ "@type": "ListItem", position: i + 1, url: abs(`/listing/${l.slug}`), name: l.name })) },
+        ...(summary ? [faqPage(summary.faq)] : []),
+      )} />
+      <PageHero kicker="The directory" title={heading} sub={sp.type === STAY_TYPES ? "Hotels, guest houses and campsites across the valley." : type?.description ?? "Approved hotels, restaurants, jeeps, guides, shops and services from Balakot to Babusar Top."} image={photo("naranNight")} />
       <section className="px-4 py-12 md:px-6">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-8">
           <form action="/directory" className="flex flex-wrap gap-3 rounded-3xl border border-line bg-white p-3">
@@ -78,6 +91,11 @@ export default async function DirectoryPage({ searchParams }: { searchParams: Pr
               <Link href={href(clear)} className="text-sm font-semibold text-maroon underline">Clear filters</Link>
             </div>
           ) : null}
+          {summary ? (
+            <section aria-label={`About ${heading}`} className="flex max-w-4xl flex-col gap-3">
+              {summary.intro.map((t) => <p key={t} className="text-lg leading-relaxed text-ink-2">{t}</p>)}
+            </section>
+          ) : null}
           <p className="text-muted">{listings.length} result{listings.length === 1 ? "" : "s"}{stop ? ` in ${stop.name}` : ""}{sp.q ? ` for “${sp.q}”` : ""}</p>
           {listings.length ? (
             <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -90,6 +108,7 @@ export default async function DirectoryPage({ searchParams }: { searchParams: Pr
               <Link href="/list-your-business" className="rounded-full bg-ink px-6 py-3 font-semibold text-ground">List a business</Link>
             </div>
           )}
+          {summary ? <Faq items={summary.faq} title={`${heading}: questions people ask`} /> : null}
         </div>
       </section>
     </>

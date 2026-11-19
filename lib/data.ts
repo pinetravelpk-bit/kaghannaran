@@ -3,6 +3,7 @@ import { cache } from "react";
 import { supabaseServer } from "@/lib/supabase/server";
 import { isDemo, isDemoAdmin } from "@/lib/supabase/config";
 import * as seed from "@/lib/seed";
+import { describe } from "@/lib/listing-content";
 import type { ActivityItem, BusinessType, EventItem, Job, Listing, ListingStatus, Profile, Role, RoadSegment, SiteSettings, Stop, Trail, WeatherArea } from "@/lib/types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -102,6 +103,13 @@ export const getSettings = cache(async (): Promise<SiteSettings> => {
 });
 
 // ───────── listings ─────────
+// Unclaimed listings (imported from map data) get a summary written from measured facts.
+const described = new Map<string, string>();
+function withSummary(l: Listing): Listing {
+  if (l.attributes.claimed !== false) return l;
+  if (!described.has(l.id)) described.set(l.id, describe(l, seed.STOPS.find((x) => x.slug === l.stop)));
+  return { ...l, description: described.get(l.id)! };
+}
 const LISTING_SELECT = "*, owner:profiles(full_name,email), listing_documents(*), moderation_events(*)";
 
 export async function getListings(opts: { status?: ListingStatus | "all"; type?: string; stop?: string; q?: string; featured?: boolean } = {}): Promise<Listing[]> {
@@ -119,7 +127,7 @@ export async function getListings(opts: { status?: ListingStatus | "all"; type?:
     const { data } = await query;
     list = (data ?? []).map(toListing);
   }
-  return list.filter((l) =>
+  return list.map(withSummary).filter((l) =>
     (status === "all" || l.status === status) &&
     (!opts.type || l.type === opts.type) &&
     (!opts.stop || l.stop === opts.stop) &&
@@ -130,10 +138,10 @@ export async function getListings(opts: { status?: ListingStatus | "all"; type?:
 
 export async function getListing(idOrSlug: string): Promise<Listing | undefined> {
   const s = await db();
-  if (!s) return seed.LISTINGS.find((l) => l.id === idOrSlug || l.slug === idOrSlug);
+  if (!s) { const l = seed.LISTINGS.find((x) => x.id === idOrSlug || x.slug === idOrSlug); return l && withSummary(l); }
   const isUuid = /^[0-9a-f-]{36}$/i.test(idOrSlug);
   const { data } = await s.from("listings").select(LISTING_SELECT).eq(isUuid ? "id" : "slug", idOrSlug).maybeSingle();
-  return data ? toListing(data) : undefined;
+  return data ? withSummary(toListing(data)) : undefined;
 }
 
 export async function getMyListings(userId: string): Promise<Listing[]> {

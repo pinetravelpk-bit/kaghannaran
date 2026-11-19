@@ -89,7 +89,7 @@ const SCHEMA_TYPE: Record<string, string> = {
   health: "EmergencyService", police: "PoliceStation", "bank-atm": "BankOrCreditUnion", fuel: "GasStation", govt: "GovernmentOffice",
 };
 
-export function listingSchema(l: Listing, type?: BusinessType, stop?: Stop, geo?: { lat: number; lon: number }) {
+export function listingSchema(l: Listing, type?: BusinessType, stop?: Stop, geo?: { lat: number; lon: number; ele?: number }) {
   return {
     "@type": SCHEMA_TYPE[l.type] ?? "LocalBusiness",
     "@id": abs(`/listing/${l.slug}#business`),
@@ -101,7 +101,7 @@ export function listingSchema(l: Listing, type?: BusinessType, stop?: Stop, geo?
     ...(l.image ? { image: l.image } : {}),
     ...(type ? { additionalType: type.name } : {}),
     address: { "@type": "PostalAddress", streetAddress: l.address, addressLocality: stop?.name, addressRegion: "Khyber Pakhtunkhwa", addressCountry: "PK" },
-    ...(geo ? { geo: { "@type": "GeoCoordinates", latitude: geo.lat, longitude: geo.lon } } : {}),
+    ...(geo ? { geo: { "@type": "GeoCoordinates", latitude: geo.lat, longitude: geo.lon, ...(geo.ele ? { elevation: geo.ele } : {}) } } : {}),
     areaServed: stop ? { "@id": abs(`/places/${stop.slug}#place`) } : { "@id": VALLEY_ID },
     ...(l.priceFrom ? { priceRange: `PKR ${l.priceFrom.toLocaleString("en-US")}+` } : {}),
     ...(l.rating && l.reviews ? { aggregateRating: { "@type": "AggregateRating", ratingValue: l.rating, reviewCount: l.reviews } } : {}),

@@ -15,6 +15,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...pages.map(([p, priority, changeFrequency]) => ({ url: `${SITE_URL}${p}`, lastModified: now, changeFrequency, priority })),
     ...stops.map((s) => ({ url: `${SITE_URL}/places/${s.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8, ...(s.image ? { images: [s.image] } : {}) })),
     ...types.filter((t) => listings.some((l) => l.type === t.slug)).map((t) => ({ url: `${SITE_URL}/directory?type=${t.slug}`, lastModified: now, changeFrequency: "daily" as const, priority: 0.6 })),
+    // town pages per business type (e.g. hotels in Naran), where there are at least 3 listings
+    ...types.flatMap((t) => stops
+      .filter((st) => listings.filter((l) => l.type === t.slug && l.stop === st.slug).length >= 3)
+      .map((st) => ({ url: `${SITE_URL}/directory?type=${t.slug}&stop=${st.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 }))),
     ...listings.map((l) => ({ url: `${SITE_URL}/listing/${l.slug}`, lastModified: new Date(l.updatedAt), changeFrequency: "weekly" as const, priority: 0.6, ...(l.image ? { images: [l.image] } : {}) })),
   ];
 }
